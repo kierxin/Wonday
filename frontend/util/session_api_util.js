@@ -1,7 +1,7 @@
 export const postUser = ({
     $.ajax {
-        url: "/api/users",
-        method: "POST",
+        url: '/api/users',
+        method: 'POST',
         data: {user: user}
     }
 });
@@ -9,8 +9,8 @@ export const postUser = ({
 
 export const postSession = ({
     $.ajax {
-        url: "/api/session",
-        method: "POST",
+        url: '/api/session',
+        method: 'POST',
         data: {user: user}
     }
 });
@@ -18,7 +18,7 @@ export const postSession = ({
 
 export const deleteSession = ({
     $.ajax {
-        url: "/api/session",
-        method: "DELETE"
+        url: '/api/session',
+        method: 'DELETE'
     }
 });
