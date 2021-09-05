@@ -12,8 +12,12 @@ class Api::SessionsController < ApplicationController
     end
 
     def destroy
-        logout!
-        redirect_to root
+        if !current_user
+            render json: ["Already logged out"], status: 404
+        else
+            logout!
+            render {}
+        end
     end
 
 end
