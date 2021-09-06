@@ -1,0 +1,90 @@
+.landing-nav-btns {
+    padding: 10px;
+    position: sticky;
+}
+
+#logo, #networking-btns, #networking-btns li a, #login-btn, #get-started-btn {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: rgb(34, 34, 34);
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin: 8px 15px;
+}
+
+.landing-nav-btns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.left-side-landing-btns, .right-side-landing-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-side-landing-btns {
+    margin-left: 5px;
+}
+
+#networking-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 36vw;
+    margin-left: 50px;
+}
+
+.right-side-landing-btns {
+    width: 20%;
+    align-self: flex-end;
+    align-items: center;
+}
+
+#get-started-btn {
+    background-color: rgb(73, 88, 255);
+    border-radius: 60px;
+    color: white;
+    margin: 0 24px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 130px;
+    padding: 11px 5px;
+}
+
+#get-started-text {
+    font-size: 1rem;
+}
+
+#logo:hover, #networking-btns li a:hover, #login-btn:hover, #get-started-btn:hover {
+    color: rgb(73, 88, 255);
+}
+
+#get-started-btn:hover {
+    color: rgb(233, 233, 233);
+    background-color: rgb(65, 79, 224);
+}
+
+#logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+#logo-com {
+    font-size: 1.1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#logo:hover {
+    color: black;
+}
+
+#w-logo {
+    height: 1.2rem;
+    margin-top: -5px;
+    margin-right: 10px;
+}

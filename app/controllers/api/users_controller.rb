@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
     def show
-         render api_user_url(@user)
+         render api_users_url #TEMPORARY
     end
 
     def create
@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
         
         if @user.save
             login(@user)
-            render api_user_url(@user)
+            render api_users_url #TEMPORARY
         else
             render json: @user.errors.full_messages, status: 422
         end

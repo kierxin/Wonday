@@ -1,17 +1,17 @@
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
-import { logout } from "../../actions/session_actions";
-import NavHeader from "./nav_header";
-
-
-const mSTP = ({ session, entities: { users } }) => ({
-    currentUser: users[session.id]
-});
+// import { logout } from "../../actions/session_actions";
+// import NavHeader from "./nav_header";
 
 
-const mDTP = dispatch => ({
-    logout = () => dispatch(logout());
-});
+// const mSTP = ({ session, entities: { users } }) => ({
+//     currentUser: users[session.id]
+// });
 
 
-export default connect(mSTP, mDTP)(NavHeader);
+// const mDTP = dispatch => ({
+//     logout = () => dispatch(logout());
+// });
+
+
+// export default connect(mSTP, mDTP)(NavHeader);
