@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
         
         if @user.save
             login(@user)
-            render api_users_url #TEMPORARY
+            redirect_to root_url #TEMPORARY
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -20,4 +20,4 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit(:email, :password, :full_name)
     end
 
-end
+end 

@@ -6,6 +6,7 @@ const _nullUser = Object.freeze({
     password: ""
 })
 
+
 const sessionReducer = (state = _nullUser, action) => {
 
     Object.freeze(state);

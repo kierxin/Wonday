@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import DemoLogin from "./demo_login";
 
 
@@ -10,22 +12,34 @@ class SessionForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            fullName: ''
+            full_name: ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInput(formField) {
-        return e => {
-            this.setState({ [formField]: e.target.value });
-        }
+        return e => this.setState({
+            [formField]: e.currentTarget.value
+        });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        let user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    formErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
     }
 
     render() {
@@ -33,12 +47,15 @@ class SessionForm extends React.Component {
         const formType = this.props.formType;
         let submitBtnText = ""
 
-        formType === "login" ? (submitBtnText = "Log in →") : (
+        formType === "login" ? (
+            submitBtnText = "Log in →") : (
             submitBtnText = "Continue");
 
         return(
             <main>
-                <h1>Log In</h1>
+                <h1>{formType}</h1>
+
+                {this.formErrors()}
 
                 <form onSubmit={this.handleSubmit} className="session-form">
                     <label>Email
@@ -55,8 +72,8 @@ class SessionForm extends React.Component {
                     {(formType === "signup") && (
                         <label>Full Name (Optional)
                             <input type="text"
-                                value={this.state.fullName}
-                                onChange={this.handleInput("fullName")} />
+                                value={this.state.full_name}
+                                onChange={this.handleInput("full_name")} />
                         </label>
                     )}
 
@@ -67,8 +84,20 @@ class SessionForm extends React.Component {
                     </button>
                 </form>
 
-                <DemoLogin formType={formType} 
-                            processForm={this.props.processForm} />
+                <DemoLogin processForm={this.props.processForm.bind(this)} />
+
+                <p id="session-call-to-action">
+                    Don't have an account yet?
+                    {this.props.formType === "login" ? (
+                        <Link className="swap-session-form" to="/signup">
+                            Sign Up
+                        </Link>
+                    ) : (
+                        <Link className="swap-session-form" to="/login">
+                            Log In
+                        </Link>
+                    )}
+                </p>
             </main>
         )
     }

@@ -1,4 +1,4 @@
-import { postUser, postSession, deleteSession } from "../util/session_api_util";
+import * as SessionApiUtil from "../util/session_api_util";
 
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -20,16 +20,25 @@ const receiveErrors = errors => ({
     errors: errors
 });
 
-
-export const createNewUser = formUser => dispatch => postUser(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)),
+export const createNewUser = formUser => dispatch => (
+    SessionApiUtil.postUser(formUser)
+    .then(
+        user => dispatch(receiveCurrentUser(user)),
         errors => dispatch(receiveErrors(errors.responseJSON))
-    );
+    )
+);
 
-export const login = formUser => dispatch => postSession(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)),
+export const login = formUser => dispatch => (
+    SessionApiUtil.postSession(formUser)
+    .then(
+        user => dispatch(receiveCurrentUser(user)),
         errors => dispatch(receiveErrors(errors.responseJSON))
-    );
+    )
+);
 
-export const logout = () => dispatch => deleteSession()
-    .then(() => dispatch(logoutCurrentUser()));
+export const logout = () => dispatch => (
+    SessionApiUtil.deleteSession()
+    .then(
+        () => dispatch(logoutCurrentUser())
+    )
+);
