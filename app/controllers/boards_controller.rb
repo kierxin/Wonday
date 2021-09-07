@@ -1,23 +1,33 @@
 class Api::Boards_Controller < ApplicationController
 
     def show
+        render "/api/boards/show"
     end
 
-    def show
+    def new
+        render "/api/workspaces/new"
     end
 
-    def show
+    def create
+        @board = Board.new(board_params)
+
+        if @board.save
+            render "api/boards/show"
+        else
+            render json: @board.errors.full_messages, status: 422
+        end
     end
 
-    def show
+    def update
     end
 
-    def show
+    def destroy
     end
 
     private
     def board_params
-        params.require(:board).permit(:name)
+        params.require(:board).permit(:name, :workspace_id, :leaders_ids) 
+            # prolly want to remove workspace_id ^
     end
 
 end
