@@ -1,3 +1,5 @@
+
+
 /* LOGIN (DEFAULT) STYLES */
 
 form {
@@ -5,17 +7,15 @@ form {
 }
 
 form label, #signup-full-name-label {
-    display: flex;
-    flex-direction: row;
+    @include flex();
     align-items: center;
     width: 80%;
     margin: 20px;
-}
 
-form label span, #signup-full-name-label span {
-    position: relative;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    span {
+        position: relative;
+        @include roboto-lightweight;
+    }
 }
 
 form input, #signup-full-name-input {
@@ -24,12 +24,12 @@ form input, #signup-full-name-input {
     margin-left: 10px;
     padding: 5px 10px;
     outline: none;
-    border: 1px solid rgb(130,130,130);
+    border: $input-border-color;
     border-radius: 5px;
-}
 
-form input:focus, #signup-full-name-input:focus {
-    border: 1px solid rgb(19, 150, 226);
+    &:focus {
+        border: 1px solid rgb(19, 150, 226);
+    }
 }
 
 .session-form-submit-btn {
@@ -43,26 +43,24 @@ form input:focus, #signup-full-name-input:focus {
     box-shadow: 0 3px 0 rgb(26, 151, 209);
     color: white;
     font-size: 1.2rem;
-}
 
-.session-form-submit-btn:hover {
-    cursor: pointer;
-    background-color: rgb(26, 151, 209);
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(26, 151, 209);
+    }
 }
 
 #session-call-to-action {
     margin-top: 10px;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-}
+    @include roboto-lightweight;
 
-#session-call-to-action a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: rgb(19, 150, 226);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    a {
+        margin-left: 10px;
+        text-decoration: none;
+        color: rgb(19, 150, 226);
+        @include roboto-lightweight;
+    }
 }
 
 
@@ -78,11 +76,10 @@ form input:focus, #signup-full-name-input:focus {
     margin-top: 20px;
     width: 100%;
     text-align: center;
-}
 
-.demo-login-container p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    p {
+        @include roboto-lightweight;
+    }
 }
 
 #demo-login-btn {
@@ -92,9 +89,9 @@ form input:focus, #signup-full-name-input:focus {
     border: 1px solid rgb(130, 130, 130);
     padding: 10px;
     background-color: transparent;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    font-family: $arial;
 
-#demo-login-btn:hover {
-    cursor: pointer;
+    &:hover {
+        cursor: pointer;
+    }
 }

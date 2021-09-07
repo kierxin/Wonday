@@ -4,25 +4,25 @@
 }
 
 #logo, #networking-btns, #networking-btns li a, #login-btn, #get-started-btn {
-    font-family: 'Roboto', sans-serif;
+    font-family: $roboto;
     text-decoration: none;
     color: rgb(34, 34, 34);
     font-size: 1.1rem;
     font-weight: 300;
     margin: 8px 15px;
+
+    &:hover {
+        color: rgb(73, 88, 255);
+    }
 }
 
 .landing-nav-btns {
-    display: flex;
-    flex-direction: row;
+    @include flex;
     width: 100%;
-    justify-content: space-between;
 }
 
 .left-side-landing-btns, .right-side-landing-btns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex;
 }
 
 .left-side-landing-btns {
@@ -30,9 +30,7 @@
 }
 
 #networking-btns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex;
     align-items: center;
     min-width: 36vw;
     margin-left: 50px;
@@ -53,36 +51,32 @@
     vertical-align: middle;
     min-width: 130px;
     padding: 11px 5px;
+
+    &:hover {
+        color: rgb(233, 233, 233);
+        background-color: rgb(65, 79, 224);
+    }
 }
 
 #get-started-text {
     font-size: 1rem;
 }
 
-#logo:hover, #networking-btns li a:hover, #login-btn:hover, #get-started-btn:hover {
-    color: rgb(73, 88, 255);
-}
-
-#get-started-btn:hover {
-    color: rgb(233, 233, 233);
-    background-color: rgb(65, 79, 224);
-}
-
 #logo {
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: 'Nunito', sans-serif;
+    font-family: $nunito;
     color: rgb(56, 56, 56);
+
+    &:hover {
+        color: rgb(41, 41, 41);
+    }
 }
 
 #logo-com {
     font-size: 1.1rem;
-    font-family: 'Nunito', sans-serif;
+    font-family: $nunito;
     color: rgb(56, 56, 56);
-}
-
-#logo:hover {
-    color: rgb(41, 41, 41);
 }
 
 #w-logo {
