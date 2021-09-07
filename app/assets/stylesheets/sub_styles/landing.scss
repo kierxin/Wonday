@@ -1,3 +1,21 @@
+@mixin get-started {
+    background-color: rgb(73, 88, 255);
+    border-radius: 60px;
+    color: white;
+    margin: 0 24px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 130px;
+    padding: 11px 5px;
+
+    &:hover {
+        color: rgb(233, 233, 233);
+        background-color: rgb(65, 79, 224);
+    }
+}
+
+
+// NAV_HEADER
 .landing-nav-btns {
     padding: 10px;
     position: sticky;
@@ -18,6 +36,7 @@
 
 .landing-nav-btns {
     @include flex;
+    height: 70px;
     width: 100%;
 }
 
@@ -40,22 +59,11 @@
     width: 20%;
     align-self: flex-end;
     align-items: center;
+    height: 100%;
 }
 
 #get-started-btn {
-    background-color: rgb(73, 88, 255);
-    border-radius: 60px;
-    color: white;
-    margin: 0 24px 0 0;
-    text-align: center;
-    vertical-align: middle;
-    min-width: 130px;
-    padding: 11px 5px;
-
-    &:hover {
-        color: rgb(233, 233, 233);
-        background-color: rgb(65, 79, 224);
-    }
+    @include get-started();
 }
 
 #get-started-text {
@@ -83,4 +91,57 @@
     height: 1.2rem;
     margin-top: -5px;
     margin-right: 10px;
+}
+
+
+// MAIN CONTENT
+.yellow-banner {
+    display: block;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(219, 252, 130);
+    text-align: center;
+    padding: 25px 0;
+
+    p {
+        font-size: 1.2rem;
+        @include roboto-lightweight;
+        
+        span {
+            @include roboto-lightweight;
+            font-weight: 700;
+        }
+    }
+}
+
+
+.landing-main {
+    display: block;
+    height: calc(100vh - 70px - 70px);
+    text-align: center;
+    
+    h1 {
+        padding-top: 70px;
+        padding-bottom: 10px;
+        font-size: 4rem;
+        font-weight: 700;
+        color: #333333;
+    }
+
+    p {
+        @include roboto-lightweight;
+        margin-top: 30px;
+        font-size: 1.7rem;
+    }
+
+    #get-started-btn-bigger {
+        @include get-started();
+        display: block;
+        width: 240px;
+        padding: 14px 0;
+        height: 50px;
+        margin: 60px auto;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
 }

@@ -99,15 +99,21 @@ class SessionForm extends React.Component {
                 <DemoLogin processForm={this.props.processForm.bind(this)} />
 
                 <p id="session-call-to-action">
-                    Don't have an account yet?
+                    
                     {this.props.formType === "login" ? (
-                        <Link className="swap-session-form" to="/signup">
-                            Sign Up
-                        </Link>
+                        <>
+                            <p>Don't have an account yet?</p>
+                            <Link className="swap-session-form" to="/signup">
+                                Sign Up
+                            </Link>
+                        </>
                     ) : (
-                        <Link className="swap-session-form" to="/login">
-                            Log In
-                        </Link>
+                        <>
+                            <p>Already have an account?</p>
+                            <Link className="swap-session-form" to="/login">
+                                Log In
+                            </Link>
+                        </>
                     )}
                 </p>
             </main>
