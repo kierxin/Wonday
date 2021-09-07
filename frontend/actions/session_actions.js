@@ -20,6 +20,7 @@ const receiveErrors = errors => ({
     errors: errors
 });
 
+
 export const createNewUser = formUser => dispatch => (
     SessionApiUtil.postUser(formUser)
     .then(
