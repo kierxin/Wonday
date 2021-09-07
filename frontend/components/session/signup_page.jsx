@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import SessionForm from "../session_forms/session_form";
+import temp from "../../../app/assets/images/right-side-temp.png";
 
 
 class SignupPage extends React.Component {
@@ -19,16 +20,19 @@ class SignupPage extends React.Component {
     render() {
         return (
             <>
-                <div className="signup-container">
-                    <div className="signup-left-side">
-                        <h1>Welcome to wonday.com</h1>
-                        <p>Let's get started</p>
-                        {this.sessionForm()}
+                <main id="signup-main">
+                    <div className="signup-container">
+                        <div className="signup-left-side">
+                            <h1>Welcome to wonday.com</h1>
+                            {this.sessionForm()}
+                        </div>
+                        <div className="signup-right-side">
+                            <img src={temp} alt="person" />
+                            <p>Fill in your details so you can log in later</p>
+                        </div>
                     </div>
-                    <div className="signup-right-side">
-                        <p>hi</p>
-                    </div>
-                </div>
+                </main>
+                <div id="signup-page-bg"></div>
             </>
         )
     }

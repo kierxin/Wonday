@@ -30,16 +30,19 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
-    formErrors() {
-        return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        )
+    formErrors(formType) {
+        console.log("a");
+        if (this.props.errors.length > 0) {
+            return (
+                <ul id={`${formType}-session-form-errors`}>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
     }
 
     render() {
@@ -53,6 +56,9 @@ class SessionForm extends React.Component {
 
         return(
             <main className={`${formType}-main`}>
+
+                {this.formErrors(formType)}
+
                 {(formType === "signup") && (
                     <label id={`${formType}-full-name-label`}>
                         <span>Full Name</span>
@@ -62,8 +68,6 @@ class SessionForm extends React.Component {
                             id={`${formType}-full-name-input`} />
                     </label>
                 )}
-
-                {this.formErrors()}
 
                 <form onSubmit={this.handleSubmit} 
                     className="session-form"
