@@ -58,31 +58,39 @@ class SessionForm extends React.Component {
             <main>
                 <h1>{formType}</h1>
 
+                {(formType === "signup") && (
+                    <label id={`${formType}-full-name-label`}>
+                        <span>Full Name</span>
+                        <input type="text"
+                            value={this.state.full_name}
+                            onChange={this.handleInput("full_name")}
+                            id={`${formType}-full-name-input`} />
+                    </label>
+                )}
+
                 {this.formErrors()}
 
                 <form onSubmit={this.handleSubmit} className="session-form">
-                    <label>Email
+                    <label id={`${formType}-email-label`}>
+                        <span>Email</span>
                         <input type="text"
                                 value={this.state.email}
-                                onChange={this.handleInput("email")} />
-                    </label>
-                    <label>Password
-                        <input type="text"
-                                value={this.state.password}
-                                onChange={this.handleInput("password")} />
+                                onChange={this.handleInput("email")} 
+                                id={`${formType}-email-input`}/>
                     </label>
 
-                    {(formType === "signup") && (
-                        <label>Full Name (Optional)
-                            <input type="text"
-                                value={this.state.full_name}
-                                onChange={this.handleInput("full_name")} />
-                        </label>
-                    )}
+                    <label id={`${formType}-password-label`}>
+                        <span>Password</span>
+                        <input type="text"
+                                value={this.state.password}
+                                onChange={this.handleInput("password")}
+                                id={`${formType}-password-input`} />
+                    </label>
 
                     <button className="session-form-submit-btn"
                             value={formType}
-                            type="submit" >
+                            type="submit"
+                            id={`${formType}-submit-btn`} >
                         {submitBtnText}
                     </button>
                 </form>
