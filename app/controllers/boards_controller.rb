@@ -1,6 +1,7 @@
 class Api::Boards_Controller < ApplicationController
 
     def show
+        @board = Board.find_by(id: params[:id])
         render "/api/boards/show"
     end
 
@@ -19,6 +20,8 @@ class Api::Boards_Controller < ApplicationController
     end
 
     def update
+        # @board = Board.find_by(id: params[:id])
+
     end
 
     def destroy

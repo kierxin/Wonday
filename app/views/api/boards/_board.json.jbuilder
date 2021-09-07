@@ -1,0 +1,1 @@
+json.extract! board, :id, :name, :leaders_ids
