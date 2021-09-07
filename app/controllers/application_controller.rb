@@ -23,12 +23,10 @@ class ApplicationController < ActionController::Base
         @current_user = nil
     end
 
-    def ensure_logged_in
-        redirect_to root_url unless logged_in?
+    def require_logged_in
+    unless current_user
+      render json: { base: ['invalid credentials'] }, status: 401
     end
-
-    def ensure_logged_out
-        redirect_to root_url if logged_in? # TEMPORARY
-    end
+  end
 
 end

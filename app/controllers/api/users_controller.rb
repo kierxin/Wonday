@@ -1,7 +1,9 @@
 class Api::UsersController < ApplicationController
 
+    before_action :require_logged_in, only: [:show]
+
     def show
-         render api_users_url #TEMPORARY
+         render api_user_url(current_user)
     end
 
     def create
@@ -9,7 +11,7 @@ class Api::UsersController < ApplicationController
         
         if @user.save
             login(@user)
-            redirect_to root_url #TEMPORARY
+            render "/api/users/show"
         else
             render json: @user.errors.full_messages, status: 422
         end

@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
 
         if @user
             login(@user)
-            redirect_to root_url #TEMPORARY
+            render "api/users/show"
         else
             render json: ["Incorrect email or password"], status: 401
         end
