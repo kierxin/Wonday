@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
             submitBtnText = "Continue");
 
         return(
-            <main>
+            <main className={`${formType}-main`}>
                 {(formType === "signup") && (
                     <label id={`${formType}-full-name-label`}>
                         <span>Full Name</span>
@@ -65,7 +65,9 @@ class SessionForm extends React.Component {
 
                 {this.formErrors()}
 
-                <form onSubmit={this.handleSubmit} className="session-form">
+                <form onSubmit={this.handleSubmit} 
+                    className="session-form"
+                    id={`${formType}-session-form`} >
                     <label id={`${formType}-email-label`}>
                         <span>Email</span>
                         <input type="text"

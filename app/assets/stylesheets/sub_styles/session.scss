@@ -1,34 +1,4 @@
-.login-topbar {
-    padding: 10px 10px 14px 10px;
-    background-color: rgb(248, 248, 248);
-    border-bottom: 1px solid rgb(228, 228, 228);
-
-    #logo {
-        font-size: 2.5rem;
-    }
-
-    #w-logo {
-        margin-top: 0;
-    }
-}
-
-.login-container {
-    margin: 0 auto;
-    margin-top: 8vh;
-    width: 40vw;
-    min-width: 600px;
-    text-align: center;
-
-    h1 {
-        @include roboto-lightweight;
-        font-weight: 100;
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-    }
-}
-
-
-/* LOGIN form (DEFAULT) STYLES */
+/* LOGIN (DEFAULT) STYLES */
 
 form {
     margin: 10px;
@@ -93,10 +63,6 @@ form input, #signup-full-name-input {
 
 
 
-/* SIGNUP form (OVERRIDE) STYLES */
-
-
-
 /* DEMO LOGIN STYLES */
 
 .demo-login-container {
@@ -128,4 +94,89 @@ form input, #signup-full-name-input {
     &:hover {
         cursor: pointer;
     }
+}
+
+
+
+/* SIGNUP (OVERRIDE) STYLES */
+.signup-container {
+    @include flex;
+    margin: 0 auto;
+    margin-top: 5vh;
+    width: 70vw;
+    max-width: 1200px;
+    min-width: 600px;
+    border: 1px solid red;
+    padding: 40px;
+
+    h1 {
+        @include roboto-lightweight;
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #333333;
+    }
+
+    p {
+        margin-top: -10px;
+        font-family: $arial;
+        color: rgb(109, 109, 109);
+    }
+
+    .signup-left-side {
+        width: 70%;
+        overflow: hidden;
+    }
+
+    .signup-right-side {
+        width: 30%;
+    }
+}
+
+.signup-main {
+    border: 1px solid limegreen;
+
+    #signup-session-form {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    label, #signup-full-name-label {
+        display: block;
+        margin-left: 5px;
+        width: 100%;
+
+        span {
+            display: block;
+            font-family: $arial;
+            font-size: .9rem;
+        }
+    }
+
+    input, #signup-full-name-input {
+        margin-top: 5px;
+        margin-left: 0;
+        height: 1.5rem;
+        width: 90%;
+    }
+
+    #signup-submit-btn {
+        height: 2.5rem;
+        border-radius: 5px;
+        background-color: rgb(21, 107, 235);
+        box-shadow: none;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .demo-login-container {
+        margin-top: 30px;
+    }
+
+    #demo-login-btn {
+        margin: 15px;
+        border-radius: 5px;
+    }
+
 }
