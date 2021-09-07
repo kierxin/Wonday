@@ -1,3 +1,35 @@
+@mixin login-btn {
+    height: 3rem;
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border: none;
+    border-radius: 65px;
+    background-color: rgb(19, 167, 226);
+    box-shadow: 0 3px 0 rgb(26, 151, 209);
+    color: white;
+    font-size: 1.2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(26, 151, 209);
+    }
+}
+
+@mixin signup-btn {
+    @include login-btn();
+    height: 2.5rem;
+    width: 93%;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 5px;
+    background-color: rgb(21, 107, 235);
+    box-shadow: none;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
 #login-session-form-errors {
     background-color: rgb(241, 83, 110);
     width: 80%;
@@ -78,22 +110,12 @@ form input, #signup-full-name-input {
     }
 }
 
-.session-form-submit-btn {
-    height: 3rem;
-    width: 70%;
-    margin: 0 auto;
-    padding: 10px 0;
-    border: none;
-    border-radius: 65px;
-    background-color: rgb(19, 167, 226);
-    box-shadow: 0 3px 0 rgb(26, 151, 209);
-    color: white;
-    font-size: 1.2rem;
+#login-submit-btn {
+    @include login-btn();
+}
 
-    &:hover {
-        cursor: pointer;
-        background-color: rgb(26, 151, 209);
-    }
+#login-continue-btn {
+    @include login-btn();
 }
 
 #session-call-to-action {
@@ -233,15 +255,11 @@ form input, #signup-full-name-input {
     }
 
     #signup-submit-btn {
-        height: 2.5rem;
-        width: 93%;
-        border-radius: 5px;
-        margin-top: 15px;
-        margin-left: 5px;
-        background-color: rgb(21, 107, 235);
-        box-shadow: none;
-        font-size: 1rem;
-        font-weight: 700;
+        @include signup-btn();
+    }
+
+    #signup-continue-btn {
+        @include signup-btn();
     }
 
     .demo-login-container {
