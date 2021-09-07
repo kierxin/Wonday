@@ -3,7 +3,8 @@ class Api::UsersController < ApplicationController
     before_action :require_logged_in, only: [:show]
 
     def show
-         render api_user_url(current_user)
+        @user = User.find_by(id: params[:id])
+         render "/api/users/show"
     end
 
     def create
