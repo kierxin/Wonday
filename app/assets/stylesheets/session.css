@@ -40,9 +40,14 @@ form input:focus, #signup-full-name-input:focus {
     border: none;
     border-radius: 65px;
     background-color: rgb(19, 167, 226);
-    box-shadow: 0 3px 0 rgb(22, 130, 192);
+    box-shadow: 0 3px 0 rgb(26, 151, 209);
     color: white;
     font-size: 1.2rem;
+}
+
+.session-form-submit-btn:hover {
+    cursor: pointer;
+    background-color: rgb(26, 151, 209);
 }
 
 #session-call-to-action {

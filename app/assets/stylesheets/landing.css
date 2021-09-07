@@ -72,15 +72,17 @@
     font-size: 1.8rem;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
+    color: rgb(56, 56, 56);
 }
 
 #logo-com {
     font-size: 1.1rem;
     font-family: 'Nunito', sans-serif;
+    color: rgb(56, 56, 56);
 }
 
 #logo:hover {
-    color: black;
+    color: rgb(41, 41, 41);
 }
 
 #w-logo {
