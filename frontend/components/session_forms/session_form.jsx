@@ -53,8 +53,6 @@ class SessionForm extends React.Component {
 
         return(
             <main>
-                <h1>{formType}</h1>
-
                 {(formType === "signup") && (
                     <label id={`${formType}-full-name-label`}>
                         <span>Full Name</span>

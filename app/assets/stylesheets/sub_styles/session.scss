@@ -1,25 +1,54 @@
+.login-topbar {
+    padding: 15px 15px 20px 15px;
+    background-color: rgb(248, 248, 248);
+    border-bottom: 1px solid rgb(228, 228, 228);
+
+    #logo {
+        font-size: 2.5rem;
+    }
+
+    #w-logo {
+        margin-top: 0;
+    }
+}
+
+.login-container {
+    margin: 0 auto;
+    margin-top: 10vh;
+    width: 40vw;
+    min-width: 600px;
+    text-align: center;
+
+    h1 {
+        @include roboto-lightweight;
+        font-weight: 100;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+}
 
 
-/* LOGIN (DEFAULT) STYLES */
+/* LOGIN form (DEFAULT) STYLES */
 
 form {
     margin: 10px;
 }
 
 form label, #signup-full-name-label {
-    @include flex();
-    align-items: center;
+    @include flex($justify-content: flex-end);
     width: 80%;
-    margin: 20px;
+    margin: 20px 20px 20px -10px;
 
     span {
         position: relative;
+        margin-top: 15px;
         @include roboto-lightweight;
     }
 }
 
 form input, #signup-full-name-input {
-    width: 100%;
+    width: 20vw;
+    min-width: 300px;
     height: 2rem;
     margin-left: 10px;
     padding: 5px 10px;
@@ -34,7 +63,7 @@ form input, #signup-full-name-input {
 
 .session-form-submit-btn {
     height: 3rem;
-    width: 30%;
+    width: 70%;
     margin: 0 auto;
     padding: 10px 0;
     border: none;
@@ -52,8 +81,8 @@ form input, #signup-full-name-input {
 
 #session-call-to-action {
     margin-top: 10px;
-    text-align: center;
     @include roboto-lightweight;
+    text-align: center;
 
     a {
         margin-left: 10px;
@@ -65,7 +94,7 @@ form input, #signup-full-name-input {
 
 
 
-/* SIGNUP (OVERRIDE) STYLES */
+/* SIGNUP form (OVERRIDE) STYLES */
 
 
 
