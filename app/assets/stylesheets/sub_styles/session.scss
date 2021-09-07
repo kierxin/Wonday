@@ -134,12 +134,13 @@ form input, #signup-full-name-input {
     margin: 30px;
     border-radius: 60px;
     border: 1px solid rgb(130, 130, 130);
-    padding: 10px;
+    padding: 11px;
     background-color: transparent;
     font-family: $arial;
 
     &:hover {
         cursor: pointer;
+        background-color: rgb(241, 247, 246);
     }
 }
 
