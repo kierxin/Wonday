@@ -20,7 +20,6 @@ class Api::BoardsController < ApplicationController
     end
 
     def update
-        # @board = Board.find_by(id: params[:id])
 
     end
 
@@ -30,7 +29,6 @@ class Api::BoardsController < ApplicationController
     private
     def board_params
         params.require(:board).permit(:name, :workspace_id, :leaders_ids) 
-            # prolly want to remove workspace_id ^
     end
 
 end
