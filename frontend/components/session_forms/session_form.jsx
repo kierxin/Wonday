@@ -20,6 +20,7 @@ class SessionForm extends React.Component {
 
         this.goNext = this.goNext.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.formErrors = this.formErrors.bind(this);
     }
 
     handleInput(formField) {
@@ -29,7 +30,11 @@ class SessionForm extends React.Component {
     }
 
     goNext() {
-        this.setState({ page: 2 });
+        if (this.state.user.email.length < 1) {
+            this.formErrors(this.props.formType);
+        } else {
+            this.setState({ page: 2 });
+        }
     }
 
     handleSubmit(e) {
@@ -126,7 +131,8 @@ class SessionForm extends React.Component {
                     )}
 
                     {(formType === "login" || page === 1) && (
-                        <DemoLogin processForm={this.props.processForm.bind(this)} />
+                        <DemoLogin 
+                            useDemo={this.props.useDemo.bind(this)} />
                     )}
 
                     {(formType === "login" || page === 1) && (

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { createNewUser } from "../../actions/session_actions";
+import { createNewUser, login } from "../../actions/session_actions";
 import SignupPage from "../session/signup_page";
 
 
@@ -11,7 +11,8 @@ const mSTP = (state) => ({
 
 
 const mDTP = dispatch => ({
-    processForm: user => dispatch(createNewUser(user))
+    processForm: user => dispatch(createNewUser(user)),
+    useDemo: user => dispatch(login(user))
 });
 
 

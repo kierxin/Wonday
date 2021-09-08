@@ -15,7 +15,7 @@ class DemoLogin extends React.Component {
             full_name: 'Leslie Rau'
         }
         
-        this.props.processForm(demoUser);
+        this.props.useDemo(demoUser);
     }
 
     render() {

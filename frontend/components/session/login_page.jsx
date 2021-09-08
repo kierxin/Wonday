@@ -12,6 +12,7 @@ class LoginPage extends React.Component {
         return (
             <SessionForm
                 processForm={this.props.processForm}
+                useDemo={this.props.useDemo}
                 errors={this.props.errors}
                 formType={this.props.formType} />
         )
