@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../../app/assets/images/wonday-logo.png";
+import NetworkLink from "./NetworkLink";
 
 
 const NavHeader = () => {
@@ -17,21 +18,18 @@ const NavHeader = () => {
                 </Link>
 
                 <ul id="networking-btns">
-                    <li>
-                        <a href="#" target="_">
-                            AngelList
-                        </a>
-                    </li>
-                    <li className="networking-btn">
-                        <a href="https://www.linkedin.com/in/kiraporter" target="_">
-                            LinkedIn
-                        </a>
-                    </li>
-                    <li className="networking-btn">
-                        <a href="https://github.com/kierxin/Wonday" target="_">
-                            Wonday GitHub Repo
-                        </a>
-                    </li>
+                    <NetworkLink 
+                        href="https://angel.co/u/keeruh" 
+                        text="AngelList" />
+                    <NetworkLink
+                        href="https://www.linkedin.com/in/kiraporter"
+                        text="LinkedIn" />
+                    <NetworkLink
+                        href="https://github.com/kierxin/Wonday"
+                        text="Wonday GitHub Repo" />
+                    <NetworkLink
+                        href="#"
+                        text="Portfolio" />
                 </ul>
                 
             </div>
