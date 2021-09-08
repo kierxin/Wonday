@@ -9,7 +9,7 @@
 @mixin signup-subtitle {
     @include roboto-lightweight;
     margin-bottom: 30px;
-    color: #919191;
+    color: #585858;
 }
 
 
@@ -52,10 +52,13 @@
 
     #signup-title-2 {
         @include signup-title();
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     #signup-subtitle-2 {
         @include signup-subtitle();
+        margin-bottom: 40px;
     }
 
     .signup-left-side {
@@ -67,7 +70,7 @@
 
     .signup-right-side {
         width: 30%;
-        background-color: rgb(241, 241, 241);
+        background-color: rgb(247, 247, 247);
         border: none;
         overflow: hidden;
 
@@ -75,7 +78,8 @@
             text-align: center;
             margin-top: -150px;
             padding: 20px;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: .9rem;
         }
     }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import DemoLogin from "./demo_login";
-import { ContinueBtn, SubmitBtn } from "./btns";
+import { ContinueBtn, SubmitBtn } from "./session_btns";
 import CallToAction from "./call_to_action";
 import Input from "./input";
 

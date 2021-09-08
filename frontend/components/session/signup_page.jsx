@@ -28,7 +28,9 @@ class SignupPage extends React.Component {
                         </div>
                         <div className="signup-right-side">
                             <img src={temp} alt="person" />
-                            <p>Fill in your details so you can log in later</p>
+                            <p>Fill in your details so<br />
+                                you can log in later
+                            </p>
                         </div>
                     </div>
                 </main>
