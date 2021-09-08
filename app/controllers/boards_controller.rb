@@ -1,4 +1,4 @@
-class Api::Boards_Controller < ApplicationController
+class Api::BoardsController < ApplicationController
 
     def show
         @board = Board.find_by(id: params[:id])
