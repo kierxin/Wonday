@@ -17,7 +17,8 @@ class SessionForm extends React.Component {
                 password: '',
                 full_name: ''
             },
-            page: 1
+            page: 1,
+            error: null
         }
 
         this.handleInput = this.handleInput.bind(this);
@@ -25,36 +26,61 @@ class SessionForm extends React.Component {
         this.goNext = this.goNext.bind(this);
     }
 
+
+// HELPERS
     handleInput(formField) {
         return e => this.setState(
-            { user: { ...this.state.user, [formField]: e.currentTarget.value } }
+            { user: { ...this.state.user, [formField]: e.currentTarget.value },
+              error: null }
         );
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        let user = Object.assign({}, this.state.user);
-        this.props.processForm(user);
+
+        if (this.state.user.password.length < 6 && this.state.page === 2) {
+            this.setState({ error: "Password is too short" });
+        } else if (this.state.page === 2) {
+            let user = Object.assign({}, this.state.user);
+            this.props.processForm(user);
+            this.setState({ error: "Invalid username or password" });
+        }
     }
 
     goNext() {
-        if (this.state.user.email.length < 3) {
-            this.formErrors(this.props.formType);
+        const email = this.state.user.email;
+        if (email.length < 3 || (
+            !email.includes("@") ||
+             email.indexOf("@") === 0 ||
+             email.indexOf("@") === (email.length - 1) ||
+            !email.includes(".") ||
+             email.indexOf(".") === 0 ||
+             email.indexOf(".") === (email.length - 1)
+        )) {
+            this.setState({ error: "Invalid email" });
         } else {
             this.setState({ page: 2 });
         }
     }
 
-    formErrors(formType) {
+    dynamicFormErrors(formType, message = "Unknown error occurred") {
+        if (this.state.error) {
+            return(
+                <p id={`${formType}-session-form-errors`}>
+                    {message}
+                </p>
+            )
+        } 
+    }
+
+    onSubmitFormErrors() {
         if (this.props.errors.length > 0) {
             return (
-                <ul id={`${formType}-session-form-errors`}>
-                    {this.props.errors.map((error, i) => (
-                        <li key={`error${i}`}>
-                            {error}
-                        </li>
-                    ))}
-                </ul>
+                <p id={`${this.state.formType}-session-form-errors`}>
+                    {console.log("successssss!")}
+                    {console.log(this.props.errors)}
+                    {this.props.errors[0]}
+                </p>
             )
         }
     }
@@ -85,6 +111,8 @@ class SessionForm extends React.Component {
         }
     }
 
+
+// RENDER FUNCTION
     render() {
 
         const formType = this.props.formType;
@@ -114,7 +142,7 @@ class SessionForm extends React.Component {
                     className="session-form"
                     id={`${formType}-session-form`} >
 
-                    {this.formErrors(formType)}
+                    {this.dynamicFormErrors(formType, this.state.error)}
 
                     {(page === 1 || (page === 2 && formType === "login")) && (
                         <Input type={formType}
@@ -169,4 +197,5 @@ class SessionForm extends React.Component {
 }
 
 
+// EXPORT
 export default SessionForm;

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const CallToAction = ({formType}) => {
     return(
         <div id="session-call-to-action">
-
             {formType === "login" ? (
                 <>
                     <p>Don't have an account yet?</p>
