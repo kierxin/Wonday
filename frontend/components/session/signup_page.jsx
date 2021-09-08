@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import SessionForm from "../session_forms/session_form";
-import temp from "../../../app/assets/images/right-side-temp.png";
 
 
 class SignupPage extends React.Component {
@@ -27,7 +26,7 @@ class SignupPage extends React.Component {
                             {this.sessionForm()}
                         </div>
                         <div className="signup-right-side">
-                            <img src={temp} alt="person" />
+                            <img src={window.logoURL} alt="person" />
                             <p>Fill in your details so<br />
                                 you can log in later
                             </p>
