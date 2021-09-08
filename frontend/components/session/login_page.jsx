@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../../app/assets/images/wonday-logo.png";
 import SessionForm from "../session_forms/session_form";
 
 
@@ -23,7 +22,7 @@ class LoginPage extends React.Component {
             <>
                 <div className="login-topbar">
                     <Link to="/" id="logo">
-                        <img src={logo} alt="w logo" id="w-logo" />
+                        <img src={window.wLogo} alt="w logo" id="w-logo" />
                         wonday
                     </Link>
                 </div>
