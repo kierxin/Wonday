@@ -77,8 +77,6 @@ class SessionForm extends React.Component {
         if (this.props.errors.length > 0) {
             return (
                 <p id={`${this.state.formType}-session-form-errors`}>
-                    {console.log("successssss!")}
-                    {console.log(this.props.errors)}
                     {this.props.errors[0]}
                 </p>
             )
