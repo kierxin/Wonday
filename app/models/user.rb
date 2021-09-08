@@ -2,6 +2,9 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    belongs_to :workspace, optional: true
+    has_many :boards, through: :workspace
+
     validates :password_digest, presence: true
     validates :email, :session_token, uniqueness: true, presence: true
     validates :password, length: {minimum: 6, allow_nil: true}

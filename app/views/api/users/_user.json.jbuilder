@@ -1,1 +1,1 @@
-json.extract! user, :id, :email, :full_name
+json.(user, :id, :email, :full_name, :workspace, :boards)

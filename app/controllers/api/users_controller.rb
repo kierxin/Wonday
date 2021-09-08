@@ -4,6 +4,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        @workspace = Workspace.find_by(id: @user.workspace)
          render "/api/users/show"
     end
 
