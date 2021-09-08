@@ -69,11 +69,17 @@ form input, #signup-full-name-input {
 #session-call-to-action {
     @include roboto-lightweight;
     text-align: center;
+    padding-bottom: 2px;
+
+    p {
+        display: inline;
+    }
 
     a {
-        margin-left: 10px;
+        display: inline;
         text-decoration: none;
-        color: rgb(19, 150, 226);
+        color: rgb(9, 137, 211);
         @include roboto-lightweight;
+        margin-left: 3px;
     }
 }
