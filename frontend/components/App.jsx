@@ -15,7 +15,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route path="/boards/:boardId" component={BoardContainer} />
-            <Route exact path="/" component={LandingPage} />
+            <AuthRoute exact path="/" component={LandingPage} />
         </Switch>
     </>
 );

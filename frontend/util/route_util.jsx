@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { Route, withRouter, Redirect } from 'react-router';
 
 
-const Auth = ({ component: Component, path, loggedIn, exact }) => {
+const Auth = ({ component: Component, path, loggedIn, exact, state }) => {
+    // const boardId = window.currentUser.boards[0];
+    console.log(window.getState().entities.users["1"]);
+
     const id = window.getState().session.id;
     return (<Route path={path}
         exact={exact}
@@ -15,6 +18,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
 
 
 const mSTP = state => ({
+    state: state,
     loggedIn: Boolean(state.session.id)
 });
 
