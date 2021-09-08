@@ -1,20 +1,20 @@
-import { RECEIVE_BOARD } from "../actions/board_actions";
+// import { RECEIVE_BOARD } from "../actions/board_actions";
 
-const boardsReducer = (state = {}, action) => {
+// const boardsReducer = (state = {}, action) => {
 
-    Object.freeze(state);
+//     Object.freeze(state);
 
-    switch (action.type) {
+//     switch (action.type) {
 
-        case RECEIVE_BOARD:
-            return Object.assign({}, state, { [action.board.id]: action.board });
+//         case RECEIVE_BOARD:
+//             return Object.assign({}, state, { [action.board.id]: action.board });
 
-        default:
-            return state;
+//         default:
+//             return state;
 
-    }
+//     }
 
-}
+// }
 
 
-export default boardsReducer;
+// export default boardsReducer;
