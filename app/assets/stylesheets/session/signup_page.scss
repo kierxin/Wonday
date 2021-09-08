@@ -1,0 +1,103 @@
+#signup-page-bg {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(65, 55, 88);
+}
+
+#signup-main {
+    position: sticky; // required for z-index
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: 100;
+}
+
+.signup-container {
+    @include flex;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 70vw;
+    max-width: 1200px;
+    min-width: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: white;
+
+    h1 {
+        @include roboto-lightweight;
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #333333;
+    }
+
+    .signup-left-side {
+        width: 70%;
+        margin: 30px;
+        overflow: hidden;
+        border: none;
+    }
+
+    .signup-right-side {
+        width: 30%;
+        background-color: rgb(241, 241, 241);
+        border: none;
+        overflow: hidden;
+
+        p {
+            text-align: center;
+            margin-top: -150px;
+            padding: 20px;
+            font-weight: 700;
+        }
+    }
+}
+
+.signup-main {
+    #signup-session-form {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    label, #signup-full-name-label {
+        display: block;
+        margin: 0 5px 0 5px;
+        width: 100%;
+
+        span {
+            display: block;
+            font-family: $arial;
+            font-size: .9rem;
+        }
+    }
+
+    input, #signup-full-name-input {
+        margin-top: 5px;
+        margin-left: 0;
+        height: 1.5rem;
+        width: 90%;
+    }
+
+    #signup-submit-btn {
+        @include signup-btn();
+    }
+
+    #signup-continue-btn {
+        @include signup-btn();
+    }
+
+    .demo-login-container {
+        margin-top: 35px;
+    }
+
+    #demo-login-btn {
+        margin: 15px;
+        border-radius: 5px;
+    }
+
+}

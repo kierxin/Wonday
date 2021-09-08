@@ -1,0 +1,31 @@
+.demo-login-container {
+    display: block;
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    border-top: 1.5px solid rgb(197, 197, 197);
+
+    p {
+        display: block;
+        width: 130px;
+        margin: 0 auto;
+        margin-top: -10px;
+        background-color: white;
+        @include roboto-lightweight;
+    }
+}
+
+#demo-login-btn {
+    width: 130px;
+    margin: 30px;
+    border-radius: 60px;
+    border: 1px solid rgb(130, 130, 130);
+    padding: 11px;
+    background-color: transparent;
+    font-family: $arial;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(241, 247, 246);
+    }
+}

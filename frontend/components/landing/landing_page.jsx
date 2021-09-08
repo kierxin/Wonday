@@ -16,7 +16,7 @@ class LandingPage extends React.Component {
                 <NavHeader />
                 <div className="yellow-banner">
                     <p>
-                        Introducing <span id="landing-span-wonday">wonday</span>: a full-stack clone of monday.com
+                        Welcome to <span id="landing-span-wonday">wonday</span>: a full-stack clone of monday.com
                     </p>
                 </div>
                 <section className="landing-main">
