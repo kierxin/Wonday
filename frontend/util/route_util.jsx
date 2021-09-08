@@ -6,15 +6,26 @@ import { Route, withRouter, Redirect } from 'react-router';
 const Auth = ({ component: Component, path, loggedIn, exact, state }) => {
     const users = window.getState().entities.users;
     const user = users[Object.keys(users)[0]];
-    const board = user.boards[0];
-    if (user) {console.log(user.boards); console.log(user)};
+    let board;
+    if (user) { board = user.boards[0]; };
 
-    return (<Route path={path}
-        exact={exact}
-        render={props => (
-            !loggedIn ? <Component {...props} /> : <Redirect to={`api/boards/${board.id}`} />
-        )}
-    />)
+    if (board) {
+        return (<Route path={path}
+            exact={exact}
+            render={props => (
+                !loggedIn ? <Component {...props} /> : <Redirect to={`api/boards/${board.id}`} />
+            )}
+        />)
+    } else {
+        return (<Route path={path}
+            exact={exact}
+            render={props => (
+                !loggedIn ? <Component {...props} /> : <Redirect to={`/api/workspaces/new`} />
+            )}
+        />)
+    }
+
+    
 };
 
 
