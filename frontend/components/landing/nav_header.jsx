@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../../app/assets/images/wonday-logo.png";
 import NetworkLink from "./NetworkLink";
 
 
@@ -13,7 +12,7 @@ const NavHeader = () => {
             <div className="left-side-landing-btns">
 
                 <Link to="/" id="logo">
-                    <img src={logo} alt="w logo" id="w-logo" />
+                    <img src={window.wLogo} alt="w logo" id="w-logo" />
                     wonday<span id="logo-com">.com</span>
                 </Link>
 

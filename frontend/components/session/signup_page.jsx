@@ -26,7 +26,7 @@ class SignupPage extends React.Component {
                             {this.sessionForm()}
                         </div>
                         <div className="signup-right-side">
-                            <img src={window.logoURL} alt="person" />
+                            <img src={window.rightSideTemp} alt="person" />
                             <p>Fill in your details so<br />
                                 you can log in later
                             </p>
