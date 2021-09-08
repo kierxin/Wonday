@@ -1,17 +1,39 @@
 import React from "react";
 
+console.log("hit boarddd");
+// debugger;
+// class Board extends React.Component {
+    
+//     // constructor(props) {
+//     //     super(props);
+//     //     this.state = {
+//     //         hi: "hi"
+//     //     }
+//     // }
 
-class Board extends React.Component {
+//     render() {
+//         // debugger;
+//         console.log("hiiiiiiii");
+
+        
+//         return(
+//             <div>
+//                 <p>Yoooooooooooooooooooooooooo</p>
+//                 <p>{this.state.hi}</p>
+//                 {console.log(this.state.hi)}
+//             </div>
+//         )
+//     }
+
+// }
 
 
+// export default Board;
 
-    render() {
-        return(
-            <div>Welcome to your board, {this.props.user.email}!</div>
-        )
-    }
-
+const Board = (props) => {
+    return(
+        <div>{JSON.stringify(props)}</div>
+    )
 }
-
 
 export default Board;

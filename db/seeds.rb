@@ -1,8 +1,3 @@
-Workspace.delete_all
-User.delete_all
-Board.delete_all
-
-
 demoWorkspace1 = Workspace.create!(
     leaders_ids: [1]
 )
