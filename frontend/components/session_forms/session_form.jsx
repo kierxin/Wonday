@@ -23,7 +23,6 @@ class SessionForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.goNext = this.goNext.bind(this);
-        this.formErrors = this.formErrors.bind(this);
     }
 
     handleInput(formField) {
@@ -60,6 +59,32 @@ class SessionForm extends React.Component {
         }
     }
 
+    signupTitle(page) {
+        if (page === 1) {
+            return(
+                <div>
+                    <h1 id="signup-title-1">
+                        Welcome to wonday.com
+                    </h1>
+                    <p id="signup-subtitle-1">
+                        Let's get started with a few simple steps
+                    </p>
+                </div>
+            )
+        } else {
+            return(
+                <div>
+                    <h1 id="signup-title-2">
+                        Set up your account
+                    </h1>
+                    <p id="signup-subtitle-2">
+                        Fill in your profile details
+                    </p>
+                </div>
+            )      
+        }
+    }
+
     render() {
 
         const formType = this.props.formType;
@@ -79,6 +104,11 @@ class SessionForm extends React.Component {
 
         return(
             <main className={`${formType}-main`}>
+
+                {(formType === "signup") && (
+                    this.signupTitle(page)
+                )}
+                
 
                 <form onSubmit={this.handleSubmit} 
                     className="session-form"

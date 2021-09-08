@@ -1,3 +1,18 @@
+@mixin signup-title {
+    @include roboto-lightweight;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+@mixin signup-subtitle {
+    @include roboto-lightweight;
+    margin-bottom: 30px;
+    color: #919191;
+}
+
+
 #signup-page-bg {
     position: absolute;
     top: 0;
@@ -27,17 +42,25 @@
     border-radius: 10px;
     background-color: white;
 
-    h1 {
-        @include roboto-lightweight;
-        margin-bottom: 20px;
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: #333333;
+    #signup-title-1 {
+        @include signup-title();
+    }
+
+    #signup-subtitle-1 {
+        @include signup-subtitle();
+    }
+
+    #signup-title-2 {
+        @include signup-title();
+    }
+
+    #signup-subtitle-2 {
+        @include signup-subtitle();
     }
 
     .signup-left-side {
         width: 70%;
-        margin: 30px;
+        margin: 40px;
         overflow: hidden;
         border: none;
     }
@@ -64,9 +87,9 @@
         width: 100%;
     }
 
-    label, #signup-full-name-label {
+    label {
         display: block;
-        margin: 0 5px 0 5px;
+        margin: 5px;
         width: 100%;
 
         span {
@@ -76,8 +99,8 @@
         }
     }
 
-    input, #signup-full-name-input {
-        margin-top: 5px;
+    input {
+        margin-top: 10px;
         margin-left: 0;
         height: 1.5rem;
         width: 90%;
@@ -92,11 +115,11 @@
     }
 
     .demo-login-container {
-        margin-top: 35px;
+        margin-top: 45px;
     }
 
     #demo-login-btn {
-        margin: 15px;
+        margin: 25px;
         border-radius: 5px;
     }
 

@@ -24,7 +24,6 @@ class SignupPage extends React.Component {
                 <main id="signup-main">
                     <div className="signup-container">
                         <div className="signup-left-side">
-                            <h1>Welcome to wonday.com</h1>
                             {this.sessionForm()}
                         </div>
                         <div className="signup-right-side">
