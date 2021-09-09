@@ -5,10 +5,6 @@ class Api::BoardsController < ApplicationController
         render "/api/boards/show"
     end
 
-    def new
-        render "/api/workspaces/new"
-    end
-
     def create
         @board = Board.new(board_params)
 

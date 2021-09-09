@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
     def show
         @user = User.find_by(id: params[:id])
         @workspace = Workspace.find_by(id: @user.workspace)
-         render "/api/users/show"
+         render "/api/boards/show"
     end
 
     def create
@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
         
         if @user.save
             login(@user)
-            render "/api/users/show"
+            render "/api/boards/show"
         else
             render json: @user.errors.full_messages, status: 422
         end

@@ -3,28 +3,28 @@ import { connect } from 'react-redux';
 import { Route, withRouter, Redirect } from 'react-router';
 
 
-const Auth = ({ component: Component, path, loggedIn, exact, state }) => {
+const Auth = ({ component: Component, path, loggedIn, exact }) => {
     const users = window.getState().entities.users;
-    const user = users[Object.keys(users)[0]];
+    
+    let user;
     let board;
-    if (user) { board = user.boards[0]; };
 
-    if (board) {
-        return (<Route path={path}
+    if (users) {
+        user = users[Object.keys(users)[0]];
+
+        if (user) {
+            board = user.boards[0];
+        }
+    }
+
+    return (
+        <Route path={path}
             exact={exact}
             render={props => (
                 !loggedIn ? <Component {...props} /> : <Redirect to={`api/boards/${board.id}`} />
             )}
-        />)
-    } else {
-        return (<Route path={path}
-            exact={exact}
-            render={props => (
-                !loggedIn ? <Component {...props} /> : <Redirect to={`/api/workspaces/new`} />
-            )}
-        />)
-    }
-
+        />
+    )
     
 };
 

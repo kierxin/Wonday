@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :create]
     resource :session, only: [:create, :destroy]
     resources :boards, only: [:show, :new, :create, :update, :destroy]
-    resources :workspace, only: [:new]
+    resources :workspace, only: [:update, :destroy]
   end
 end

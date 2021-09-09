@@ -1,1 +1,0 @@
-json.(workspace, :id, :leaders_ids)
