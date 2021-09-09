@@ -8,12 +8,11 @@ class Api::BoardsController < ApplicationController
     def create
         @user = User.find(current_user.id)
 
-        if !@user.workspace
-            
+        if !@user.boards
             default_board = {
                 name: "New Board",
-                leaders: [@user.id],
-                workspace_id: @user.workspace.id
+                leaders: [@user.id.to_i],
+                workspace_id: @user.workspace_id
             }
             @board = Board.new(default_board)
         else 
@@ -21,10 +20,12 @@ class Api::BoardsController < ApplicationController
         end
 
         if @board.save
+            @user.save
             render "api/boards/show"
         else
             render json: @board.errors.full_messages, status: 422
         end
+
     end
 
     def update

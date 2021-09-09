@@ -1,15 +1,17 @@
 class Api::WorkspacesController < ApplicationController
 
     def create
-        workspace = { leaders: [params[:userId].to_i] }
-        @workspace = Workspace.new(workspace)
+        @user = User.find(current_user.id)
+
+        default_workspace = { leaders: [@user.id] }
+
+        @workspace = Workspace.new(default_workspace)
 
         if @workspace.save
-            @user = User.find(current_user.id)
             @user.workspace_id = @workspace.id
             @user.save
 
-            render "api/workspaces/create"
+            render "/api/workspaces/create"
         else
             puts @workspace.errors.full_messages
             render json: @workspace.errors.full_messages, status: 422

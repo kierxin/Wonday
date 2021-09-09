@@ -11,6 +11,7 @@ const receiveWorkspace = workspace => ({
 });
 
 const newBoardParams = (workspace) => {
+    // console.log(workspace)
     return {
     "leaders": [workspace.leaders[0]],
     "workspace_id": workspace.id,

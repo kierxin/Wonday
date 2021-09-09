@@ -17,6 +17,12 @@ class Board extends React.Component {
         }
     }
 
+    componentDidMount() {
+        console.log(this.state.user)
+        !this.state.user.workspace && window.location.reload();
+        !this.state.user.boards.length && window.location.reload();
+    }
+
     render() {
         return(
             <main className="everything-container">

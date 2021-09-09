@@ -1,31 +1,37 @@
 import React from "react";
-import { Redirect } from "react-router";
+// import { Redirect } from "react-router";
 
 
 class NewUser extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         user: user,
+    //         workspace: workspace,
+    //         redirect: false
+    //     }
+    // }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: props.user,
-            workspaces: props.workspaces,
-            placeholder: "hi"
-        }
-    }
+    // render() {
+    //     if (this.state.redirect === true) {
+    //         return (<Redirect 
+    //             to={`/api/boards/${window.currentUser.boards[
+    //                 Object.keys(window.currentUser.boards)[0]]}`}
+    //         />)
+    //     }
+
+    //     return(
+    //         <div>hi</div>
+    //     )
+    // }
 
     componentDidMount() {
-        console.log(this.state.user);
-        this.props.createWorkspace(this.state.user.id)
-        .then(<Redirect to={`/api/users/${this.state.user.id}`} />)
+        history.back();
     }
 
     render() {
-        return(
-            <div><p>{JSON.stringify(this.state.user)}</p>
-                <p>{JSON.stringify(this.state.workspaces)}</p></div>
-        )
+        return <div>hiiiiiiiiii</div>
     }
-
 }
 
 
