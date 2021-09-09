@@ -11,6 +11,7 @@ class Api::BoardsController < ApplicationController
         if @board.save
             render "api/boards/show"
         else
+            puts @board.errors.full_messages
             render json: @board.errors.full_messages, status: 422
         end
     end
@@ -24,7 +25,7 @@ class Api::BoardsController < ApplicationController
 
     private
     def board_params
-        params.require(:board).permit(:name, :workspace_id, :leaders_ids) 
+        params.require(:board).permit(:name, :workspace_id, :leaders) 
     end
 
 end

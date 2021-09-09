@@ -23,11 +23,11 @@ demoUser2 = User.create!(
 board1 = Board.create!(
     workspace_id: 1,
     name: "September Project",
-    leaders_ids: [1]
+    leaders: [1]
 )
 
 board2 = Board.create!(
     workspace_id: 2,
     name: "Ant Colony Game",
-    leaders_ids: [2]
+    leaders: [2]
 )

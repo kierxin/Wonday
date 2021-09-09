@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_184119) do
+ActiveRecord::Schema.define(version: 2021_09_09_014627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 2021_09_08_184119) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "leaders_ids", default: [], array: true
+    t.integer "leaders", default: [], null: false, array: true
+    t.index ["leaders"], name: "index_boards_on_leaders"
     t.index ["name"], name: "index_boards_on_name"
     t.index ["workspace_id"], name: "index_boards_on_workspace_id"
   end
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 2021_09_08_184119) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "leaders_ids", default: [], array: true
-    t.index ["leaders_ids"], name: "index_workspaces_on_leaders_ids"
   end
 
 end

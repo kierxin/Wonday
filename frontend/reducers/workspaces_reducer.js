@@ -1,14 +1,14 @@
-import { RECEIVE_BOARD } from "../actions/board_actions";
+import { RECEIVE_WORKSPACE } from "../actions/workspace_actions";
 
 
-const boardsReducer = (state = {}, action) => {
+const workspacesReducer = (state = {}, action) => {
 
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
-    switch (action.type) {
+    switch(action.type) {
 
-        case RECEIVE_BOARD:
+        case RECEIVE_WORKSPACE:
             nextState[action.type.id] = action.type;
             return nextState;
 
@@ -16,7 +16,8 @@ const boardsReducer = (state = {}, action) => {
             return state;
 
     }
+
 }
 
 
-export default boardsReducer;
+export default workspacesReducer;
