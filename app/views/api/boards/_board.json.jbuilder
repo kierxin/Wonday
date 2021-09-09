@@ -1,0 +1,1 @@
+json.(board, :id, :workspace_id, :name, :leaders, :users)

@@ -12,15 +12,5 @@ const receiveBoard = board => ({
 
 export const createNewBoard = newBoard => dispatch => (
     BoardApiUtil.postBoard(newBoard)
-    .then(
-        board => dispatch(receiveBoard(board))
-    )
-);
-
-
-export const fetchBoard = boardId => dispatch => (
-    BoardApiUtil.fetchBoard(boardId)
-    .then(
-        board => dispatch(receiveBoard(board))
-    )
+    .then(board => dispatch(receiveBoard(board)))
 );

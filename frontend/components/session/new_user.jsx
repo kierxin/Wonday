@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router";
 
 
 class NewUser extends React.Component {
@@ -6,21 +7,22 @@ class NewUser extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: props.user
+            user: props.user,
+            workspaces: props.workspaces,
+            placeholder: "hi"
         }
     }
 
     componentDidMount() {
-        this.state.user.workspace_id ? (
-            this.props.fetchBoard(this.state.user.id)
-        ) : (
-            this.props.createWorkspace(this.state.user.id)
-        );
+        console.log(this.state.user);
+        this.props.createWorkspace(this.state.user.id)
+        .then(<Redirect to={`/api/users/${this.state.user.id}`} />)
     }
 
     render() {
         return(
-            <div>{JSON.stringify(this.state.user)}</div>
+            <div><p>{JSON.stringify(this.state.user)}</p>
+                <p>{JSON.stringify(this.state.workspaces)}</p></div>
         )
     }
 

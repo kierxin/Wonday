@@ -5,6 +5,10 @@ class Api::WorkspacesController < ApplicationController
         @workspace = Workspace.new(workspace)
 
         if @workspace.save
+            @user = User.find(current_user.id)
+            @user.workspace_id = @workspace.id
+            @user.save
+
             render "api/workspaces/create"
         else
             puts @workspace.errors.full_messages

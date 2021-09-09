@@ -6,12 +6,23 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-        @board = Board.new(board_params)
+        @user = User.find(current_user.id)
+
+        if !@user.workspace
+            
+            default_board = {
+                name: "New Board",
+                leaders: [@user.id],
+                workspace_id: @user.workspace.id
+            }
+            @board = Board.new(default_board)
+        else 
+            @board = Board.new(board_params)
+        end
 
         if @board.save
             render "api/boards/show"
         else
-            puts @board.errors.full_messages
             render json: @board.errors.full_messages, status: 422
         end
     end
