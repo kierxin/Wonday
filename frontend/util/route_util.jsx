@@ -20,13 +20,6 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
         } else {
             return <Redirect to={`/api/boards/${user.boards[0].id}`} />
         }
-        // if (!user.workspace) {
-            // return <Redirect to={`/api/`} />
-        // } else if (!user.boards.length) {
-            // return <Redirect to={`/api/`} />
-        // } else {
-            // return <Redirect to={`/api/boards/${user.boards[0].id}`} />
-        // }
     }
 
 }
