@@ -1,14 +1,11 @@
 class Api::WorkspacesController < ApplicationController
 
     def create
-        puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
-        puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
-        puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
-        puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
-        @workspace = Workspace.new(workspace_params)
+        workspace = { leaders: [params[:userId].to_i] }
+        @workspace = Workspace.new(workspace)
 
         if @workspace.save
-            # render "api/boards/show"
+            render "api/workspaces/create"
         else
             puts @workspace.errors.full_messages
             render json: @workspace.errors.full_messages, status: 422
@@ -23,7 +20,7 @@ class Api::WorkspacesController < ApplicationController
 
     private
     def workspace_params
-        params.require(:board).permit(:name, :workspace_id, :leaders) 
+        params.require(:board).permit(:name, :workspace_id, :leaders => []) 
     end
 
 end

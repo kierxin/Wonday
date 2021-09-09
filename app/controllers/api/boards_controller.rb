@@ -25,7 +25,7 @@ class Api::BoardsController < ApplicationController
 
     private
     def board_params
-        params.require(:board).permit(:name, :workspace_id, :leaders) 
+        params.require(:board).permit(:name, :workspace_id, :leaders => []) 
     end
 
 end

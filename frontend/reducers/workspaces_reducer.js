@@ -5,11 +5,10 @@ const workspacesReducer = (state = {}, action) => {
 
     Object.freeze(state);
     let nextState = Object.assign({}, state);
-
     switch(action.type) {
 
         case RECEIVE_WORKSPACE:
-            nextState[action.type.id] = action.type;
+            nextState[action.workspace.id] = action.workspace;
             return nextState;
 
         default:

@@ -10,16 +10,19 @@ const receiveWorkspace = workspace => ({
     workspace: workspace
 });
 
-const newBoardParams = (workspace) => ({
-    "leaders_ids": [window.currentUser.id],
+const newBoardParams = (workspace) => {
+    console.log(workspace)
+    return {
+    "leaders": [workspace.leaders[0]],
     "workspace_id": workspace.id,
     "name": "New Board"
-})
+    }
+}
 
 
 export const createNewWorkspace = userId => dispatch => (
     WorkspaceApiUtil.postWorkspace(userId)
         .then(workspace => dispatch(receiveWorkspace(workspace)))
-        .then(workspace => newBoardParams(workspace))
+        .then(workspaceAction => newBoardParams(workspaceAction.workspace))
         .then(board => dispatch(createNewBoard(board)))
 );

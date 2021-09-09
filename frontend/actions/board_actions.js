@@ -16,3 +16,11 @@ export const createNewBoard = newBoard => dispatch => (
         board => dispatch(receiveBoard(board))
     )
 );
+
+
+export const fetchBoard = boardId => dispatch => (
+    BoardApiUtil.fetchBoard(boardId)
+    .then(
+        board => dispatch(receiveBoard(board))
+    )
+);

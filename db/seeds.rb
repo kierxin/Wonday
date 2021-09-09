@@ -1,9 +1,9 @@
 demoWorkspace1 = Workspace.create!(
-    leaders_ids: [1]
+    leaders: [1]
 )
 
 demoWorkspace2 = Workspace.create!(
-    leaders_ids: [2]
+    leaders: [2]
 )
 
 demoUser1 = User.create!(

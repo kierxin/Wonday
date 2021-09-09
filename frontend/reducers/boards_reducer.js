@@ -9,7 +9,7 @@ const boardsReducer = (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_BOARD:
-            nextState[action.type.id] = action.type;
+            nextState[action.board.id] = action.board;
             return nextState;
 
         default:
