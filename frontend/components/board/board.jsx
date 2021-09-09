@@ -26,16 +26,23 @@ class Board extends React.Component {
     render() {
         return(
             <main className="everything-container">
-                <nav id="left-nav">
-                    <div id="left-nav-upper-btns">
-                        {/* <img src="{window.wLogo}" alt="W Logo" /> */}
-                        <LeftNavBtn src={window.boardsIcon} />
-                    </div> 
-                    <div id="left-nav-lower-btns">
-                        <LeftNavBtn src={window.inviteIcon} />
-                        <UserIcon name={this.state.user.full_name} />
+                <nav className="left-nav">
+                    <div className="left-nav-btns">
+                        <div id="left-nav-upper-btns">
+                            <img src="{window.wLogo}" alt="W Logo" />
+                            <LeftNavBtn src={window.boardsIcon} />
+                            {/* <LeftNavNetworkingIcon site={github} */}
+                            {/* <LeftNavNetworkingIcon site={angellist} */}
+                            {/* <LeftNavNetworkingIcon site={linkedin} */}
+                            {/* <LeftNavNetworkingIcon site={postfolio} */}
+                        </div> 
+                        <div id="left-nav-lower-btns">
+                            <LeftNavBtn src={window.inviteIcon} />
+                            <UserIcon name={this.state.user.full_name} />
+                        </div>
                     </div>
                 </nav>
+                <div id="workspace-bar-spacemaker"></div> {/* when clicking to expand WorkspaceSidebar, give this element a width so that BoardContent is pushed sideways (WorkspaceSidebar no longer overlaps it; remove the width when collapse button is clicked again) */}
                 <section className="board-main">
                     <WorkspaceSidebar workspace={this.state.user.workspace} />
                     <BoardContent board={this.state.board} user={this.state.user} />
