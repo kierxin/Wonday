@@ -1,7 +1,7 @@
 class Api::WorkspacesController < ApplicationController
 
     def create
-        @user = User.find(current_user.id)
+        @user = current_user
 
         default_workspace = { leaders: [@user.id], name: "My Workspace" }
 

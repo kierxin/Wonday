@@ -20,7 +20,7 @@ class Board extends React.Component {
 
     componentDidMount() {
         !this.state.user.workspace && window.location.reload();
-        !this.state.user.boards.length && window.location.reload();
+        !this.state.user.boards && window.location.reload();
     }
 
     render() {

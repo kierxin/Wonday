@@ -21,7 +21,6 @@
 
 .left-nav-inner-container {
     @include flex($flex-direction: column)
-    overflow: hidden;
     margin: 13px auto;
     height: calc(100vh - 26px);
     width: calc(100% - 20px); 

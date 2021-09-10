@@ -6,6 +6,7 @@ import { Route, withRouter, Redirect } from 'react-router';
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
     const users = window.getState().entities.users;
     const user = users[Object.keys(users)[0]];
+    console.log(user);
     
     if (!loggedIn) {
         return(
@@ -15,10 +16,12 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
             />
         )
     } else {
-        if (!user.boards) {
+
+        if (!user.boards.length) {
             return <Redirect to={`/api/`} />
         } else {
-            return <Redirect to={`/api/boards/${user.boards[0].id}`} />
+            const board = user.boards[Object.keys(user.boards)[0]];
+            return <Redirect to={`/api/boards/${board.id}`} />
         }
     }
 

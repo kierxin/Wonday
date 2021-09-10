@@ -1,14 +1,17 @@
 class Api::BoardsController < ApplicationController
 
     def show
-        @user = User.find(current_user.id)
+        @user = current_user
         @board = Board.find_by(id: params[:id])
+        if !@board
+            @board = current_user.boards[0]
+        end
         @workspace = @board.workspace
         render "/api/boards/show"
     end
 
     def create
-        @user = User.find(current_user.id)
+        @user = current_user
 
         if !@user.boards
             default_board = {
