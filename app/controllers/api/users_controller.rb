@@ -2,11 +2,11 @@ class Api::UsersController < ApplicationController
 
     before_action :require_logged_in, only: [:show]
 
-    def show
-        @user = User.find_by(id: params[:id])
-        @workspace = Workspace.find_by(id: @user.workspace)
-        render "/api/boards/show"
-    end
+    # def show
+    #     @user = User.find_by(id: params[:id])
+    #     @workspace = Workspace.find_by(id: @user.workspace)
+    #     render "/api/boards/show"
+    # end
 
     def create
         @user = User.new(user_params)

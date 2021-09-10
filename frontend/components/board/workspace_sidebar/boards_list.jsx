@@ -5,7 +5,7 @@ class BoardsList extends React.Component {
 
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         // for each board belonging to current user, add <li>
 
         return(

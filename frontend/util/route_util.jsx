@@ -15,7 +15,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
             />
         )
     } else {
-        if (!user.boards.length) {
+        if (!user.boards) {
             return <Redirect to={`/api/`} />
         } else {
             return <Redirect to={`/api/boards/${user.boards[0].id}`} />

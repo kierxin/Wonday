@@ -19,11 +19,13 @@ class Board extends React.Component {
     }
 
     componentDidMount() {
-        !this.state.workspace && window.location.reload();
-        !this.state.board && window.location.reload();
+        !this.state.user.workspace && window.location.reload();
+        !this.state.user.boards.length && window.location.reload();
     }
 
     render() {
+        console.log("ST A TE !");
+
         console.log(this.state);
 
         return(
@@ -55,10 +57,13 @@ class Board extends React.Component {
                             />
                         </div> 
                         <div id="left-nav-lower-btns">
+                            
+                            {console.log("PR OP S !")}
+                            {console.log(this.props)}
                             <LeftNavBtn external={false} src={"invite"} />
-                                <UserIcon 
-                                    name={this.state.user.full_name} 
-                                    logout={this.props.logout}/>
+                            <UserIcon 
+                                name={this.state.user.full_name} 
+                                logout={this.props.logout}/>
                         </div>
                     </div>
                 </nav>

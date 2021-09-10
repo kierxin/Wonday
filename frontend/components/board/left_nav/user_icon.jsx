@@ -26,11 +26,14 @@ class UserIcon extends React.Component {
     }
 
     render() {
-        let initials = "Me";
-        const { name } = this.props; 
-        let title;
+        console.log('USER-ICON PROPS');
+        console.log(this.props);
 
-        if(name) {
+        let initials = "Me";
+        let name = this.props.name; 
+        let title = "";
+
+        if(name.length > 0) {
             title = name;
 
             let split = name.split(" ");
