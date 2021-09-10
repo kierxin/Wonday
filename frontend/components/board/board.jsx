@@ -24,9 +24,6 @@ class Board extends React.Component {
     }
 
     render() {
-        console.log("ST A TE !");
-
-        console.log(this.state);
 
         return(
             <main className="everything-container">
@@ -58,8 +55,6 @@ class Board extends React.Component {
                         </div> 
                         <div id="left-nav-lower-btns">
                             
-                            {console.log("PR OP S !")}
-                            {console.log(this.props)}
                             <LeftNavBtn external={false} src={"invite"} />
                             <UserIcon 
                                 name={this.state.user.full_name} 

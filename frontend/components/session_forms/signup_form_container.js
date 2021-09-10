@@ -12,7 +12,7 @@ const mSTP = (state) => ({
 
 const mDTP = dispatch => ({
     processForm: user => (
-        dispatch(createNewUser(user)).then(console.log("!!!!!!!!!!"))
+        dispatch(createNewUser(user))
     ),
     useDemo: user => dispatch(login(user))
 });
