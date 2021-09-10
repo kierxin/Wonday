@@ -43,8 +43,6 @@ class WorkspaceSidebar extends React.Component {
     }
 
     render() {
-        console.log("workspace sidebar props");
-        console.log(this.props);
 
         let className;
         if(this.state.collapsed === true) {
