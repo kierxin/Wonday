@@ -1,3 +1,5 @@
+// layout and LeftNav
+
 .everything-container {
     display: flex;
     flex-direction: row;
@@ -72,6 +74,7 @@
         margin: 5px 0 0 5px;
 
         &:hover, &:active {
+            cursor: auto;
             background-color: transparent;
         }
     }

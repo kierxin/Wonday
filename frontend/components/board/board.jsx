@@ -54,7 +54,9 @@ class Board extends React.Component {
                         </div> 
                         <div id="left-nav-lower-btns">
                             <LeftNavBtn external={false} src={"invite"} />
-                            <UserIcon name={this.state.user.full_name} />
+                            <UserIcon 
+                                name={this.state.user.full_name} 
+                                logout={this.props.logout}/>
                         </div>
                     </div>
                 </nav>

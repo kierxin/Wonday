@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
 import Board from "./board";
+import { logout } from "../../actions/session_actions";
 
 
 const mSTP = state => ({
@@ -8,4 +9,9 @@ const mSTP = state => ({
     board: state.entities.users[Object.keys(state.entities.users)[0]].boards[0]
 });
 
-export default connect(mSTP, null)(Board);
+const mDTP = dispatch => ({
+    logout: () => dispatch(logout())
+});
+
+
+export default connect(mSTP, mDTP)(Board);
