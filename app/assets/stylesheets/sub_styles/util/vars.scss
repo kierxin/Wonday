@@ -76,9 +76,13 @@
 }
 
 @mixin workspace-sidebar-collapsed-btn-transition {
-    transition: width 300ms, box-shadow 500ms;
+    transition: width 300ms, box-shadow 300ms, border-width 300ms;
+    transition-delay: 100ms;
 }
 
+@mixin div-visibility-toggle {
+    transition-delay: 200ms;
+}
 
 // FONTS
 $roboto: 'Roboto', sans-serif;
