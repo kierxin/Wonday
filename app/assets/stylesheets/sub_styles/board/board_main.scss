@@ -1,0 +1,95 @@
+.workspace-sidebar {
+    // position: fixed;
+    height: 100vh;
+    width: 5%;
+    min-width: 30px;
+    overflow: hidden;
+    background-color: rgb(247, 247, 247);
+    padding: 15px;
+}
+
+#workspace-sidebar-collapse-btn {
+    @include workspace-sidebar-collapse-transition;
+    position: relative;
+    padding: 6px 9px;
+    height: 30px;
+    width: 30px;
+    margin-left: -15px;
+    margin-top: 25px;
+    border-radius: 100%;
+    background-color: white;
+    border: 1px solid rgb(218, 218, 218);
+    color: black;
+
+    &:hover {
+        @include workspace-sidebar-collapse-transition;
+        cursor: pointer;
+        width: 35px;
+        padding-left: 15px;
+        border-radius: 30px;
+        background-color: rgb(0, 90, 247);
+        color: white;
+        
+    }
+}
+
+.workspace-sidebar-collapsed {
+    @include workspace-sidebar-collapsed-btn-transition;
+
+    div {
+        display: none;
+    }
+}
+
+.workspace-sidebar-open {
+    // width: 40%;
+    @include workspace-sidebar-collapsed-btn-transition;
+    width: 650px;
+    border-right: 1px solid lightgray;
+    box-shadow: 5px 0px 20px rgba(145, 145, 145, 0.3);
+
+    div {
+        display: block;
+    }
+}
+
+#workspace-sidebar-header {
+    @include flex;
+}
+
+#workspace-name {
+    @include flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 12px 0 20px 0;
+    padding: 5px;
+    font-weight: 700;
+
+    p {
+        background-color: salmon;
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+        user-select: none;
+    }
+
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#add-board-option {
+    text-align: left;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(228, 228, 228);
+    }
+}

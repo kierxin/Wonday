@@ -1,18 +1,3 @@
-@mixin signup-title {
-    @include roboto-lightweight;
-    margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #333333;
-}
-
-@mixin signup-subtitle {
-    @include roboto-lightweight;
-    margin-bottom: 30px;
-    color: #585858;
-}
-
-
 #signup-page-bg {
     position: absolute;
     top: 0;

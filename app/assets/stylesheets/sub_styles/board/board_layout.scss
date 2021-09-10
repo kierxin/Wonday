@@ -20,9 +20,7 @@
 }
 
 .left-nav-inner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex($flex-direction: column)
     overflow: hidden;
     margin: 13px auto;
     height: calc(100vh - 26px);
@@ -90,21 +88,18 @@
         border: 2px solid white;
         font-size: 1.1rem;
         font-weight: 700;
+        user-select: none;
 
         &:hover {
+            transform: scale(.9);
             cursor: pointer;
         }
 
         text-align: center;
     }
 
-    .large-initials {
-        width: 80%;
-        color: rgb(221, 231, 241);
-    }
-
 }
 
 .board-main {
-    padding: 20px;
+    @include flex;
 }

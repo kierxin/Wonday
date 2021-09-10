@@ -13,17 +13,19 @@ class Board extends React.Component {
 
         this.state = {
             user: props.user,
-            board: props.board,
+            workspace: props.workspace,
+            board: props.board
         }
     }
 
     componentDidMount() {
-        console.log(this.state.user)
-        !this.state.user.workspace && window.location.reload();
-        !this.state.user.boards.length && window.location.reload();
+        !this.state.workspace && window.location.reload();
+        !this.state.board && window.location.reload();
     }
 
     render() {
+        console.log(this.state);
+
         return(
             <main className="everything-container">
                 <nav className="left-nav">
@@ -54,25 +56,29 @@ class Board extends React.Component {
                         </div> 
                         <div id="left-nav-lower-btns">
                             <LeftNavBtn external={false} src={"invite"} />
-                            <UserIcon 
-                                name={this.state.user.full_name} 
-                                logout={this.props.logout}/>
+                                <UserIcon 
+                                    name={this.state.user.full_name} 
+                                    logout={this.props.logout}/>
                         </div>
                     </div>
                 </nav>
-                <div id="workspace-bar-spacemaker"></div> {/* when clicking to expand WorkspaceSidebar, give this element a width so that BoardContent is pushed sideways (WorkspaceSidebar no longer overlaps it; remove the width when collapse button is clicked again) */}
-                <section className="board-main">
-                    <WorkspaceSidebar workspace={this.state.user.workspace} />
-                    <BoardContent board={this.state.board} user={this.state.user} />
 
-                    <br /><br /><br /><br />
-                    <div>
-                        <p>{JSON.stringify(this.state.user)}</p><br /><br />
-                        <p>{JSON.stringify(this.state.board)}</p><br /><br />
-                    </div>
-                </section>
+                {this.state.board && (
+                    <section className="board-main">
+
+                        <WorkspaceSidebar 
+                        workspace={this.state.workspace}
+                        user={this.state.user} />
+
+                        <BoardContent board={this.state.board} user={this.state.user} />       <br /><br /><br /><br />
+                        <div>
+                            <p>{JSON.stringify(this.state.user)}</p><br /><br />
+                            <p>{JSON.stringify(this.state.board)}</p><br /><br />
+                        </div>
+                    </section>
+                )}
+
             </main>
-            
         )
     }
 

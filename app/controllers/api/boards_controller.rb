@@ -1,7 +1,9 @@
 class Api::BoardsController < ApplicationController
 
     def show
+        @user = User.find(current_user.id)
         @board = Board.find_by(id: params[:id])
+        @workspace = @board.workspace
         render "/api/boards/show"
     end
 

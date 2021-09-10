@@ -1,4 +1,4 @@
-// mixins
+// MIXINS
 @mixin roboto-lightweight {
     font-family: $roboto;
     font-weight: 300;
@@ -10,12 +10,81 @@
     justify-content: $justify-content;
 }
 
+@mixin signup-title {
+    @include roboto-lightweight;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #333333;
+}
 
-// fonts
+@mixin signup-subtitle {
+    @include roboto-lightweight;
+    margin-bottom: 30px;
+    color: #585858;
+}
+
+@mixin get-started {
+    background-color: rgb(73, 88, 255);
+    border-radius: 60px;
+    color: white;
+    margin: 0 24px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 130px;
+    padding: 11px 5px;
+
+    &:hover {
+        color: rgb(233, 233, 233);
+        background-color: rgb(65, 79, 224);
+    }
+}
+
+@mixin login-btn {
+    height: 3rem;
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border: none;
+    border-radius: 65px;
+    background-color: rgb(19, 167, 226);
+    box-shadow: 0 3px 0 rgb(26, 151, 209);
+    color: white;
+    font-size: 1.2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(26, 151, 209);
+    }
+}
+
+@mixin signup-btn {
+    @include login-btn();
+    height: 2.5rem;
+    width: 93%;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 5px;
+    background-color: rgb(21, 107, 235);
+    box-shadow: none;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+@mixin workspace-sidebar-collapse-transition {
+    transition: width 80ms, padding-left 80ms, border-radius 80ms;
+}
+
+@mixin workspace-sidebar-collapsed-btn-transition {
+    transition: width 300ms, box-shadow 500ms;
+}
+
+
+// FONTS
 $roboto: 'Roboto', sans-serif;
 $nunito: 'Nunito', sans-serif;
 $arial: Arial, Helvetica, sans-serif;
 
 
-// colors
+// COLORS
 $input-border-color: 1px solid rgb(130,130,130);

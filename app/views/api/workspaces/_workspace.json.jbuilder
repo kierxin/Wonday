@@ -1,1 +1,1 @@
-json.(workspace, :id, :leaders)
+json.(workspace, :id, :name, :leaders)
