@@ -1,5 +1,4 @@
 .everything-container {
-    // @include roboto-lightweight;
     display: flex;
     flex-direction: row;
     width: 100vw;
@@ -12,10 +11,10 @@
     display: block;
     height: 100vh;
     width: 10vw;
-    min-width: 50px;
+    min-width: 70px;
     max-width: 100px;
     overflow: hidden;
-    background-color: rgb(44, 53, 88);
+    background-color: rgb(37, 45, 74);
 }
 
 .left-nav-inner-container {
@@ -27,11 +26,9 @@
     height: calc(100vh - 26px);
     width: calc(100% - 20px); 
     color: white;
-    // border: 1px solid salmon;
 
     .left-nav-btn {
-        width: 100%;
-        // border: 1px solid gold;
+        width: 80%;
         margin: 20px auto;
         padding: 12%;
         border-radius: 3px;
@@ -48,18 +45,7 @@
         &:active {
             background-color: rgb(118, 122, 149);
         }
-
-        // span {
-        //     // visibility: hidden;
-        //     user-select: none;
-        //     float: right;
-        //     color: gold;
-
-        //     &:hover {
-        //         visibility: visible;
-        //         color: red;
-        //     }
-        // }
+        
         &:hover::before {
             position: absolute;
             padding: 10px;
@@ -69,12 +55,21 @@
             font-size: .9rem;
             color: white;
 
-            content: attr(datatitle);
+            content: attr(data-title);
+        }
+
+    }
+
+    [data-title="Boards"] {
+        background-color: rgb(118, 122, 149);
+
+        &:hover {
+            background-color: rgb(118, 122, 149);
         }
     }
 
     #left-nav-logo {
-        margin: 5px 0 0 0;
+        margin: 5px 0 0 5px;
 
         &:hover, &:active {
             background-color: transparent;
@@ -83,19 +78,26 @@
 
     #user-icon {
         border-radius: 100%;
-        width: 100%;
+        width: 2.5rem;
+        min-height: 2.5rem;
+        padding: .5rem;
         margin: 0 auto;
-        background-color: rgb(62, 171, 201);
+        margin-bottom: 10px;
+        background-color: rgb(13, 140, 194);
         border: 2px solid white;
+        font-size: 1.1rem;
+        font-weight: 700;
 
         &:hover {
             cursor: pointer;
         }
+
+        text-align: center;
     }
 
     .large-initials {
         width: 80%;
-        color: red;
+        color: rgb(221, 231, 241);
     }
 
 }

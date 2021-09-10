@@ -11,7 +11,7 @@ class LeftNavBtn extends React.Component {
         if(this.props.external) {
 
             return(
-                <div className="left-nav-btn" datatitle={`${title}`}>
+                <div className="left-nav-btn" data-title={`${title}`}>
                     <a href={this.props.href} target="_blank">
                         <img src={window[src]} />
                     </a>
@@ -21,7 +21,7 @@ class LeftNavBtn extends React.Component {
         } else {
             
             return(
-                <div className="left-nav-btn" datatitle={`${title}`}>
+                <div className="left-nav-btn" data-title={`${title}`}>
                     <img src={window[src]} />
                 </div>
             );
