@@ -27,17 +27,33 @@ class Board extends React.Component {
         return(
             <main className="everything-container">
                 <nav className="left-nav">
-                    <div className="left-nav-btns">
+                    <div className="left-nav-inner-container">
                         <div id="left-nav-upper-btns">
-                            <img src="{window.wLogo}" alt="W Logo" />
-                            <LeftNavBtn src={window.boardsIcon} />
-                            {/* <LeftNavNetworkingIcon site={github} */}
-                            {/* <LeftNavNetworkingIcon site={angellist} */}
-                            {/* <LeftNavNetworkingIcon site={linkedin} */}
-                            {/* <LeftNavNetworkingIcon site={postfolio} */}
+                            <img id="left-nav-logo" className="left-nav-btn" src={wLogoSmall} alt="W Logo" />
+                            <LeftNavBtn external={false} src={"boards"} />
+                            <LeftNavBtn 
+                                external={true} 
+                                href="#" 
+                                src={"github"} 
+                            />
+                            <LeftNavBtn 
+                                external={true} 
+                                href="#" 
+                                src={"angellist"} 
+                            />
+                            <LeftNavBtn 
+                                external={true} 
+                                href="#" 
+                                src={"linkedin"} 
+                            />
+                            <LeftNavBtn 
+                                external={true} 
+                                href="#" 
+                                src={"portfolio"} 
+                            />
                         </div> 
                         <div id="left-nav-lower-btns">
-                            <LeftNavBtn src={window.inviteIcon} />
+                            <LeftNavBtn external={false} src={"invite"} />
                             <UserIcon name={this.state.user.full_name} />
                         </div>
                     </div>

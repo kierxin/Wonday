@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: rgb(224, 224, 224);
+    background-color: white;
 }
 
 .left-nav {
@@ -18,7 +18,7 @@
     background-color: rgb(44, 53, 88);
 }
 
-.left-nav-btns {
+.left-nav-inner-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,7 +27,77 @@
     height: calc(100vh - 26px);
     width: calc(100% - 20px); 
     color: white;
-    border: 1px solid salmon;
+    // border: 1px solid salmon;
+
+    .left-nav-btn {
+        width: 100%;
+        // border: 1px solid gold;
+        margin: 20px auto;
+        padding: 12%;
+        border-radius: 3px;
+
+        img {
+            width: 100%;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(17, 20, 35);
+        }
+
+        &:active {
+            background-color: rgb(118, 122, 149);
+        }
+
+        // span {
+        //     // visibility: hidden;
+        //     user-select: none;
+        //     float: right;
+        //     color: gold;
+
+        //     &:hover {
+        //         visibility: visible;
+        //         color: red;
+        //     }
+        // }
+        &:hover::before {
+            position: absolute;
+            padding: 10px;
+            margin-left: 50px;
+            border-radius: 3px;
+            background-color: rgb(68, 68, 68);
+            font-size: .9rem;
+            color: white;
+
+            content: attr(datatitle);
+        }
+    }
+
+    #left-nav-logo {
+        margin: 5px 0 0 0;
+
+        &:hover, &:active {
+            background-color: transparent;
+        }
+    }
+
+    #user-icon {
+        border-radius: 100%;
+        width: 100%;
+        margin: 0 auto;
+        background-color: rgb(62, 171, 201);
+        border: 2px solid white;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .large-initials {
+        width: 80%;
+        color: red;
+    }
+
 }
 
 .board-main {

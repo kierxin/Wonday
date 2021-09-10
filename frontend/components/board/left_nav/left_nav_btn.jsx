@@ -3,15 +3,30 @@ import React from "react";
 
 class LeftNavBtn extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
 
     render() {
-        return (
-            <div>LeftNavBtn</div>
+        const { src } = this.props;
+        const title = `${src[0].toUpperCase()}${src.slice(1).toLowerCase()}`;
 
-        );
+        if(this.props.external) {
+
+            return(
+                <div className="left-nav-btn" datatitle={`${title}`}>
+                    <a href={this.props.href} target="_blank">
+                        <img src={window[src]} />
+                    </a>
+                </div>
+            )
+            
+        } else {
+            
+            return(
+                <div className="left-nav-btn" datatitle={`${title}`}>
+                    <img src={window[src]} />
+                </div>
+            );
+
+        }
     }
 }
 
