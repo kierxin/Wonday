@@ -14,25 +14,24 @@ class Board extends React.Component {
         this.state = {
             user: props.user,
             workspace: props.workspace,
-            board: props.board
+            board: props.board,
+            fullyLoaded: false
         }
     }
 
     componentDidMount() {
         !this.state.user.workspace && window.location.reload();
         !this.state.user.boards && window.location.reload();
+        !this.state.fullyLoaded && this.setState({ fullyLoaded: true });
     }
 
     render() {
-        console.log("ST A TE !");
-
-        console.log(this.state);
 
         return(
             <main className="everything-container">
                 <nav className="left-nav">
                     <div className="left-nav-inner-container">
-                        <div id="left-nav-upper-btns">
+                        <div className="left-nav-upper-btns">
                             <img id="left-nav-logo" className="left-nav-btn" src={wLogoSmall} alt="W Logo" />
                             <LeftNavBtn external={false} src={"boards"} />
                             <LeftNavBtn 
@@ -56,7 +55,7 @@ class Board extends React.Component {
                                 src={"portfolio"} 
                             />
                         </div> 
-                        <div id="left-nav-lower-btns">
+                        <div className="left-nav-lower-btns">
                             
                             {console.log("PR OP S !")}
                             {console.log(this.props)}
