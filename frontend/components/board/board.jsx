@@ -1,9 +1,10 @@
 import React from "react";
+import { ProtectedRoute } from "../../util/route_util";
 
 import LeftNavBtn from "./left_nav/left_nav_btn";
 import UserIconContainer from "./left_nav/user_icon_container";
 import WorkspaceSidebar from "./workspace_sidebar/workspace_sidebar";
-import BoardContent from "./board_main/board_content";
+import BoardContentContainer from "./board_main/board_content_container";
 import Modal from "../modals/modal";
 
 
@@ -47,7 +48,8 @@ class Board extends React.Component {
 
 
     render() {
-        const { board } = this.props;
+        const board = this.state.board;
+        const user = this.state.user;
 
         return(
             <main className="everything-container">
@@ -81,7 +83,7 @@ class Board extends React.Component {
                             
                             <LeftNavBtn external={false} src={"invite"} />
                             <UserIconContainer 
-                                name={this.state.user.full_name} />
+                                name={user.full_name} />
                         </div>
                     </div>
                 </nav>
@@ -91,13 +93,12 @@ class Board extends React.Component {
 
                         <WorkspaceSidebar
                             toggleModal={this.toggleModal}
-                            user={this.state.user} />
+                            user={user} />
 
-                        <BoardContent board={board} user={this.state.user} />       <br /><br /><br /><br />
-                        <div>
-                            <p>{JSON.stringify(this.state.user)}</p><br /><br />
-                            <p>{JSON.stringify(board)}</p><br /><br />
-                        </div>
+                        <ProtectedRoute 
+                            path={`/api/boards/${user.latest_board}`}
+                            component={BoardContentContainer} />
+                            
                     </section>
                 )}
 
@@ -107,8 +108,8 @@ class Board extends React.Component {
                 {this.state.modalOpen && (
                     <Modal
                         modalType="create-board"
-                        userId={this.props.user.id}
-                        workspaceId={this.props.workspace.id}
+                        userId={this.state.user.id}
+                        workspaceId={this.state.workspace.id}
                         toggleModal={this.toggleModal} />
                 )}
 

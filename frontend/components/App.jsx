@@ -11,12 +11,12 @@ import LandingPage from "./landing/landing_page";
 
 const App = () => (
     <>
-        <Switch>
+        {/* <Switch> */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <ProtectedRoute path="/api" component={BoardContainer} />
+            <ProtectedRoute path="/api/" component={BoardContainer} />
             <AuthRoute exact path="/" component={LandingPage} />
-        </Switch>
+        {/* </Switch> */}
     </>
 );
 

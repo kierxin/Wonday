@@ -4,7 +4,7 @@ import { Route, withRouter, Redirect } from 'react-router';
 
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
-    const board = getState().user.latest_board;
+    let board = getState().user.latest_board;
     
     if (!loggedIn) {
         return(

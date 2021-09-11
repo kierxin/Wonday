@@ -5,8 +5,6 @@ import { logout } from "../../actions/session_actions";
 
 
 const mSTP = state => {
-    console.log("board container state");
-    console.log(state);
 
     return {
         user: state.user,

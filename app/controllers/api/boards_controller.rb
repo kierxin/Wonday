@@ -2,7 +2,7 @@ class Api::BoardsController < ApplicationController
 
     def show
         @user = current_user
-        @board = Board.find(id: current_user.latest_board)
+        @board = Board.find(id: current_user.latest_board) || @user.boards[-1]
         @workspace = @board.workspace
         render "/api/boards/show"
     end
