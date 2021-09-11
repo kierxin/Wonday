@@ -1,0 +1,9 @@
+#create-board-modal {
+    position: absolute;
+    z-index: 100;
+    float: left;
+    width: calc(100vw - 100px);
+    height: calc(100vh - 40px);
+    color: red;
+    border: 2px solid gold;
+}

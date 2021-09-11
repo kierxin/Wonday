@@ -26,7 +26,6 @@ class Board extends React.Component {
     }
 
     render() {
-
         return(
             <main className="everything-container">
                 <nav className="left-nav">
@@ -70,7 +69,8 @@ class Board extends React.Component {
 
                         <WorkspaceSidebar 
                         workspace={this.state.workspace}
-                        user={this.state.user} />
+                        user={this.state.user}
+                        addBoard={this.props.postBoard} />
 
                         <BoardContent board={this.state.board} user={this.state.user} />       <br /><br /><br /><br />
                         <div>
