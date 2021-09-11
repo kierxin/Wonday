@@ -15,8 +15,7 @@ class Board extends React.Component {
         this.state = {
             user: props.user,
             workspace: props.user.workspace,
-            board: props.user.latest_board,
-            fullyLoaded: false,
+            board: null,
             modalOpen: false
         }
 
@@ -26,7 +25,14 @@ class Board extends React.Component {
     componentDidMount() {
         !this.state.user.workspace && location.reload();
         !this.state.user.latest_board && location.reload();
-        !this.state.fullyLoaded && this.setState({ fullyLoaded: true });
+
+        let latestBoard;
+        this.state.user.boards.forEach(board => {
+            if (board.id === this.state.user.latest_board) {
+                latestBoard = board;
+            }
+        });
+        this.setState({ board: latestBoard });
     }
 
     toggleModal(e) {
@@ -80,7 +86,7 @@ class Board extends React.Component {
                     </div>
                 </nav>
 
-                {this.state.board && this.state.board.name && (
+                {this.state.board && (
                     <section className="board-main">
 
                         <WorkspaceSidebar

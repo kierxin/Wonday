@@ -4,7 +4,7 @@ import { Route, withRouter, Redirect } from 'react-router';
 
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
-    const board = getState().user.board;
+    const board = getState().user.latest_board;
     
     if (!loggedIn) {
         return(
@@ -15,7 +15,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
         )
     } else {
         if (board) {
-            return <Redirect to={`/api/boards/${board.id}`} />
+            return <Redirect to={`/api/boards/${board}`} />
         } else {
             return <Redirect to={`/api/`} />
         }

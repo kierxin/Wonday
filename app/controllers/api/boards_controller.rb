@@ -2,10 +2,7 @@ class Api::BoardsController < ApplicationController
 
     def show
         @user = current_user
-        @board = Board.find_by(id: params[:id])
-        if !@board
-            @board = current_user.boards[0]
-        end
+        @board = Board.find(id: current_user.latest_board)
         @workspace = @board.workspace
         render "/api/boards/show"
     end
