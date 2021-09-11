@@ -19,14 +19,7 @@ class Api::BoardsController < ApplicationController
             @workspace = @board.workspace
             @user = current_user
             @user.latest_board = @board.id
-            @user.save
-
-            puts "!!!!!!!"
-            puts "!!!!!!!"
-            puts "!!!!!!!"
-            puts "!!!!!!!"
-            puts "!!!!!!!"
-            puts @user
+            @user.save!
 
             render "api/boards/show"
         else

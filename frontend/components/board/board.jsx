@@ -5,8 +5,6 @@ import UserIconContainer from "./left_nav/user_icon_container";
 import WorkspaceSidebar from "./workspace_sidebar/workspace_sidebar";
 import BoardContent from "./board_main/board_content";
 import Modal from "../modals/modal";
-import { createNewWorkspace } from "../../actions/workspace_actions";
-import { createNewBoard } from "../../actions/board_actions";
 
 
 class Board extends React.Component {
@@ -16,8 +14,8 @@ class Board extends React.Component {
 
         this.state = {
             user: props.user,
-            workspace: props.workspace,
-            board: props.board,
+            workspace: props.user.workspace,
+            board: props.user.latest_board,
             fullyLoaded: false,
             modalOpen: false
         }
@@ -26,11 +24,8 @@ class Board extends React.Component {
     }
 
     componentDidMount() {
-        // console.log("GET STATE");
-        // console.log(getState());
-        // console.log("board mounted");
-        // !this.state.workspace && dispatch(createNewWorkspace(this.state.user.id));
-        // !this.state.board && dispatch(createNewBoard(this.state.workspace.id));
+        !this.state.user.workspace && location.reload();
+        !this.state.user.latest_board && location.reload();
         !this.state.fullyLoaded && this.setState({ fullyLoaded: true });
     }
 

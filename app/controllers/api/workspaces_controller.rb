@@ -6,7 +6,8 @@ class Api::WorkspacesController < ApplicationController
         @workspace = Workspace.new(workspace_params)
 
         if @workspace.save
-            @user.update_attribute(:workspace_id => @workspace.id)
+            @user.workspace_id = @workspace.id
+            @user.save!
 
             render "/api/workspaces/show"
         else

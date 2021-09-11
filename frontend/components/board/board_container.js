@@ -9,9 +9,7 @@ const mSTP = state => {
     console.log(state);
 
     return {
-        user: state.entities.user,
-        workspace: state.entities.workspace,
-        board: state.entities.board
+        user: state.user,
     }
 };
 
