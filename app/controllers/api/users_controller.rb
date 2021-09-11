@@ -1,13 +1,5 @@
 class Api::UsersController < ApplicationController
 
-    before_action :require_logged_in, only: [:show]
-
-    # def show
-    #     @user = User.find_by(id: params[:id])
-    #     @workspace = Workspace.find_by(id: @user.workspace)
-    #     render "/api/boards/show"
-    # end
-
     def create
         @user = User.new(user_params)
         
@@ -21,7 +13,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:email, :password, :full_name)
+        params.require(:user).permit(:email, :password, :full_name, :latest_board)
     end
 
 end 

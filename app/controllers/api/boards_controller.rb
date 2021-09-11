@@ -17,8 +17,17 @@ class Api::BoardsController < ApplicationController
 
         if @board.save
             @workspace = @board.workspace
-            @workspace.save
+            @user = current_user
+            @user.latest_board = @board.id
             @user.save
+
+            puts "!!!!!!!"
+            puts "!!!!!!!"
+            puts "!!!!!!!"
+            puts "!!!!!!!"
+            puts "!!!!!!!"
+            puts @user
+
             render "api/boards/show"
         else
             render json: @board.errors.full_messages, status: 422

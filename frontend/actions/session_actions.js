@@ -23,8 +23,6 @@ const receiveErrors = errors => ({
 
 
 export const createNewUser = formUser => dispatch => {
-    debugger;
-
     return (
         SessionApiUtil.postUser(formUser)
         .then(
@@ -40,8 +38,6 @@ export const createNewUser = formUser => dispatch => {
 };
 
 export const login = formUser => dispatch => {
-    debugger;
-
     return (
         SessionApiUtil.postSession(formUser)
         .then(

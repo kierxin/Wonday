@@ -12,14 +12,16 @@ demoUser1 = User.create!(
     email: "leslie_rau@yahoo.com",
     password: "lrau123",
     full_name: "Leslie Rau",
-    workspace_id: 1
+    workspace_id: 1,
+    latest_board: 1
 )
 
 demoUser2 = User.create!(
     email: "zariah123@verizon.net", 
     password: "zhopper123",
     full_name: "Zariah Hopper",
-    workspace_id: 2
+    workspace_id: 2,
+    latest_board: 2
 )
 
 board1 = Board.create!(
