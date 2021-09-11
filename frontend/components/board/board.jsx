@@ -101,9 +101,9 @@ class Board extends React.Component {
                 {this.state.modalOpen && (
                     <Modal
                         modalType="create-board"
-                        user={this.props.user}
-                        workspace={this.props.workspace}
-                        addBoard={this.addBoard}
+                        userId={this.props.user.id}
+                        workspaceId={this.props.workspace.id}
+                        addBoard={this.props.postBoard}
                         toggleModal={this.toggleModal} />
                 )}
 

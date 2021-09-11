@@ -4,10 +4,11 @@
     float: left;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(53, 63, 113, .3);
+    background-color: rgba(43, 52, 90, 0.6);
 }
 
 .create-board-modal-foreground {
+    overflow: auto;
     background-color: white;
     width: 40vw;
     height: 90vh;

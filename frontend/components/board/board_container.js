@@ -23,7 +23,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
-    postBoard: board => dispatch(postBoard(board))
+    postBoard: board => dispatch(postBoard(board)),
 });
 
 
