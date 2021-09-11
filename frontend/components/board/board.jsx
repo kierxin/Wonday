@@ -4,6 +4,7 @@ import LeftNavBtn from "./left_nav/left_nav_btn";
 import UserIcon from "./left_nav/user_icon";
 import WorkspaceSidebar from "./workspace_sidebar/workspace_sidebar";
 import BoardContent from "./board_main/board_content";
+import Modal from "../modals/modal";
 
 
 class Board extends React.Component {
@@ -15,8 +16,11 @@ class Board extends React.Component {
             user: props.user,
             workspace: props.workspace,
             board: props.board,
-            fullyLoaded: false
+            fullyLoaded: false,
+            modalOpen: false
         }
+
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     componentDidMount() {
@@ -24,6 +28,16 @@ class Board extends React.Component {
         !this.state.user.boards && window.location.reload();
         !this.state.fullyLoaded && this.setState({ fullyLoaded: true });
     }
+
+    toggleModal() {
+        if (this.state.modalOpen) {
+            console.log("click off");
+            this.setState({ modalOpen: false });
+        } else {
+            this.setState({ modalOpen: true });
+        }
+    }
+
 
     render() {
         return(
@@ -70,7 +84,7 @@ class Board extends React.Component {
                         <WorkspaceSidebar 
                         workspace={this.state.workspace}
                         user={this.state.user}
-                        addBoard={this.props.postBoard} />
+                        toggleModal={this.toggleModal} />
 
                         <BoardContent board={this.state.board} user={this.state.user} />       <br /><br /><br /><br />
                         <div>
@@ -78,6 +92,18 @@ class Board extends React.Component {
                             <p>{JSON.stringify(this.state.board)}</p><br /><br />
                         </div>
                     </section>
+                )}
+
+
+
+
+                {this.state.modalOpen && (
+                    <Modal
+                        modalType="create-board"
+                        user={this.props.user}
+                        workspace={this.props.workspace}
+                        addBoard={this.addBoard}
+                        toggleModal={this.toggleModal} />
                 )}
 
             </main>

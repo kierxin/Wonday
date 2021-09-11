@@ -1,9 +1,18 @@
-#create-board-modal {
+#create-board-modal-background {
     position: absolute;
     z-index: 100;
     float: left;
-    width: calc(100vw - 100px);
-    height: calc(100vh - 40px);
-    color: red;
-    border: 2px solid gold;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(53, 63, 113, .3);
+}
+
+#create-board-modal-foreground {
+    background-color: white;
+    width: 40vw;
+    height: 90vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+    border-radius: 10px;
+    padding: 30px;
 }

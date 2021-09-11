@@ -1,7 +1,6 @@
 import React from "react";
 
 import BoardsList from "./boards_list";
-import CreateBoardModal from "../../modals/create_board_modal";
 
 
 class WorkspaceSidebar extends React.Component {
@@ -11,14 +10,13 @@ class WorkspaceSidebar extends React.Component {
         this.state = {
             hoverable: true,
             collapsed: true,
-            toggleText: ">",
-            addingBoard: false
+            toggleText: ">"
+            // addingBoard: false
         }
 
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
         this.toggleCollapse = this. toggleCollapse.bind(this);
-        this.openCreateBoardModal = this.openCreateBoardModal.bind(this);
     }
 
     show() {
@@ -45,10 +43,6 @@ class WorkspaceSidebar extends React.Component {
         }
     }
 
-    openCreateBoardModal() {
-        this.setState({ addingBoard: true })
-    }
-
     render() {
         let className;
         if(this.state.collapsed === true) {
@@ -63,13 +57,6 @@ class WorkspaceSidebar extends React.Component {
                 onMouseEnter={this.show}
                 onMouseLeave={this.hide} >
 
-                {this.state.addingBoard && (
-                    <CreateBoardModal 
-                        user={this.props.user} 
-                        workspace={this.props.workspace}
-                        addBoard={this.props.addBoard} />
-                )}
-
                 <div className="workspace-sidebar-container">
                     <div id="workspace-sidebar-header">
                         <h3>Workspace</h3>
@@ -81,7 +68,7 @@ class WorkspaceSidebar extends React.Component {
                     </div>
                     <button 
                         id="add-board-option" 
-                        onClick={this.openCreateBoardModal}>
+                        onClick={this.props.toggleModal}>
                         {/* img */}
                         <p>Add New Board</p>
                     </button>
