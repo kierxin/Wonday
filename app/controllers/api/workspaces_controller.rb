@@ -11,7 +11,7 @@ class Api::WorkspacesController < ApplicationController
             @user.workspace_id = @workspace.id
             @user.save
 
-            render "/api/workspaces/create"
+            render "/api/workspaces/show"
         else
             puts @workspace.errors.full_messages
             render json: @workspace.errors.full_messages, status: 422

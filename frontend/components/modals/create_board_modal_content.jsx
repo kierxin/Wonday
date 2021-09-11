@@ -23,6 +23,7 @@ class CreateBoardModalContent extends React.Component {
     postBoard(e) {
         e.preventDefault();
         if (this.state.name.length > 0) {
+            console.log(this.state);
             this.props.addBoard(this.state);
         } else {
             this.setState({ name: "New Board" });

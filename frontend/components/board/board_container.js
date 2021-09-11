@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import Board from "./board";
 import { logout } from "../../actions/session_actions";
-import { postBoard } from "../../util/board_api_util";
+import { createNewBoard } from "../../actions/board_actions";
 
 
 const mSTP = state => {
@@ -23,7 +23,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
-    postBoard: board => dispatch(postBoard(board)),
+    postBoard: board => dispatch(createNewBoard(board))
 });
 
 

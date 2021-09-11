@@ -25,8 +25,11 @@ class Modal extends React.Component {
         return(
             <div className={`${type}-modal-background`}
                 onClick={this.handleClick}>
-                    <CreateBoardModalContent type={type}
-                        addBoard={this.props.addBoard} />
+                    <CreateBoardModalContent 
+                        type={type}
+                        addBoard={this.props.addBoard}
+                        userId={this.props.userId}
+                        workspaceId={this.props.userId} />
             </div>
         )
     }

@@ -25,6 +25,8 @@ class Api::BoardsController < ApplicationController
         end
 
         if @board.save
+            @workspace = @board.workspace
+            @workspace.save
             @user.save
             render "api/boards/show"
         else
