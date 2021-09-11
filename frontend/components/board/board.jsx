@@ -29,9 +29,10 @@ class Board extends React.Component {
         !this.state.fullyLoaded && this.setState({ fullyLoaded: true });
     }
 
-    toggleModal() {
-        if (this.state.modalOpen) {
-            console.log("click off");
+    toggleModal(e) {
+        if (e.target.classList.contains("ignore-modal-close")) {
+            
+        } else if (this.state.modalOpen) {
             this.setState({ modalOpen: false });
         } else {
             this.setState({ modalOpen: true });

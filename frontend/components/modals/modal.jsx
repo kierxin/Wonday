@@ -7,23 +7,26 @@ class Modal extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     ignoreClick(e) {
         e.stopPropagation();
     }
 
+    handleClick(e) {
+        this.props.toggleModal(e);
+    }
+
     render() {
-        console.log(this.props);
         const type = this.props.modalType;
 
         return(
-            <div id={`${type}-modal-background`}
-                onClick={this.props.toggleModal}>
-                <div id={`${type}-modal-foreground`}
-                    onClick={this.ignoreClick}>
-                    <CreateBoardModalContent />
-                </div>
+            <div className={`${type}-modal-background`}
+                onClick={this.handleClick}>
+                    <CreateBoardModalContent type={type}
+                        addBoard={this.props.addBoard} />
             </div>
         )
     }

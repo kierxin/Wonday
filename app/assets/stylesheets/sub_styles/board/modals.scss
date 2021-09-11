@@ -1,4 +1,4 @@
-#create-board-modal-background {
+.create-board-modal-background {
     position: absolute;
     z-index: 100;
     float: left;
@@ -7,7 +7,7 @@
     background-color: rgba(53, 63, 113, .3);
 }
 
-#create-board-modal-foreground {
+.create-board-modal-foreground {
     background-color: white;
     width: 40vw;
     height: 90vh;
@@ -15,4 +15,30 @@
     margin-top: 5vh;
     border-radius: 10px;
     padding: 30px;
+
+    h1 {
+        margin-bottom: 20px;
+        font-family: $roboto;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    label {
+        font-family: $roboto;
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: .9rem;
+        // border: 1px solid gold;
+
+        input {
+            font-family: $roboto;
+            margin: 10px 0;
+            padding: 5px 10px;
+            font-size: 1rem;
+            width: calc(100% - 24px);
+        }
+    }
 }
