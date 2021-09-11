@@ -1,7 +1,6 @@
 import React from "react";
 
-import CreateBoardModalContent from "./create_board_modal_content";
-
+import CreateBoardModalContainer from "./create_board_modal_container";
 
 class Modal extends React.Component {
 
@@ -25,9 +24,7 @@ class Modal extends React.Component {
         return(
             <div className={`${type}-modal-background`}
                 onClick={this.handleClick}>
-                    <CreateBoardModalContent 
-                        type={type}
-                        addBoard={this.props.addBoard}
+                    <CreateBoardModalContainer 
                         userId={this.props.userId}
                         workspaceId={this.props.userId} />
             </div>

@@ -10,8 +10,13 @@ const receiveBoard = board => ({
 });
 
 
-export const createNewBoard = newBoard => dispatch => (
-    BoardApiUtil.postBoard(newBoard)
-    .then(board => dispatch(receiveBoard(board)))
-    .then(board => BoardApiUtil.getBoard(board.id))
-);
+export const createNewBoard = newBoard => dispatch => {
+    console.log("NEW BOARD");
+    console.log(newBoard);
+
+    return(
+        BoardApiUtil.postBoard(newBoard)
+        .then(board => dispatch(receiveBoard(board)))
+        .then(board => BoardApiUtil.getBoard(board.id))
+    );
+};

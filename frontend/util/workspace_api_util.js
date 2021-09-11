@@ -1,7 +1,7 @@
-export const postWorkspace = userId => (
+export const postWorkspace = workspace => (
     $.ajax({
         url: '/api/workspaces',
         method: 'POST',
-        data: { userId: userId }
+        data: { workspace: workspace }
     })
 )

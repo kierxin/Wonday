@@ -3,9 +3,7 @@ class Api::WorkspacesController < ApplicationController
     def create
         @user = current_user
 
-        default_workspace = { leaders: [@user.id], name: "My Workspace" }
-
-        @workspace = Workspace.new(default_workspace)
+        @workspace = Workspace.new(workspace_params)
 
         if @workspace.save
             @user.workspace_id = @workspace.id
@@ -26,7 +24,7 @@ class Api::WorkspacesController < ApplicationController
 
     private
     def workspace_params
-        params.require(:board).permit(:name, :leaders => []) 
+        params.require(:workspace).permit(:name, :leaders => []) 
     end
 
 end

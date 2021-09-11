@@ -13,16 +13,7 @@ class Api::BoardsController < ApplicationController
     def create
         @user = current_user
 
-        if !@user.boards
-            default_board = {
-                name: "New Board",
-                leaders: [@user.id.to_i],
-                workspace_id: @user.workspace_id
-            }
-            @board = Board.new(default_board)
-        else 
-            @board = Board.new(board_params)
-        end
+        @board = Board.new(board_params)
 
         if @board.save
             @workspace = @board.workspace

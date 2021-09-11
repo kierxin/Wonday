@@ -22,22 +22,34 @@ const receiveErrors = errors => ({
 });
 
 
-export const createNewUser = formUser => dispatch => (
-    SessionApiUtil.postUser(formUser)
-    .then(
-        user => dispatch(receiveCurrentUser(user)),
-        errors => dispatch(receiveErrors(errors.responseJSON))
-    )
-    .then(user => dispatch(createNewWorkspace(user.id)))
-);
+export const createNewUser = formUser => dispatch => {
+    debugger;
 
-export const login = formUser => dispatch => (
-    SessionApiUtil.postSession(formUser)
-    .then(
-        user => dispatch(receiveCurrentUser(user)),
-        errors => dispatch(receiveErrors(errors.responseJSON))
-    )
-);
+    return (
+        SessionApiUtil.postUser(formUser)
+        .then(
+            user => dispatch(receiveCurrentUser(user)),
+            errors => dispatch(receiveErrors(errors.responseJSON))
+        )
+        .then(
+            actionResult => dispatch(
+                createNewWorkspace(actionResult.currentUser.id)
+            )
+        )
+    );
+};
+
+export const login = formUser => dispatch => {
+    debugger;
+
+    return (
+        SessionApiUtil.postSession(formUser)
+        .then(
+            user => dispatch(receiveCurrentUser(user)),
+            errors => dispatch(receiveErrors(errors.responseJSON))
+        )
+    );
+}
 
 export const logout = () => dispatch => (
     SessionApiUtil.deleteSession()

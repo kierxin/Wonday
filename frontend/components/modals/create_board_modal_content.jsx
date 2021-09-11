@@ -23,18 +23,18 @@ class CreateBoardModalContent extends React.Component {
     postBoard(e) {
         e.preventDefault();
         if (this.state.name.length > 0) {
-            console.log(this.state);
-            this.props.addBoard(this.state);
+            this.props.createNewBoard(this.state);
         } else {
             this.setState({ name: "New Board" });
         }
     }
 
     render() {
+        console.log(this.props);
         const ignr = "ignore-modal-close";
 
         return(
-            <div className={`${this.props.type}-modal-foreground ${ignr}`}>
+            <div className={`create-board-modal-foreground ${ignr}`}>
 
                 <h1 className={ignr}>Create board</h1>
                 <form id="create-board-form" 

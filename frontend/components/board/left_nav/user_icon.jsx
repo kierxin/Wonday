@@ -10,11 +10,6 @@ class UserIcon extends React.Component {
         }
 
         this.hover = this.hover.bind(this);
-        this.logout = this.logout.bind(this);
-    }
-
-    logout() {
-        this.props.logout();
     }
 
     hover() {
@@ -31,7 +26,7 @@ class UserIcon extends React.Component {
         let name = this.props.name; 
         let title = "";
 
-        if(name.length > 0) {
+        if(name && name.length > 0) {
             title = name;
 
             let split = name.split(" ");
@@ -47,7 +42,7 @@ class UserIcon extends React.Component {
                 className={`${this.state.size}`}
                 onMouseEnter={this.hover}
                 onMouseLeave={this.hover}
-                onClick={this.logout}
+                onClick={this.props.logout}
                 title={title} >
                 <p>{initials}</p>
             </div>

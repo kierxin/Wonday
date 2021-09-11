@@ -1,10 +1,12 @@
 import React from "react";
 
 import LeftNavBtn from "./left_nav/left_nav_btn";
-import UserIcon from "./left_nav/user_icon";
+import UserIconContainer from "./left_nav/user_icon_container";
 import WorkspaceSidebar from "./workspace_sidebar/workspace_sidebar";
 import BoardContent from "./board_main/board_content";
 import Modal from "../modals/modal";
+import { createNewWorkspace } from "../../actions/workspace_actions";
+import { createNewBoard } from "../../actions/board_actions";
 
 
 class Board extends React.Component {
@@ -24,8 +26,11 @@ class Board extends React.Component {
     }
 
     componentDidMount() {
-        !this.state.user.workspace && window.location.reload();
-        !this.state.user.boards && window.location.reload();
+        // console.log("GET STATE");
+        // console.log(getState());
+        // console.log("board mounted");
+        // !this.state.workspace && dispatch(createNewWorkspace(this.state.user.id));
+        // !this.state.board && dispatch(createNewBoard(this.state.workspace.id));
         !this.state.fullyLoaded && this.setState({ fullyLoaded: true });
     }
 
@@ -41,6 +46,8 @@ class Board extends React.Component {
 
 
     render() {
+        const { board } = this.props;
+
         return(
             <main className="everything-container">
                 <nav className="left-nav">
@@ -72,25 +79,23 @@ class Board extends React.Component {
                         <div className="left-nav-lower-btns">
                             
                             <LeftNavBtn external={false} src={"invite"} />
-                            <UserIcon 
-                                name={this.state.user.full_name} 
-                                logout={this.props.logout}/>
+                            <UserIconContainer 
+                                name={this.state.user.full_name} />
                         </div>
                     </div>
                 </nav>
 
-                {this.state.board && (
+                {this.state.board && this.state.board.name && (
                     <section className="board-main">
 
-                        <WorkspaceSidebar 
-                        workspace={this.state.workspace}
-                        user={this.state.user}
-                        toggleModal={this.toggleModal} />
+                        <WorkspaceSidebar
+                            toggleModal={this.toggleModal}
+                            user={this.state.user} />
 
-                        <BoardContent board={this.state.board} user={this.state.user} />       <br /><br /><br /><br />
+                        <BoardContent board={board} user={this.state.user} />       <br /><br /><br /><br />
                         <div>
                             <p>{JSON.stringify(this.state.user)}</p><br /><br />
-                            <p>{JSON.stringify(this.state.board)}</p><br /><br />
+                            <p>{JSON.stringify(board)}</p><br /><br />
                         </div>
                     </section>
                 )}
@@ -103,7 +108,6 @@ class Board extends React.Component {
                         modalType="create-board"
                         userId={this.props.user.id}
                         workspaceId={this.props.workspace.id}
-                        addBoard={this.props.postBoard}
                         toggleModal={this.toggleModal} />
                 )}
 

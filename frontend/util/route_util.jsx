@@ -4,8 +4,7 @@ import { Route, withRouter, Redirect } from 'react-router';
 
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
-    const users = window.getState().entities.users;
-    const user = users[Object.keys(users)[0]];
+    const board = getState().entities.board;
     
     if (!loggedIn) {
         return(
@@ -15,19 +14,14 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
             />
         )
     } else {
-
-        if (!user.boards.length) {
-            return <Redirect to={`/api/`} />
-        } else {
-            const board = user.boards[Object.keys(user.boards)[0]];
-            return <Redirect to={`/api/boards/${board.id}`} />
-        }
+        return <Redirect to={`/api/boards/${board.id}`} />
     }
 
 }
 
 
 const Protected = ({ component: Component, path, loggedIn, exact }) => {
+    // debugger;
     if (loggedIn) {
         return(
             <Route path={path}

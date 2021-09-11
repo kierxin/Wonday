@@ -11,12 +11,11 @@ class WorkspaceSidebar extends React.Component {
             hoverable: true,
             collapsed: true,
             toggleText: ">"
-            // addingBoard: false
         }
 
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
-        this.toggleCollapse = this. toggleCollapse.bind(this);
+        this.toggleCollapse = this.toggleCollapse.bind(this);
     }
 
     show() {
@@ -63,8 +62,8 @@ class WorkspaceSidebar extends React.Component {
                         <button id="workspace-settings-option"></button>
                     </div>
                     <div id="workspace-name">
-                        <p>{this.props.workspace.name[0].toUpperCase()}</p>
-                        <h2>{this.props.workspace.name}</h2>
+                        <p>{this.props.user.workspace.name[0].toUpperCase()}</p>
+                        <h2>{this.props.user.workspace.name}</h2>
                     </div>
                     <button 
                         id="add-board-option" 
@@ -74,7 +73,7 @@ class WorkspaceSidebar extends React.Component {
                     </button>
                     <BoardsList 
                         user={this.props.user} 
-                        workspace={this.props.workspace} />
+                        workspace={this.props.user.workspace} />
                 </div>
             </nav>
             <div id="workspace-sidebar-collapse-btn"
