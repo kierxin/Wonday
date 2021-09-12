@@ -12,7 +12,7 @@ export const getBoards = () => (
         url: '/api/boards',
         method: 'GET'
     })
-)
+);
  
 export const getBoard = boardId => (
     $.ajax({
