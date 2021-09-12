@@ -9,12 +9,9 @@ import BoardContent from "./board_content";
 const mSTP = state => {
     const board = defineBoard(state.user);
 
-    console.log(board);
-
     return {
         user: state.user,
-        state: state,
-        board: board
+        board: state.user.board || board
     }
 }
 

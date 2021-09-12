@@ -5,10 +5,11 @@ class BoardContent extends React.Component {
 
     constructor(props) {
         super(props);
+    }
 
-        this.state = {
-            user: this.props.user
-        }
+
+    componentDidMount() {
+        this.props.getLatestBoard(this.props.user.latest_board)
     }
 
 

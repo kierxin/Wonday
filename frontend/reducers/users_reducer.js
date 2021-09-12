@@ -17,11 +17,20 @@ const usersReducer = (state = {}, action) => {
 
         case RECEIVE_BOARD:
             let boards = nextState.boards;
-            boards.push(action.board);
+            let alreadyIncluded = false;
 
+            boards.forEach(board => {
+                if(board.id === action.board.id) {alreadyIncluded = true}
+            })
+
+            if(!alreadyIncluded) {
+                boards.push(action.board);
+            }
+            
             return Object.assign({}, state, {
                 latest_board: action.board.id,
-                boards: boards
+                boards: boards,
+                board: action.board
              });
 
         case LOGOUT_USER:

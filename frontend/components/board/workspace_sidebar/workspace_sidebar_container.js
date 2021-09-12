@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => {
     const board = defineBoard(state.user);
 
     return {
-        board: board,
+        board: state.user.board || board,
         user: state.user,
         toggleModal: ownProps.toggleModal
     };
