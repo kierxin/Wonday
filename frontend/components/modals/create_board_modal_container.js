@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import CreateBoardModalContent from "./create_board_modal_content";
-import { createNewBoard } from "../../actions/board_actions";
+import { createNewBoard, switchBoards } from "../../actions/board_actions";
 import { defineBoard } from "../../util/board_api_util";
 
 
@@ -12,7 +12,8 @@ const mSTP = state => ({
 
 
 const mDTP = dispatch => ({
-    createNewBoard: board => dispatch(createNewBoard(board))
+    createNewBoard: board => dispatch(createNewBoard(board)),
+    switchBoards: boardId => dispatch(switchBoards(boardId))
 });
 
 

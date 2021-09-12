@@ -1,3 +1,12 @@
+export const defineBoard = user => {
+    const boards = Object.values(user.boards);
+    return boards.filter(board => {
+        return board.id === user.latest_board;
+    })[0];
+};
+
+
+
 export const getBoards = () => (
     $.ajax({
         url: '/api/boards',
@@ -27,12 +36,3 @@ export const updateBoard = board => (
         data: {board: board}
     })
 )
-
-
-
-export const defineBoard = user => {
-    const boards = Object.values(user.boards);
-    return boards.filter(board => {
-        return board.id === user.latest_board;
-    })[0];
-};

@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter, Redirect } from 'react-router';
-import { defineBoard } from './board_api_util';
 
 
-const Auth = ({ component: Component, path, loggedIn, exact }) => {
+const Auth = ({ component: Component, path, loggedIn, latest, exact }) => {
     
     if (!loggedIn) {
         return(
@@ -14,9 +13,8 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
             />
         )
     } else {
-        let board = defineBoard(getState().user);
-        if (board && board.id) {
-            return <Redirect to={`/api/boards/${board.id}`} />
+        if (latest) {
+            return <Redirect to={`/api/boards/${latest}`} />
         } else {
             return <Redirect to={`/api/`} />
         }
@@ -36,7 +34,8 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 
 const mSTP = state => {
     return { 
-        loggedIn: Boolean(state.session.id)
+        loggedIn: Boolean(state.session.id),
+        latest: state.user.latest_board
     }
 };
 

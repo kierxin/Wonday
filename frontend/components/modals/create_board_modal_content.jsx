@@ -24,6 +24,7 @@ class CreateBoardModalContent extends React.Component {
         e.preventDefault();
         if (this.state.name.length > 0) {
             this.props.createNewBoard(this.state)
+            .then(action => this.props.switchBoards(action.board.id))
         } else {
             this.setState({ name: "New Board" });
         }
