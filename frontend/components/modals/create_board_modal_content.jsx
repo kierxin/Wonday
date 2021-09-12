@@ -36,7 +36,10 @@ class CreateBoardModalContent extends React.Component {
         return(
             <div className={`create-board-modal-foreground ${ignr}`}>
 
-                <h1 className={ignr}>Create board</h1>
+                <div id="create-board-modal-header">
+                    <h1 className={ignr}>Create board</h1>
+                    <img src={closeModal} alt="Close board creation modal" />
+                </div>
                 <form id="create-board-form" 
                     className={ignr}
                     onSubmit={this.postBoard}>
@@ -51,10 +54,10 @@ class CreateBoardModalContent extends React.Component {
 
                     <button type="submit" 
                         value="Create Board"
-                        className={ignr} />
+                        className={ignr}>
+                            Create Board
+                    </button>
                 </form>
-
-                <p>{JSON.stringify(this.state)}</p>
 
             </div>
         )

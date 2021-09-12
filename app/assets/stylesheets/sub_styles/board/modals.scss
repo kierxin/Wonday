@@ -17,11 +17,26 @@
     border-radius: 10px;
     padding: 30px;
 
-    h1 {
-        margin-bottom: 20px;
-        font-family: $roboto;
-        font-size: 2rem;
-        font-weight: 700;
+    #create-board-modal-header {
+        @include flex;
+
+        h1 {
+            margin-bottom: 20px;
+            font-family: $roboto;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        img {
+            background-color: black;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid black;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 
     label {
@@ -41,5 +56,11 @@
             font-size: 1rem;
             width: calc(100% - 24px);
         }
+    }
+
+    button {
+        min-width: 100px;
+        min-height: 30px;
+        color: black;
     }
 }
