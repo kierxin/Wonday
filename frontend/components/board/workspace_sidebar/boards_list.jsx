@@ -8,7 +8,7 @@ class BoardsList extends React.Component {
         super(props);
 
         this.state = {
-            boards: props.user.boards
+            boards: Object.values(props.user.boards)
         }
     }
 
@@ -19,11 +19,7 @@ class BoardsList extends React.Component {
     render() {
 
         let boards = this.state.boards;
-        for (let board in boards) {
-            if (board.id && board.name) {
-                boards.push(board)
-            }
-        }
+        console.log(boards);
 
         const boardOptions = boards.map(board => {
             return (

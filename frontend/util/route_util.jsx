@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter, Redirect } from 'react-router';
+import { defineBoard } from './board_api_util';
 
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
-    let board = getState().board;
     
     if (!loggedIn) {
         return(
@@ -14,6 +14,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
             />
         )
     } else {
+        let board = defineBoard(getState().user);
         if (board && board.id) {
             return <Redirect to={`/api/boards/${board.id}`} />
         } else {

@@ -26,10 +26,6 @@ class Board extends React.Component {
     componentDidMount() {
         !this.state.user.workspace && location.reload();
         !this.state.user.latest_board && location.reload();
-        
-        if (typeof this.state.board !== "object") {
-            this.props.switchBoards(this.state.board);
-        }
     }
 
     toggleModal(e) {

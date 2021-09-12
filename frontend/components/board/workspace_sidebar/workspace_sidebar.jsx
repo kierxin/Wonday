@@ -71,7 +71,7 @@ class WorkspaceSidebar extends React.Component {
                         {/* img */}
                         <p>Add New Board</p>
                     </button>
-                    {getState().board && (
+                    {getState().user.boards && (
                         <BoardsListContainer />
                     )}
                 </div>

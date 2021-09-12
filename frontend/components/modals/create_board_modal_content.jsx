@@ -8,8 +8,8 @@ class CreateBoardModalContent extends React.Component {
 
         this.state = {
             name: "",
-            workspace_id: this.props.workspaceId,
-            leaders: [this.props.userId]
+            workspace_id: this.props.user.workspace.id,
+            leaders: [this.props.user.id]
         }
 
         this.handleInput = this.handleInput.bind(this);

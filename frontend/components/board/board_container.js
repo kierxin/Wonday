@@ -3,16 +3,14 @@ import { connect } from "react-redux";
 import Board from "./board";
 import { logout } from "../../actions/session_actions";
 import { switchBoards } from "../../actions/board_actions";
-import { getBoard } from "../../util/board_api_util";
+import { getBoard, defineBoard } from "../../util/board_api_util";
 
 
 const mSTP = state => {
-    const boards = state.user.boards;
-
-    console.log(boards);
-
+    const board = defineBoard(state.user);
     return {
-        user: state.user
+        user: state.user,
+        board: board
     }
 };
 
