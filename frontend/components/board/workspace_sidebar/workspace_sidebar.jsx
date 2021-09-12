@@ -1,6 +1,6 @@
 import React from "react";
 
-import BoardsList from "./boards_list";
+import BoardsListContainer from "./boards_list_container";
 
 
 class WorkspaceSidebar extends React.Component {
@@ -71,9 +71,9 @@ class WorkspaceSidebar extends React.Component {
                         {/* img */}
                         <p>Add New Board</p>
                     </button>
-                    <BoardsList 
-                        user={this.props.user} 
-                        workspace={this.props.user.workspace} />
+                    {getState().board && (
+                        <BoardsListContainer />
+                    )}
                 </div>
             </nav>
             <div id="workspace-sidebar-collapse-btn"

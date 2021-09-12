@@ -18,3 +18,19 @@ export const createNewBoard = newBoard => dispatch => {
         ))
     );
 };
+
+export const updateBoard = board => dispatch => {
+    return(
+        BoardApiUtil.updateBoard(board)
+        .then(board => dispatch(receiveBoard(board)))
+    )
+}
+
+export const switchBoards = boardId => dispatch => {
+    return(
+        BoardApiUtil.getBoard(boardId)
+        .then(board => dispatch(
+            receiveBoard(board)
+        ))
+    );
+};

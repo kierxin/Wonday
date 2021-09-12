@@ -16,6 +16,15 @@ export const postSession = user => (
 );
 
 
+export const updateUser = user => (
+    $.ajax({
+        url: `/api/users/${user.id}`,
+        method: 'GET',
+        data: { user: user }
+    })
+);
+
+
 export const deleteSession = () => (
     $.ajax ({
         url: '/api/session',

@@ -2,18 +2,18 @@ import * as SessionApiUtil from "../util/session_api_util";
 import { createNewWorkspace } from "./workspace_actions";
 
 
-export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
+export const RECEIVE_USER = 'RECEIVE_USER';
+export const LOGOUT_USER = 'LOGOUT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 
-const receiveCurrentUser = currentUser => ({
-    type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+const receiveUser = user => ({
+    type: RECEIVE_USER,
+    user: user
 });
 
-const logoutCurrentUser = () => ({
-    type: LOGOUT_CURRENT_USER
+const logoutUser = () => ({
+    type: LOGOUT_USER
 });
 
 const receiveErrors = errors => ({
@@ -26,22 +26,32 @@ export const createNewUser = formUser => dispatch => {
     return (
         SessionApiUtil.postUser(formUser)
         .then(
-            user => dispatch(receiveCurrentUser(user)),
+            user => dispatch(receiveUser(user)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
         .then(
             actionResult => dispatch(
-                createNewWorkspace(actionResult.currentUser.id)
+                createNewWorkspace(actionResult.user.id)
             )
         )
     );
 };
 
+export const updateExistingUser = user => dispatch => {
+    return (
+        SessionApiUtil.updateUser(user)
+        .then(
+            user => dispatch(receiveUser(user)),
+            errors => dispatch(receiveErrors(errors.responseJSON))
+        )
+    )
+}
+
 export const login = formUser => dispatch => {
     return (
         SessionApiUtil.postSession(formUser)
         .then(
-            user => dispatch(receiveCurrentUser(user)),
+            user => dispatch(receiveUser(user)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
     );
@@ -50,6 +60,6 @@ export const login = formUser => dispatch => {
 export const logout = () => dispatch => (
     SessionApiUtil.deleteSession()
     .then(
-        () => dispatch(logoutCurrentUser())
+        () => dispatch(logoutUser())
     )
 );

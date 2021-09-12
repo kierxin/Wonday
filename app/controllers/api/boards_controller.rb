@@ -2,7 +2,7 @@ class Api::BoardsController < ApplicationController
 
     def show
         @user = current_user
-        @board = Board.find(id: current_user.latest_board) || @user.boards[-1]
+        @board = Board.find_by(id: params[:id]) || Board.find_by(id: current_user.latest_board)
         @workspace = @board.workspace
         render "/api/boards/show"
     end
@@ -26,7 +26,13 @@ class Api::BoardsController < ApplicationController
     end
 
     def update
+        @board = Board.find_by(id: params[:id])
 
+        if @board.update(board_params)
+            render "/api/boards/show"
+        else
+            render json: @board.errors.full_messages, status: 422
+        end
     end
 
     def destroy

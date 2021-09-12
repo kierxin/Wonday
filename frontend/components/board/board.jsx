@@ -3,7 +3,7 @@ import { ProtectedRoute } from "../../util/route_util";
 
 import LeftNavBtn from "./left_nav/left_nav_btn";
 import UserIconContainer from "./left_nav/user_icon_container";
-import WorkspaceSidebar from "./workspace_sidebar/workspace_sidebar";
+import WorkspaceSidebarContainer from "./workspace_sidebar/workspace_sidebar_container";
 import BoardContentContainer from "./board_main/board_content_container";
 import Modal from "../modals/modal";
 
@@ -16,7 +16,7 @@ class Board extends React.Component {
         this.state = {
             user: props.user,
             workspace: props.user.workspace,
-            board: null,
+            board: props.board,
             modalOpen: false
         }
 
@@ -27,13 +27,9 @@ class Board extends React.Component {
         !this.state.user.workspace && location.reload();
         !this.state.user.latest_board && location.reload();
 
-        let latestBoard;
-        this.state.user.boards.forEach(board => {
-            if (board.id === this.state.user.latest_board) {
-                latestBoard = board;
-            }
-        });
-        this.setState({ board: latestBoard });
+        if (typeof this.state.board !== "object") {
+            this.props.switchBoards(this.state.board);
+        }
     }
 
     toggleModal(e) {
@@ -87,12 +83,11 @@ class Board extends React.Component {
                     </div>
                 </nav>
 
-                {this.state.board && (
+                {(this.state.board) && (
                     <section className="board-main">
 
-                        <WorkspaceSidebar
-                            toggleModal={this.toggleModal}
-                            user={user} />
+                        <WorkspaceSidebarContainer
+                            toggleModal={this.toggleModal} />
 
                         <ProtectedRoute 
                             path={`/api/boards/:boardId`}
