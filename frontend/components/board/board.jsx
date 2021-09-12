@@ -26,7 +26,7 @@ class Board extends React.Component {
     componentDidMount() {
         !this.state.user.workspace && location.reload();
         !this.state.user.latest_board && location.reload();
-
+        
         if (typeof this.state.board !== "object") {
             this.props.switchBoards(this.state.board);
         }
@@ -83,7 +83,7 @@ class Board extends React.Component {
                     </div>
                 </nav>
 
-                {(this.state.board) && (
+                {(this.state.board && this.state.board.id) && (
                     <section className="board-main">
 
                         <WorkspaceSidebarContainer

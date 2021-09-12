@@ -1,5 +1,12 @@
+export const getBoards = () => (
+    $.ajax({
+        url: '/api/boards',
+        method: 'GET'
+    })
+)
+ 
 export const getBoard = boardId => (
-    $.ajax ({
+    $.ajax({
         url: `/api/boards/${boardId}`,
         method: 'GET'
     })

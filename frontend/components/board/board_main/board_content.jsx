@@ -8,29 +8,23 @@ class BoardContent extends React.Component {
 
         this.state = {
             user: this.props.user,
-            board: null
+            boardId: null
         }
     }
 
-    // componentDidMount() {
-    //     let latestBoard;
-
-    //     for (let board in this.state.user.boards) {
-    //         if (board.id === this.state.latest_board) {
-    //             latestBoard = board;
-    //         }
-    //     }
-
-    //     this.setState({ board: latestBoard });
-    // }
+    componentDidMount() {
+        // this.setState({ boardId: parseInt(this.props.match.params.boardId) })
+    }
 
     render() {
-
+        // console.log(this.state.boardId);
+        // console.log(parseInt(this.props.match.params.boardId));
 
         return (
             <div>
                 <p>{JSON.stringify(this.props.user)}</p><br /><br />
-                <p>{this.props.board && JSON.stringify(this.state.user.board)}</p><br /><br />
+                <p>{JSON.stringify(this.props.board)}</p><br /><br />
+                <p>{this.props.board && JSON.stringify(this.props.board.name)}</p><br /><br />
             </div>
         );
     }

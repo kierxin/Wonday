@@ -1,4 +1,4 @@
-import { RECEIVE_BOARD } from "../actions/board_actions";
+import { RECEIVE_BOARD, RECEIVE_BOARDS } from "../actions/board_actions";
 import { RECEIVE_USER, LOGOUT_USER } from "../actions/session_actions";
 
 const usersReducer = (state = {}, action) => {
@@ -9,6 +9,11 @@ const usersReducer = (state = {}, action) => {
 
         case RECEIVE_USER:
             return Object.assign({}, state, action.user);
+
+        case RECEIVE_BOARDS:
+            return Object.assign({}, state, {
+                boards: boards
+            });
 
         case RECEIVE_BOARD:
             const newBoards = {...state.boards, ...action.board};

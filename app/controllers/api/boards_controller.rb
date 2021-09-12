@@ -1,5 +1,10 @@
 class Api::BoardsController < ApplicationController
 
+    def index
+        @boards = current_user.boards
+        render "/api/boards/index"
+    end
+
     def show
         @user = current_user
         @board = Board.find_by(id: params[:id]) || Board.find_by(id: current_user.latest_board)

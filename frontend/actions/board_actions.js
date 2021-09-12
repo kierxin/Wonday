@@ -2,6 +2,7 @@ import * as BoardApiUtil from '../util/board_api_util';
 
 
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
+export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 
 
 const receiveBoard = board => ({
@@ -9,12 +10,27 @@ const receiveBoard = board => ({
     board: board
 });
 
+const receiveBoards = boards => ({
+    type: RECEIVE_BOARDS,
+    boards: boards
+});
+
+
+export const viewBoards = () => dispatch => {
+    return(
+        BoardApiUtil.getBoards()
+        .then(boards => dispatch(
+            receiveBoards(boards)
+        ))
+    );
+};
 
 export const createNewBoard = newBoard => dispatch => {
     return(
         BoardApiUtil.postBoard(newBoard)
-        .then(result => dispatch(
-            receiveBoard(result.boards[result.boards.length - 1])
+        .then(board => dispatch(
+            console.log(board)
+            // receiveBoard(board)
         ))
     );
 };
