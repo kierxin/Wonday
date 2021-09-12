@@ -16,12 +16,12 @@ const usersReducer = (state = {}, action) => {
             });
 
         case RECEIVE_BOARD:
-            const newBoards = { ...state.boards, ...action.board };
-            // const newBoards = { ...state.boards, ...action.board};
+            let boards = nextState.boards;
+            boards.push(action.board);
 
             return Object.assign({}, state, {
                 latest_board: action.board.id,
-                boards: newBoards
+                boards: boards
              });
 
         case LOGOUT_USER:

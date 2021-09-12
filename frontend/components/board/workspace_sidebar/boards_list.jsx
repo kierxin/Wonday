@@ -16,7 +16,7 @@ class BoardsList extends React.Component {
 
     switchBoards(e) {
         e.preventDefault();
-        
+
         this.props.switchBoards(`${e.currentTarget.getAttribute("data-id")}`)
         .then(action => {
             this.props.history.push(action.board.id)

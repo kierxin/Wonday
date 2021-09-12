@@ -24,7 +24,7 @@ class CreateBoardModalContent extends React.Component {
         e.preventDefault();
         if (this.state.name.length > 0) {
             this.props.createNewBoard(this.state)
-            .then(action => this.props.switchBoards(action.board.id))
+            .then(action => this.props.history.push(`/api/boards/${action.board.id}`))
         } else {
             this.setState({ name: "New Board" });
         }
@@ -53,6 +53,8 @@ class CreateBoardModalContent extends React.Component {
                         value="Create Board"
                         className={ignr} />
                 </form>
+
+                <p>{JSON.stringify(this.state)}</p>
 
             </div>
         )
