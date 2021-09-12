@@ -25,6 +25,15 @@ export const viewBoards = () => dispatch => {
     );
 };
 
+export const getLatestBoard = boardId => dispatch => {
+    return(
+        BoardApiUtil.getBoard(boardId)
+        .then(
+            board => dispatch(receiveBoard(board))
+        )
+    );
+};
+
 export const createNewBoard = newBoard => dispatch => {
     return(
         BoardApiUtil.postBoard(newBoard)

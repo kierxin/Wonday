@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { switchBoards, viewBoards } from "../../../actions/board_actions";
+import { getLatestBoard } from "../../../actions/board_actions";
 import { defineBoard } from "../../../util/board_api_util";
 
 import BoardContent from "./board_content";
@@ -9,16 +9,17 @@ import BoardContent from "./board_content";
 const mSTP = state => {
     const board = defineBoard(state.user);
 
+    console.log(board);
+
     return {
         user: state.user,
-        board: board,
-        state: state
+        state: state,
+        board: board
     }
 }
 
 const mDTP = dispatch => ({
-    switchBoards: boardId => dispatch(switchBoards(boardId)),
-    viewBoards: () => dispatch(viewBoards())
+    getLatestBoard: boardId => dispatch(getLatestBoard(boardId))
 });
 
 

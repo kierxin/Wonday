@@ -16,7 +16,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
-    switchBoards: boardId => dispatch(switchBoards(boardId)),
+    // switchBoards: boardId => dispatch(switchBoards(boardId)),
     getBoard: boardId => dispatch(getBoard(boardId))
 });
 

@@ -10,23 +10,28 @@ class BoardsList extends React.Component {
         this.state = {
             boards: Object.values(props.user.boards)
         }
+
+        this.switchBoards = this.switchBoards.bind(this);
     }
 
-    componentDidMount() {
-        this.props.viewBoards();
+    switchBoards(e) {
+        e.preventDefault();
+        
+        this.props.switchBoards(`${e.currentTarget.getAttribute("data-id")}`)
+        .then(action => {
+            this.props.history.push(action.board.id)
+        });
     }
 
     render() {
-
         let boards = this.state.boards;
-        console.log(boards);
 
         const boardOptions = boards.map(board => {
             return (
                 <li key={`board-option-${board.id}`}>
-                    <Link to={`/api/boards/${board.id}`}>
+                    <button onClick={this.switchBoards} data-id={board.id}>
                         {board.name}
-                    </Link>
+                    </button>
                 </li>
             )
         });

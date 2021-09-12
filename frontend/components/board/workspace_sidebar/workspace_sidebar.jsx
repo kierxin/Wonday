@@ -18,6 +18,7 @@ class WorkspaceSidebar extends React.Component {
         this.toggleCollapse = this.toggleCollapse.bind(this);
     }
 
+
     show() {
         if(this.state.hoverable) {
             this.setState({ collapsed: false, toggleText: "<" });

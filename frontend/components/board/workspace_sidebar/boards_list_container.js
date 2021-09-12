@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 
 import { switchBoards } from "../../../actions/board_actions";
 import { viewBoards } from "../../../actions/board_actions";
@@ -15,4 +16,4 @@ const mDTP = dispatch => ({
 });
 
 
-export default connect(mSTP, mDTP)(BoardsList);
+export default withRouter(connect(mSTP, mDTP)(BoardsList));

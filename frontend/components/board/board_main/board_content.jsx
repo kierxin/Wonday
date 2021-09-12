@@ -7,22 +7,19 @@ class BoardContent extends React.Component {
         super(props);
 
         this.state = {
-            user: this.props.user,
-            boardId: null
+            user: this.props.user
         }
     }
 
     componentDidMount() {
-        this.props.viewBoards();
+        this.props.getLatestBoard(this.state.user.latest_board); //not sure if this is doing anything
     }
 
     render() {
         return (
             <div>
-                <p>{JSON.stringify(this.props.user)}</p><br /><br />
-                <p>{JSON.stringify(this.props.board)}</p><br /><br />
-                <p>{JSON.stringify(this.props)}</p><br /><br />
-                <p>{this.props.board && JSON.stringify(this.props.board.name)}</p><br /><br />
+                <p>USER: {JSON.stringify(this.props.user)}</p><br /><br />
+                <p>CURRENT BOARD: {JSON.stringify(this.props.board)}</p><br /><br />
             </div>
         );
     }

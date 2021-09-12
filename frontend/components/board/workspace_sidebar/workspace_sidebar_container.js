@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { switchBoards } from "../../../actions/board_actions";
+// import { switchBoards } from "../../../actions/board_actions";
 import { defineBoard } from "../../../util/board_api_util";
 import WorkspaceSidebar from "./workspace_sidebar";
 
@@ -15,9 +15,9 @@ const mSTP = (state, ownProps) => {
     };
 };
 
-const mDTP = dispatch => ({
-    switchBoards: boardId => dispatch(switchBoards(boardId))
-});
+// const mDTP = dispatch => ({
+//     switchBoards: boardId => dispatch(switchBoards(boardId)),
+// });
 
 
-export default connect(mSTP, mDTP)(WorkspaceSidebar);
+export default connect(mSTP, null)(WorkspaceSidebar);
