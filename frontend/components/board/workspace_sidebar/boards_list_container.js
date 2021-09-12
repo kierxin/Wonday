@@ -7,7 +7,8 @@ import BoardsList from "./boards_list";
 
 
 const mSTP = state => ({
-    user: state.user
+    user: state.user,
+    boards: state.user.boards
 });
 
 const mDTP = dispatch => ({

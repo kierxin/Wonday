@@ -1,15 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 
 class BoardsList extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            boards: Object.values(props.user.boards)
-        }
 
         this.switchBoards = this.switchBoards.bind(this);
     }
@@ -24,7 +19,7 @@ class BoardsList extends React.Component {
     }
 
     render() {
-        let boards = this.state.boards;
+        let boards = this.props.boards;
 
         const boardOptions = boards.map(board => {
             return (
