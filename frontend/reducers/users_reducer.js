@@ -1,3 +1,4 @@
+// import { RECEIVE_GROUP, RECEIVE_GROUPS } from "../actions/group_actions";
 import { RECEIVE_BOARD, RECEIVE_BOARDS } from "../actions/board_actions";
 import { RECEIVE_USER, LOGOUT_USER } from "../actions/session_actions";
 
@@ -9,6 +10,9 @@ const usersReducer = (state = {}, action) => {
 
         case RECEIVE_USER:
             return Object.assign({}, state, action.user);
+
+        case LOGOUT_USER:
+            return {};
 
         case RECEIVE_BOARDS:
             return Object.assign({}, state, {
@@ -33,8 +37,16 @@ const usersReducer = (state = {}, action) => {
                 board: action.board
              });
 
-        case LOGOUT_USER:
-            return {};
+        // case RECEIVE_GROUPS:
+        //     return Object.assign({}, state, {
+        //         boards: Object.assign({}, {
+        //             groups: action.groups
+        //         })
+        //     });
+
+        // case RECEIVE_GROUP:
+        //     let boardId = nextState.latest_board;
+
 
         default:
             return state;

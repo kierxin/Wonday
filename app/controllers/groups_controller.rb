@@ -12,6 +12,8 @@ class Api::GroupsController < ApplicationController
     end
 
     def create
+        puts "REACHED GROUP CREATE CONTROLLER ACTION"
+
         @group = Group.new(group_params)
 
         if @group.save

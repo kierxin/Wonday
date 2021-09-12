@@ -1,5 +1,4 @@
 import * as SessionApiUtil from "../util/session_api_util";
-import { getLatestBoard } from "./board_actions";
 import { createNewWorkspace } from "./workspace_actions";
 
 

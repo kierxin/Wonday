@@ -13,6 +13,8 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
+        puts "REACHED BOARD CREATE CONTROLLER ACTION"
+
         @user = current_user
 
         @board = Board.new(board_params)

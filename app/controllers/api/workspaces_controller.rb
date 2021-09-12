@@ -1,6 +1,8 @@
 class Api::WorkspacesController < ApplicationController
 
     def create
+        puts "REACHED WORKSPACE CREATE CONTROLLER ACTION"
+
         @user = current_user
 
         @workspace = Workspace.new(workspace_params)
