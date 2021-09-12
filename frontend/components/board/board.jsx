@@ -48,7 +48,6 @@ class Board extends React.Component {
 
 
     render() {
-        const board = this.state.board;
         const user = this.state.user;
 
         return(
@@ -96,7 +95,7 @@ class Board extends React.Component {
                             user={user} />
 
                         <ProtectedRoute 
-                            path={`/api/boards/${user.latest_board}`}
+                            path={`/api/boards/:boardId`}
                             component={BoardContentContainer} />
                             
                     </section>

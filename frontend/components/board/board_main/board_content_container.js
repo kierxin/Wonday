@@ -5,8 +5,6 @@ import BoardContent from "./board_content";
 
 
 const mSTP = state => {
-    console.log("BOARD CONTENT STATE");
-    console.log(state);
     return {
         user: state.user
     }
