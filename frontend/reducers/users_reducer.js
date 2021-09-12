@@ -16,7 +16,7 @@ const usersReducer = (state = {}, action) => {
             });
 
         case RECEIVE_BOARD:
-            const newBoards = { ...state.user.boards, ...action.board };
+            const newBoards = { ...state.boards, ...action.board };
             // const newBoards = { ...state.boards, ...action.board};
 
             return Object.assign({}, state, {

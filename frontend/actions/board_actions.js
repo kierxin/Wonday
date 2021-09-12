@@ -29,8 +29,7 @@ export const createNewBoard = newBoard => dispatch => {
     return(
         BoardApiUtil.postBoard(newBoard)
         .then(board => dispatch(
-            console.log(board)
-            // receiveBoard(board)
+            receiveBoard(board)
         ))
     );
 };
