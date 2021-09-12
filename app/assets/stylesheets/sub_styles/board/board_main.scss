@@ -47,9 +47,10 @@
 }
 
 .workspace-sidebar-open {
-    // width: 40%;
     @include workspace-sidebar-collapsed-btn-transition;
-    width: 650px;
+    width: 100%;
+    min-width: 200px;
+    max-width: 350px;
     border-right: 1px solid lightgray;
     box-shadow: 5px 0px 20px rgba(145, 145, 145, 0.3);
 
@@ -98,5 +99,31 @@
     &:hover {
         cursor: pointer;
         background-color: rgb(228, 228, 228);
+    }
+}
+
+#boards-list {
+    width: 100%;
+    height: 78%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgb(209, 217, 226);
+
+    button {
+        margin: 5px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: transparent;
+        text-decoration: none;
+        text-transform: capitalize;
+        text-align: left;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(226, 231, 236);
+        }
     }
 }
