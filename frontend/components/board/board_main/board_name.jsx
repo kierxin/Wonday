@@ -40,12 +40,11 @@ class BoardName extends React.Component {
     }
 
     render() {
-        const ignr = "ignore-modal-close";
 
         return(
             <>
                 <form onSubmit={this.handleSubmit}
-                    className={`rename-board-modal-foreground ${ignr}`} >
+                    id="change-board-name-field">
 
                     <input type="text"
                         defaultValue={this.state.name}

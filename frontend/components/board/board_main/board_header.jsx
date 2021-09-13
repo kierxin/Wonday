@@ -15,14 +15,15 @@ class BoardHeader extends React.Component {
                         <div id="last-seen">
                             Last Seen
                         </div>
-                        <div id="invite">
-                            Invite
-                        </div>
+                        <button id="invite-to-board">
+                            <img src={person} alt="icon" />
+                            <p>Invite</p>
+                        </button>
                         <button id="add-to-board">
-                            Add to board
+                            + Add to board
                         </button>
                         <button id="board-header-settings">
-                            S
+                            <img src={options} alt="click to open settings" />
                         </button>
                     </div>
                 </div>

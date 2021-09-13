@@ -1,3 +1,7 @@
+.board-main {
+    @include flex;
+}
+
 .workspace-sidebar {
     height: 100vh;
     width: 5%;
@@ -113,10 +117,12 @@
     border-top: 1px solid rgb(209, 217, 226);
 
     button {
+        width: 96%;
         margin: 5px;
+        margin-left: 1px;
         padding: 10px;
         border: none;
-        border-radius: 3px;
+        border-radius: 5px;
         background-color: transparent;
         text-decoration: none;
         text-transform: capitalize;
@@ -124,7 +130,7 @@
 
         &:hover {
             cursor: pointer;
-            background-color: rgb(226, 231, 236);
+            background-color: rgb(228, 228, 228);
         }
     }
 }

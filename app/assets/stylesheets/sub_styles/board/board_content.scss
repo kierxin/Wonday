@@ -1,12 +1,13 @@
 .board-content {
     display: block;
+    padding: 15px;
 }
 
 .board-header {
 
     input {
         @include roboto-lightweight;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 1.5rem;
         max-width: 46%;
     }
@@ -14,8 +15,62 @@
 
 .upper-board-header {
     @include flex;
+    margin: 3px 0 10px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+
+    #change-board-name-field {
+        margin: 0;
+        padding: 0;
+    
+        input {
+            @include text-input
+        }
+    }
 }
 
 .upper-board-header-btns {
     @include flex;
+    align-items: center;
+    font-size: .9rem;
+
+    div, button {
+        font-family: $roboto;
+        margin: 0 15px;
+    }
+
+    button {
+        padding: 8px 10px;
+        background-color: transparent;
+        border-radius: 3px;
+        border: 1px solid rgb(164, 164, 164);
+        outline: none;
+        font-size: .9rem;
+
+        &:last-child {
+            margin-left: 15px;
+            border: 1px solid transparent;
+            padding: 1px;
+        }
+
+        &:hover {
+            background-color: rgb(232, 237, 243);
+            cursor: pointer;
+        }
+
+        img {
+            height: 1.8rem;
+        }
+    }
+
+    #invite-to-board {
+        display: flex;
+        border: 1px solid transparent;
+
+        img {
+            height: 1rem;
+            margin-right: 5px;
+        }
+    }
+    
 }

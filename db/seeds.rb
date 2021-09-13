@@ -3,11 +3,6 @@ demoWorkspace1 = Workspace.create!(
     leaders: [1]
 )
 
-demoWorkspace2 = Workspace.create!(
-    name: "New Workspace",
-    leaders: [2]
-)
-
 demoUser1 = User.create!(
     email: "leslie_rau@yahoo.com",
     password: "lrau123",
@@ -20,7 +15,7 @@ demoUser2 = User.create!(
     email: "zariah123@verizon.net", 
     password: "zhopper123",
     full_name: "Zariah Hopper",
-    workspace_id: 2,
+    workspace_id: 1,
     latest_board: 2
 )
 
@@ -31,7 +26,7 @@ board1 = Board.create!(
 )
 
 board2 = Board.create!(
-    workspace_id: 2,
+    workspace_id: 1,
     name: "Ant Colony Game",
     leaders: [2]
 )
