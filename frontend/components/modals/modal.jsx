@@ -15,6 +15,7 @@ class Modal extends React.Component {
     }
 
     handleClick(e) {
+        // if (e.target !== this) { return; }
         this.props.toggleModal(false);
     }
 

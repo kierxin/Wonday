@@ -14,10 +14,19 @@ class CreateBoardModalContent extends React.Component {
 
         this.handleInput = this.handleInput.bind(this);
         this.postBoard = this.postBoard.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     handleInput(e) {
         this.setState({ name: e.currentTarget.value });
+    }
+
+    preventClose(e) {
+        e.stopPropagation();
+    }
+
+    closeModal() {
+        this.props.toggleModal(false);
     }
 
     postBoard(e) {
@@ -35,11 +44,14 @@ class CreateBoardModalContent extends React.Component {
         const ignr = "ignore-modal-close";
 
         return(
-            <div className={`create-board-modal-foreground ${ignr}`}>
+            <div className={`create-board-modal-foreground ${ignr}`} 
+                onClick={this.preventClose}>
 
                 <div id="create-board-modal-header">
                     <h1 className={ignr}>Create board</h1>
-                    <img src={closeModal} alt="Close board creation modal" />
+                    <img src={closeModal} 
+                        alt="Close board creation modal"
+                        onClick={this.closeModal} />
                 </div>
                 <form id="create-board-form" 
                     className={ignr}
