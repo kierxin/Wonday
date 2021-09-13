@@ -35,3 +35,16 @@ board2 = Board.create!(
     name: "Ant Colony Game",
     leaders: [2]
 )
+
+group1 = Group.create!(
+    board_id: 1,
+    color: "gold",
+    title: "My first group!"
+)
+
+
+group2 = Group.create!(
+    board_id: 1,
+    color: "salmon",
+    title: "My second group"
+)

@@ -1,8 +1,6 @@
 class Api::WorkspacesController < ApplicationController
 
     def create
-        puts "REACHED WORKSPACE CREATE CONTROLLER ACTION"
-
         @user = current_user
 
         @workspace = Workspace.new(workspace_params)
@@ -13,7 +11,6 @@ class Api::WorkspacesController < ApplicationController
 
             render "/api/workspaces/show"
         else
-            puts @workspace.errors.full_messages
             render json: @workspace.errors.full_messages, status: 422
         end
     end

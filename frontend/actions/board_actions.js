@@ -59,8 +59,8 @@ export const createNewBoard = newBoard => dispatch => {
             board => dispatch(receiveBoard(board)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
-        .then(action => newGroupParams(action.board))
-        .then(group => dispatch(createNewGroup(group[0], group[1])))
+        // .then(action => newGroupParams(action.board))
+        // .then(group => dispatch(createNewGroup(group[0], group[1])))
     );
 };
 

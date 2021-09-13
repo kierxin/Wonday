@@ -17,6 +17,8 @@ class Api::GroupsController < ApplicationController
         @group = Group.new(group_params)
 
         if @group.save
+            @board = Board.find_by(id: @group.board_id)
+            @board.save!
             render "/api/groups/show"
         else
             render json: @group.errors.full_messages, status: 422

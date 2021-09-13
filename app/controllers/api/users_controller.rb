@@ -1,8 +1,6 @@
 class Api::UsersController < ApplicationController
 
     def create
-        puts "REACHED USER CREATE CONTROLLER ACTION"
-
         @user = User.new(user_params)
         
         if @user.save
