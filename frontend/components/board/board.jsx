@@ -26,6 +26,8 @@ class Board extends React.Component {
     componentDidMount() {
         !this.state.user.workspace && location.reload();
         !this.state.user.latest_board && location.reload();
+        !this.state.user.boards && location.reload();
+        // !this.state.user.board.groups && location.reload();
     }
 
     toggleModal(e) {

@@ -1,4 +1,5 @@
 import * as BoardApiUtil from '../util/board_api_util';
+import { createNewGroup } from './group_actions';
 
 
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
@@ -59,8 +60,6 @@ export const createNewBoard = newBoard => dispatch => {
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
         .then(action => newGroupParams(action.board))
-        .then(group => dispatch(createNewGroup(group[0], group[1])))
-        .then(group => dispatch(createNewGroup(group[0], group[1])))
         .then(group => dispatch(createNewGroup(group[0], group[1])))
     );
 };
