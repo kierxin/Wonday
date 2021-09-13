@@ -14,9 +14,6 @@ class Board extends React.Component {
         super(props);
 
         this.state = {
-            user: props.user,
-            workspace: props.user.workspace,
-            board: props.board,
             modalOpen: false
         }
 
@@ -24,10 +21,9 @@ class Board extends React.Component {
     }
 
     componentDidMount() {
-        !this.state.user.workspace && location.reload();
-        !this.state.user.latest_board && location.reload();
-        !this.state.user.boards && location.reload();
-        // !this.state.user.board.groups && location.reload();
+        !this.props.user.workspace && location.reload();
+        !this.props.user.latest_board && location.reload();
+        !this.props.user.boards && location.reload();
     }
 
     toggleModal(e) {
@@ -42,7 +38,7 @@ class Board extends React.Component {
 
 
     render() {
-        const user = this.state.user;
+        const user = this.props.user;
 
         return(
             <main className="everything-container">
@@ -81,7 +77,7 @@ class Board extends React.Component {
                     </div>
                 </nav>
 
-                {(this.state.board && this.state.board.id) && (
+                {(this.props.board && this.props.board.id) && (
                     <section className="board-main">
 
                         <WorkspaceSidebarContainer
@@ -95,13 +91,11 @@ class Board extends React.Component {
                 )}
 
 
-
-
                 {this.state.modalOpen && (
                     <Modal
                         modalType="create-board"
-                        userId={this.state.user.id}
-                        workspaceId={this.state.workspace.id}
+                        userId={this.props.user.id}
+                        workspaceId={this.props.user.workspace.id}
                         toggleModal={this.toggleModal} />
                 )}
 
