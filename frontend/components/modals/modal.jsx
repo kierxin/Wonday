@@ -10,12 +10,11 @@ class Modal extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    ignoreClick(e) {
-        e.stopPropagation();
-    }
-
     handleClick(e) {
-        this.props.toggleModal(false);
+
+        if (!e.target.classList.contains("ignore-modal-close")) {
+            this.props.toggleModal(false);
+        }
     }
 
     render() {
