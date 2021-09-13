@@ -117,6 +117,8 @@
     border-top: 1px solid rgb(209, 217, 226);
 
     button {
+        @include flex;
+        align-items: center;
         width: 96%;
         margin: 5px;
         margin-left: 1px;
@@ -131,6 +133,15 @@
         &:hover {
             cursor: pointer;
             background-color: rgb(228, 228, 228);
+        }
+
+        i {
+            padding: 7px;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: rgb(243, 243, 243);
+            }
         }
     }
 }

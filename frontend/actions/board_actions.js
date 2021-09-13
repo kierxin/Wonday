@@ -4,6 +4,7 @@ import { createNewGroup } from './group_actions';
 
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
 export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
+export const REMOVE_BOARD = 'REMOVE_BOARD';
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 
@@ -19,6 +20,11 @@ const receiveBoards = boards => ({
     type: RECEIVE_BOARDS,
     boards: boards
 });
+
+const removeBoard = boards => ({
+    type: REMOVE_BOARD,
+    boards: boards
+})
 
 const receiveErrors = errors => ({
     type: RECEIVE_BOARD_ERRORS,
@@ -69,8 +75,8 @@ export const createNewBoard = newBoard => dispatch => {
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
         .then(board => dispatch(receiveBoard(board)))
-        .then(action => newGroupParams(action.board))
-        .then(group => dispatch(createNewGroup(group[0], group[1])))
+        // .then(action => newGroupParams(action.board))
+        // .then(group => dispatch(createNewGroup(group[0], group[1])))
     );
 };
 
@@ -78,6 +84,16 @@ export const updateBoard = board => dispatch => {
     return(
         BoardApiUtil.updateBoard(board)
         .then(board => dispatch(receiveBoard(board)))
+    )
+}
+
+export const deleteBoard = boardId => dispatch => {
+    return(
+        BoardApiUtil.deleteBoard(boardId)
+        .then(
+            boards => dispatch(removeBoard(boards)),
+            error => dispatch(receiveErrors(error.responseJSON))
+        )
     )
 }
 

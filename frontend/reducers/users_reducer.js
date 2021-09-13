@@ -1,4 +1,4 @@
-import { RECEIVE_BOARD, RECEIVE_BOARDS } from "../actions/board_actions";
+import { RECEIVE_BOARD, RECEIVE_BOARDS, REMOVE_BOARD } from "../actions/board_actions";
 import { RECEIVE_USER, LOGOUT_USER } from "../actions/session_actions";
 
 const usersReducer = (state = {}, action) => {
@@ -21,6 +21,8 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_BOARD:
             let boards = nextState.boards;
 
+            console.log(action);
+
             const replica = {
                 id: action.board.id,
                 name: action.board.name
@@ -33,11 +35,25 @@ const usersReducer = (state = {}, action) => {
 
                 boards[idx] = replica;
             }
+
+            boards = boards.filter(board => {
+                return board.id
+            })
             
             return Object.assign({}, state, {
                 latest_board: action.board.id,
-                boards: boards,
+                boards: boards
              });
+
+        case REMOVE_BOARD:
+            console.log(nextState);
+            let removeBoards = nextState.boards;
+            const idx = removeBoards.findIndex(board => board.id === action.boards.deleted);
+            console.log(idx);
+            removeBoards.splice(idx, 1)
+            nextState.boards = removeBoards;
+            console.log(nextState.boards);
+            return nextState;
 
         default:
             return state;

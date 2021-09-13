@@ -41,6 +41,20 @@ class Api::BoardsController < ApplicationController
     end
 
     def destroy
+        @board = Board.find_by(id: params[:id])
+
+        @workspace = Workspace.find(@board.workspace_id)
+        if @workspace.boards.length > 1
+            @idx = @board.id
+            @board.destroy
+            @boards = Board.all
+            render "/api/boards/destroy"
+        else 
+            render json: {status: "error", code: 405, message: "Workspace must have at least one board"}
+            @boards = Board.all
+            render "/api/boards/show"
+        end
+
     end
 
     private

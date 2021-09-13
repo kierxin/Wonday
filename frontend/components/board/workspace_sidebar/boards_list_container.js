@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 
 import { getLatestBoard } from "../../../actions/board_actions";
 import { viewBoards } from "../../../actions/board_actions";
+import { deleteBoard } from "../../../actions/board_actions";
 import BoardsList from "./boards_list";
 
 
@@ -13,7 +14,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     getLatestBoard: boardId => dispatch(getLatestBoard(boardId)),
-    viewBoards: () => dispatch(viewBoards())
+    viewBoards: () => dispatch(viewBoards()),
+    deleteBoard: boardId => dispatch(deleteBoard(boardId))
 });
 
 

@@ -1,4 +1,4 @@
-import { RECEIVE_BOARD, TOGGLE_MODAL } from "../actions/board_actions";
+import { RECEIVE_BOARD, REMOVE_BOARD, TOGGLE_MODAL } from "../actions/board_actions";
 import { RECEIVE_GROUP, RECEIVE_GROUPS } from "../actions/group_actions";
 import { LOGOUT_USER } from "../actions/session_actions";
 
@@ -15,6 +15,11 @@ const boardReducer = (state = {}, action) => {
             }
 
             return nextState;
+
+        case REMOVE_BOARD:
+            if (action.boards.deleted === nextState.id) {
+                return action.boards[0]
+            }
 
         case RECEIVE_GROUPS:
             return Object.assign({}, state, {
