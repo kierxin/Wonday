@@ -18,7 +18,7 @@ const boardReducer = (state = {}, action) => {
 
         case REMOVE_BOARD:
             if (action.boards.deleted === nextState.id) {
-                return action.boards[0]
+                return action.boards.boards[0];
             }
 
         case RECEIVE_GROUPS:

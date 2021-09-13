@@ -21,8 +21,6 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_BOARD:
             let boards = nextState.boards;
 
-            console.log(action);
-
             const replica = {
                 id: action.board.id,
                 name: action.board.name
@@ -46,13 +44,10 @@ const usersReducer = (state = {}, action) => {
              });
 
         case REMOVE_BOARD:
-            console.log(nextState);
             let removeBoards = nextState.boards;
             const idx = removeBoards.findIndex(board => board.id === action.boards.deleted);
-            console.log(idx);
             removeBoards.splice(idx, 1)
             nextState.boards = removeBoards;
-            console.log(nextState.boards);
             return nextState;
 
         default:

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, withRouter, Redirect } from 'react-router';
 
 
-const Auth = ({ component: Component, path, loggedIn, latest, exact }) => {
+const Auth = ({ component: Component, path, loggedIn, latest, boardId, exact }) => {
     
     if (!loggedIn) {
         return(
@@ -13,7 +13,9 @@ const Auth = ({ component: Component, path, loggedIn, latest, exact }) => {
             />
         )
     } else {
-        if (latest) {
+        if (boardId && latest !== boardId) {
+            return <Redirect to={`/api/boards/${boardId}`} />
+        } else if (latest) {
             return <Redirect to={`/api/boards/${latest}`} />
         } else {
             return <Redirect to={`/api/`} />
@@ -35,7 +37,8 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 const mSTP = state => {
     return { 
         loggedIn: Boolean(state.session.id),
-        latest: state.user.latest_board
+        latest: state.user.latest_board,
+        boardId: state.board.id
     }
 };
 

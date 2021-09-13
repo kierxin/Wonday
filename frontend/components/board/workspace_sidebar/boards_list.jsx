@@ -12,8 +12,7 @@ class BoardsList extends React.Component {
 
     getLatestBoard(e) {
         e.preventDefault();
-        console.log(e.currentTarget);
-
+        
         if(!e.currentTarget.classList.contains("ignore-fetch")) {
             this.props.getLatestBoard(`${e.currentTarget.getAttribute("dataid")}`)
             .then(action => {
