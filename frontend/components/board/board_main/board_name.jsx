@@ -23,9 +23,6 @@ class BoardName extends React.Component {
     }
 
     render() {
-        // console.log(this.props.board["name"]);
-        // console.log(this.props.name);
-
         return(
             <input type="text" 
                 value={this.state.name}
