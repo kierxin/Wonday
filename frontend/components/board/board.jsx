@@ -12,27 +12,11 @@ class Board extends React.Component {
     
     constructor(props) {
         super(props);
-
-        // this.state = {
-        //     modalOpen: false
-        // }
-
-        // this.toggleModal = this.toggleModal.bind(this);
     }
 
     componentDidMount() {
         !this.props.user.workspace && location.reload();
     }
-
-    // toggleModal(e) {
-    //     if (e.target.classList.contains("ignore-modal-close")) {
-            
-    //     } else if (this.state.modalOpen) {
-    //         this.setState({ modalOpen: false });
-    //     } else {
-    //         this.setState({ modalOpen: true });
-    //     }
-    // }
 
 
     render() {
@@ -88,9 +72,9 @@ class Board extends React.Component {
                 )}
 
 
-                {/* {this.props.board.modalType === "create-board" && ( */}
+                {this.props.user.workspace && this.props.board && this.props.board.id && (
                     <ModalContainer />
-                {/* )} */}
+                )}
 
             </main>
         )

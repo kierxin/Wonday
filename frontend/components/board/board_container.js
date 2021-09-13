@@ -10,7 +10,7 @@ const mSTP = state => {
     const board = defineBoard(state.user);
     return {
         user: state.user,
-        board: board
+        board: state.board || board
     }
 };
 

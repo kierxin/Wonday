@@ -15,12 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: window.currentUser.id
             },
             user: window.currentUser,
-            board: {
-                modal: false
-            }
+            board: window.currentBoard
         };
 
         store = configureStore(preloadedState);
+        delete window.currentBoard;
         delete window.currentUser;
 
     } else {

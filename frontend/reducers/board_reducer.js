@@ -2,6 +2,8 @@ import { RECEIVE_BOARD, TOGGLE_MODAL } from "../actions/board_actions";
 
 
 const boardReducer = (state = {}, action) => {
+    console.log(state);
+    console.log(action);
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
