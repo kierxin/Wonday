@@ -15,7 +15,7 @@ class Modal extends React.Component {
     }
 
     handleClick(e) {
-        this.props.toggleModal(e);
+        this.props.toggleModal(false);
     }
 
     render() {
@@ -24,9 +24,7 @@ class Modal extends React.Component {
         return(
             <div className={`${type}-modal-background`}
                 onClick={this.handleClick}>
-                    <CreateBoardModalContainer 
-                        userId={this.props.userId}
-                        workspaceId={this.props.userId} />
+                    {this.props.modalType === "create-board" && <CreateBoardModalContainer />}
             </div>
         )
     }

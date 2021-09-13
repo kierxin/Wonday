@@ -5,7 +5,7 @@ import LeftNavBtn from "./left_nav/left_nav_btn";
 import UserIconContainer from "./left_nav/user_icon_container";
 import WorkspaceSidebarContainer from "./workspace_sidebar/workspace_sidebar_container";
 import BoardContentContainer from "./board_main/board_content_container";
-import Modal from "../modals/modal";
+import ModalContainer from "../modals/modal_container";
 
 
 class Board extends React.Component {
@@ -13,28 +13,26 @@ class Board extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            modalOpen: false
-        }
+        // this.state = {
+        //     modalOpen: false
+        // }
 
-        this.toggleModal = this.toggleModal.bind(this);
+        // this.toggleModal = this.toggleModal.bind(this);
     }
 
     componentDidMount() {
         !this.props.user.workspace && location.reload();
-        !this.props.user.latest_board && location.reload();
-        !this.props.user.boards && location.reload();
     }
 
-    toggleModal(e) {
-        if (e.target.classList.contains("ignore-modal-close")) {
+    // toggleModal(e) {
+    //     if (e.target.classList.contains("ignore-modal-close")) {
             
-        } else if (this.state.modalOpen) {
-            this.setState({ modalOpen: false });
-        } else {
-            this.setState({ modalOpen: true });
-        }
-    }
+    //     } else if (this.state.modalOpen) {
+    //         this.setState({ modalOpen: false });
+    //     } else {
+    //         this.setState({ modalOpen: true });
+    //     }
+    // }
 
 
     render() {
@@ -80,8 +78,7 @@ class Board extends React.Component {
                 {(this.props.board && this.props.board.id) && (
                     <section className="board-main">
 
-                        <WorkspaceSidebarContainer
-                            toggleModal={this.toggleModal} />
+                        <WorkspaceSidebarContainer />
 
                         <ProtectedRoute 
                             path={`/api/boards/:boardId`}
@@ -91,13 +88,9 @@ class Board extends React.Component {
                 )}
 
 
-                {this.state.modalOpen && (
-                    <Modal
-                        modalType="create-board"
-                        userId={this.props.user.id}
-                        workspaceId={this.props.user.workspace.id}
-                        toggleModal={this.toggleModal} />
-                )}
+                {/* {this.props.board.modalType === "create-board" && ( */}
+                    <ModalContainer />
+                {/* )} */}
 
             </main>
         )

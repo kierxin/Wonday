@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: window.currentUser.id
             },
             user: window.currentUser,
-            board: null
+            board: {
+                modal: false
+            }
         };
 
         store = configureStore(preloadedState);

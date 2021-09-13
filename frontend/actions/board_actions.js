@@ -1,10 +1,11 @@
 import * as BoardApiUtil from '../util/board_api_util';
-import { createNewGroup } from './group_actions';
+// import { createNewGroup } from './group_actions';
 
 
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
 export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 
 
 const receiveBoard = board => ({
@@ -22,16 +23,22 @@ const receiveErrors = errors => ({
     errors: errors
 });
 
-const newGroupParams = (board) => {
-    const colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
-    const index = Math.floor(Math.random() * 7);
+const modal = modalType => ({
+    type: TOGGLE_MODAL,
+    modalType: modalType
+})
 
-    return [board.id, {
-        "title": "New Group",
-        "board_id": board.id,
-        "color": colors[index]
-    }]
-}
+
+// const newGroupParams = (board) => {
+//     const colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
+//     const index = Math.floor(Math.random() * 7);
+
+//     return [board.id, {
+//         "title": "New Group",
+//         "board_id": board.id,
+//         "color": colors[index]
+//     }]
+// }
 
 
 export const viewBoards = () => dispatch => {
@@ -77,5 +84,11 @@ export const switchBoards = boardId => dispatch => {
         .then(board => dispatch(
             receiveBoard(board)
         ))
+    );
+};
+
+export const toggleModal = modalType => dispatch => {
+    return(
+        dispatch(modal(modalType))
     );
 };

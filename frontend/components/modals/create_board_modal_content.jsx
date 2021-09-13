@@ -25,6 +25,7 @@ class CreateBoardModalContent extends React.Component {
         if (this.state.name.length > 0) {
             this.props.createNewBoard(this.state)
             .then(action => this.props.history.push(`/api/boards/${action.board.id}`))
+            .then(this.props.toggleModal(false))
         } else {
             this.setState({ name: "New Board" });
         }

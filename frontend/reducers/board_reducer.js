@@ -1,6 +1,4 @@
-// import { RECEIVE_BOARD } from "../actions/board_actions";
-// import { RECEIVE_USER } from "../actions/session_actions";
-import { RECEIVE_BOARD } from "../actions/board_actions";
+import { RECEIVE_BOARD, TOGGLE_MODAL } from "../actions/board_actions";
 
 
 const boardReducer = (state = {}, action) => {
@@ -10,7 +8,12 @@ const boardReducer = (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_BOARD:
-            return action.board;
+            return Object.assign({}, state, action.board);
+
+        case TOGGLE_MODAL:
+            return Object.assign({}, state, {
+                modal: action.modalType || false
+            })
 
         default:
             return state;

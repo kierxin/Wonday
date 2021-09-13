@@ -16,6 +16,7 @@ class WorkspaceSidebar extends React.Component {
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
         this.toggleCollapse = this.toggleCollapse.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
 
@@ -43,6 +44,12 @@ class WorkspaceSidebar extends React.Component {
         }
     }
 
+    toggleModal(e) {
+        e.preventDefault();
+        this.props.toggleModal("create-board");
+    }
+
+
     render() {
         let className;
         if(this.state.collapsed === true) {
@@ -68,11 +75,11 @@ class WorkspaceSidebar extends React.Component {
                     </div>
                     <button 
                         id="add-board-option" 
-                        onClick={this.props.toggleModal}>
+                        onClick={this.toggleModal}>
                         {/* img */}
                         <p>Add New Board</p>
                     </button>
-                    {getState().user.boards && (
+                    {this.props.user.boards && (
                         <BoardsListContainer />
                     )}
                 </div>
