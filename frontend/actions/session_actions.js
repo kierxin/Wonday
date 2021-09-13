@@ -51,7 +51,7 @@ export const createNewUser = formUser => dispatch => {
     );
 };
 
-export const updateExistingUser = user => dispatch => {
+export const updateUser = user => dispatch => {
     return (
         SessionApiUtil.updateUser(user)
         .then(

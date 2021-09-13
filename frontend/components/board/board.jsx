@@ -17,6 +17,7 @@ class Board extends React.Component {
     componentDidMount() {
         !this.props.user.workspace && location.reload();
         !this.props.board && location.reload();
+        // !this.props.board.groups && location.reload();
     }
 
 

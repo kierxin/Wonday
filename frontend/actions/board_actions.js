@@ -1,6 +1,5 @@
 import * as BoardApiUtil from '../util/board_api_util';
-import { fetchUser } from './session_actions';
-// import { createNewGroup } from './group_actions';
+import { createNewGroup } from './group_actions';
 
 
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
@@ -32,16 +31,16 @@ const modal = modalType => ({
 })
 
 
-// const newGroupParams = (board) => {
-//     const colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
-//     const index = Math.floor(Math.random() * 7);
+const newGroupParams = (board) => {
+    const colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
+    const index = Math.floor(Math.random() * 7);
 
-//     return [board.id, {
-//         "title": "New Group",
-//         "board_id": board.id,
-//         "color": colors[index]
-//     }]
-// }
+    return [board.id, {
+        "title": "New Group",
+        "board_id": board.id,
+        "color": colors[index]
+    }]
+}
 
 
 export const viewBoards = () => dispatch => {
@@ -70,8 +69,8 @@ export const createNewBoard = newBoard => dispatch => {
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
         .then(board => dispatch(receiveBoard(board)))
-        // .then(action => newGroupParams(action.board))
-        // .then(group => dispatch(createNewGroup(group[0], group[1])))
+        .then(action => newGroupParams(action.board))
+        .then(group => dispatch(createNewGroup(group[0], group[1])))
     );
 };
 
@@ -81,15 +80,6 @@ export const updateBoard = board => dispatch => {
         .then(board => dispatch(receiveBoard(board)))
     )
 }
-
-export const switchBoards = boardId => dispatch => {
-    return(
-        BoardApiUtil.getBoard(boardId)
-        .then(board => dispatch(
-            receiveBoard(board)
-        ))
-    );
-};
 
 export const toggleModal = modalType => dispatch => {
     return(

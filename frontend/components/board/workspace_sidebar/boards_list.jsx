@@ -6,13 +6,13 @@ class BoardsList extends React.Component {
     constructor(props) {
         super(props);
 
-        this.switchBoards = this.switchBoards.bind(this);
+        this.getLatestBoard = this.getLatestBoard.bind(this);
     }
 
-    switchBoards(e) {
+    getLatestBoard(e) {
         e.preventDefault();
 
-        this.props.switchBoards(`${e.currentTarget.getAttribute("data-id")}`)
+        this.props.getLatestBoard(`${e.currentTarget.getAttribute("data-id")}`)
         .then(action => {
             this.props.history.push(action.board.id)
         });
@@ -24,7 +24,7 @@ class BoardsList extends React.Component {
         const boardOptions = boards.map(board => {
             return (
                 <li key={`board-option-${board.id}`}>
-                    <button onClick={this.switchBoards} data-id={board.id}>
+                    <button onClick={this.getLatestBoard} data-id={board.id}>
                         {board.name}
                     </button>
                 </li>

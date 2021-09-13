@@ -1,25 +1,23 @@
 class Api::GroupsController < ApplicationController
 
     def index
-        @board = Board.find_by(id: params[:id])
+        @board = @board = Board.find_by(id: params[:board_id])
         @groups = @board.groups
-        render "/api/groups/index"
+        render "/api/boards/groups/index"
     end
 
     def show
         @group = Group.find_by(id: params[:id])
-        render "/api/groups/show"
+        render "/api/boards/groups/show"
     end
 
     def create
-        puts "REACHED GROUP CREATE CONTROLLER ACTION"
-
         @group = Group.new(group_params)
 
         if @group.save
             @board = Board.find_by(id: @group.board_id)
             @board.save!
-            render "/api/groups/show"
+            render "/api/boards/groups/show"
         else
             render json: @group.errors.full_messages, status: 422
         end
@@ -29,7 +27,7 @@ class Api::GroupsController < ApplicationController
         @group = Group.find_by(id: params[:id])
 
         if @group.update(group_params)
-            render "/api/groups/show"
+            render "/api/boards/groups/show"
         else
             render json: @group.errors.full_messages, status: 422
         end
