@@ -19,6 +19,10 @@ class WorkspaceSidebar extends React.Component {
         this.toggleModal = this.toggleModal.bind(this);
     }
 
+    componentDidMount() {
+        !this.props.board && !this.props.board.id && location.reload();
+    }
+
 
     show() {
         if(this.state.hoverable) {
@@ -60,34 +64,36 @@ class WorkspaceSidebar extends React.Component {
 
         return(
             <>
-            <nav className={`workspace-sidebar ${className}`}
-                onMouseEnter={this.show}
-                onMouseLeave={this.hide} >
+            {this.props.user.workspace && <><nav className={`workspace-sidebar ${className}`}
+                    onMouseEnter={this.show}
+                    onMouseLeave={this.hide} >
 
-                <div className="workspace-sidebar-container">
-                    <div id="workspace-sidebar-header">
-                        <h3>Workspace</h3>
-                        <button id="workspace-settings-option"></button>
+                    <div className="workspace-sidebar-container">
+                        <div id="workspace-sidebar-header">
+                            <h3>Workspace</h3>
+                            <button id="workspace-settings-option"></button>
+                        </div>
+                        <div id="workspace-name">
+                            <p>{this.props.user.workspace.name[0].toUpperCase()}</p>
+                            <h2>{this.props.user.workspace.name}</h2>
+                        </div>
+                        <button 
+                            id="add-board-option" 
+                            onClick={this.toggleModal}>
+                            {/* img */}
+                            <p>Add New Board</p>
+                        </button>
+                        {this.props.user.boards && (
+                            <BoardsListContainer />
+                        )}
                     </div>
-                    <div id="workspace-name">
-                        <p>{this.props.user.workspace.name[0].toUpperCase()}</p>
-                        <h2>{this.props.user.workspace.name}</h2>
-                    </div>
-                    <button 
-                        id="add-board-option" 
-                        onClick={this.toggleModal}>
-                        {/* img */}
-                        <p>Add New Board</p>
-                    </button>
-                    {this.props.user.boards && (
-                        <BoardsListContainer />
-                    )}
+                </nav>
+                <div id="workspace-sidebar-collapse-btn"
+                    onClick={this.toggleCollapse}>
+                            {this.state.toggleText}
                 </div>
-            </nav>
-            <div id="workspace-sidebar-collapse-btn"
-                onClick={this.toggleCollapse}>
-                        {this.state.toggleText}
-            </div>
+            </>}
+            
             </>
         );
     }

@@ -6,6 +6,7 @@ import UserIconContainer from "./left_nav/user_icon_container";
 import WorkspaceSidebarContainer from "./workspace_sidebar/workspace_sidebar_container";
 import BoardContentContainer from "./board_main/board_content_container";
 import ModalContainer from "../modals/modal_container";
+import { getLatestBoard } from "../../actions/board_actions";
 
 
 class Board extends React.Component {
@@ -15,11 +16,18 @@ class Board extends React.Component {
     }
 
     componentDidMount() {
-        const user = this.props.user;
+        console.log("PROPS")
+        console.log(this.props);
 
-        !user.workspace && location.reload();
+        !this.props.board && location.reload();
+        // const user = this.props.user;
+
+        // !user.workspace && location.reload();
         // debugger;
-        !user.latest_board && location.reload();
+        // !user.latest_board && location.reload();
+        // .then(result => getLatestBoard(user.latest_board));
+
+        // debugger;
 
         // !this.props.board && this.props.getBoard(user.latest_board)
         // .then(location.reload());
@@ -68,7 +76,7 @@ class Board extends React.Component {
                         </div>
                     </div>
                 </nav>
-                {(this.props.user.workspace && this.props.board && this.props.board.id) && (
+                {(this.props.board) && (
                     <section className="board-main">
 
                         <WorkspaceSidebarContainer />

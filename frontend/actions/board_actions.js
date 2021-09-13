@@ -60,6 +60,8 @@ export const getLatestBoard = boardId => dispatch => {
 };
 
 export const createNewBoard = newBoard => dispatch => {
+    console.log("CREATE NEW BOARD!!");
+
     return(
         BoardApiUtil.postBoard(newBoard)
         .then(
@@ -69,7 +71,7 @@ export const createNewBoard = newBoard => dispatch => {
         // .then(action => console.log(action))
         // .then(action => BoardApiUtil.getBoard(action.board.id))
         // .then(action => getLatestBoard(action.board.id))
-        // .then(board => dispatch(receiveBoard(board)))
+        .then(board => dispatch(receiveBoard(board)))
         // .then(action => newGroupParams(action.board))
         // .then(group => dispatch(createNewGroup(group[0], group[1])))
     );

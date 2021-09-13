@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { toggleModal } from "../../../actions/board_actions";
+import { withRouter } from "react-router";
 
+import { toggleModal } from "../../../actions/board_actions";
 import WorkspaceSidebar from "./workspace_sidebar";
 
 
@@ -17,4 +18,4 @@ const mDTP = dispatch => ({
 });
 
 
-export default connect(mSTP, mDTP)(WorkspaceSidebar);
+export default withRouter(connect(mSTP, mDTP)(WorkspaceSidebar));
