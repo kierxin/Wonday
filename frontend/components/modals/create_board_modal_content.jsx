@@ -47,7 +47,7 @@ class CreateBoardModalContent extends React.Component {
             <div className={`create-board-modal-foreground ${ignr}`} 
                 onClick={this.preventClose}>
 
-                <div id="create-board-modal-header">
+                <div id="create-board-modal-header" className={ignr}>
                     <h1 className={ignr}>Create board</h1>
                     <img src={closeModal} 
                         alt="Close board creation modal"
@@ -57,7 +57,7 @@ class CreateBoardModalContent extends React.Component {
                     className={ignr}
                     onSubmit={this.postBoard}>
                         
-                    <label>Board name
+                    <label className={ignr}>Board name
                         <input type="text" 
                             placeholder="New Board" 
                             className={ignr}

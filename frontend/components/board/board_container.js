@@ -13,7 +13,7 @@ const mSTP = state => {
 
     return {
         user: state.user,
-        board: state.board || state.user.boards[state.user.boards.length - 1]
+        board: state.board || board
     }
 };
 

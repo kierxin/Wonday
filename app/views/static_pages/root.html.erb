@@ -5,6 +5,15 @@
                                         user: current_user).html_safe %>
 
     </script>
+
+    <% if current_user.latest_board %>
+    <script>
+            window.currentBoard = <%= render("/api/boards/board.json.jbuilder",
+                                        board: current_board).html_safe %>
+        
+    </script>
+    <% end %>
+    
 <% end %>
 
 

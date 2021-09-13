@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
             session: {
                 id: window.currentUser.id
             },
-            user: window.currentUser
+            user: window.currentUser,
+            board: window.currentBoard
         };
 
         store = configureStore(preloadedState);
+        delete window.currentBoard;
         delete window.currentUser;
 
     } else {

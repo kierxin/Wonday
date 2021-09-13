@@ -23,7 +23,7 @@ class UserIcon extends React.Component {
     render() {
 
         let initials = "Me";
-        let name = this.props.name; 
+        let name = this.props.user.full_name; 
         let title = "";
 
         if(name && name.length > 0) {

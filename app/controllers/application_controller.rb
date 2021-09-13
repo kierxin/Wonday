@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :current_board, :logged_in?
 
     def login(user)
         user.reset_session_token!
@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
     def current_user
         return nil unless session[:session_token]
         @current_user ||= User.find_by(session_token: session[:session_token])
+    end
+
+    def current_board
+        return nil unless session[:session_token]
+        @current_board ||= Board.find_by(id: current_user.latest_board)
     end
 
     def logged_in?

@@ -14,6 +14,11 @@ class Board extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        !this.props.user.workspace && location.reload();
+    }
+
+
     render() {
         const user = this.props.user;
 
@@ -66,7 +71,11 @@ class Board extends React.Component {
                 )}
 
 
+<<<<<<< HEAD
                 {this.props.user.workspace && this.props.board.modalType === "create-board" && (
+=======
+                {this.props.user.workspace && this.props.board && this.props.board.id && (
+>>>>>>> main
                     <ModalContainer />
                 )}
 

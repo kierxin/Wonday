@@ -8,10 +8,13 @@ export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 
 
-const receiveBoard = board => ({
-    type: RECEIVE_BOARD,
-    board: board
-});
+const receiveBoard = board => {
+    console.log(board);
+    return {
+        type: RECEIVE_BOARD,
+        board: board
+    }
+};
 
 const receiveBoards = boards => ({
     type: RECEIVE_BOARDS,

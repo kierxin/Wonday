@@ -1,0 +1,21 @@
+.board-content {
+    display: block;
+}
+
+.board-header {
+
+    input {
+        @include roboto-lightweight;
+        font-weight: 700;
+        font-size: 1.5rem;
+        max-width: 46%;
+    }
+}
+
+.upper-board-header {
+    @include flex;
+}
+
+.upper-board-header-btns {
+    @include flex;
+}
