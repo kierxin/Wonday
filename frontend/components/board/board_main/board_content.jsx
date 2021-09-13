@@ -11,9 +11,11 @@ class BoardContent extends React.Component {
 
     componentDidMount() {
         this.props.getLatestBoard(this.props.user.latest_board);
-        this.props.fetchUser(this.props.user.id);
     }
 
+    componentWillUnmount() {
+        console.log("UNMOUNT");
+    }
 
     render() {
         let groups = "";

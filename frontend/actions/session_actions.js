@@ -68,7 +68,6 @@ export const login = formUser => dispatch => {
             user => dispatch(receiveUser(user)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
-        // .then(action => getLatestBoard(action.user.latest_board))
         .then(action => getBoard(action.user.latest_board))
         .then(board => dispatch(receiveBoard(board)))
     );

@@ -20,17 +20,22 @@ const usersReducer = (state = {}, action) => {
 
         case RECEIVE_BOARD:
             let boards = nextState.boards;
-            let alreadyIncluded = false;
 
-            boards.forEach(board => {
-                if(board.id === action.board.id) {alreadyIncluded = true}
-            })
+            const replica = {
+                id: action.board.id,
+                name: action.board.name
+            }
 
-            if(!alreadyIncluded) {
-                boards.push(action.board);
+            if (boards.findIndex(board => board.id === action.board.id) === -1) {
+                console.log("ONE");
+                console.log(boards);
+                boards.push(replica);
+                console.log(boards);
             } else {
-                const oldBoard = boards.filter(board => board.id === action.board.id);
-                boards[boards.indexOf(oldBoard)] = action.board;
+                console.log("TWO");
+                const idx = boards.findIndex(board => board.id === action.board.id);
+
+                boards[idx] = replica;
             }
             
             return Object.assign({}, state, {

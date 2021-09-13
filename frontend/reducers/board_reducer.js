@@ -9,7 +9,11 @@ const boardReducer = (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_BOARD:
-            nextState = Object.assign({}, state, action.board);
+            nextState = Object.assign({}, action.board);
+            if (!nextState.hasOwnProperty("modal")) {
+                nextState.modal = false;
+            }
+
             return nextState;
 
         case TOGGLE_MODAL:

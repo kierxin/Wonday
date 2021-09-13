@@ -1,4 +1,5 @@
 import * as BoardApiUtil from '../util/board_api_util';
+import { fetchUser } from './session_actions';
 // import { createNewGroup } from './group_actions';
 
 
