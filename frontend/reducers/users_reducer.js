@@ -27,12 +27,8 @@ const usersReducer = (state = {}, action) => {
             }
 
             if (boards.findIndex(board => board.id === action.board.id) === -1) {
-                console.log("ONE");
-                console.log(boards);
                 boards.push(replica);
-                console.log(boards);
             } else {
-                console.log("TWO");
                 const idx = boards.findIndex(board => board.id === action.board.id);
 
                 boards[idx] = replica;
