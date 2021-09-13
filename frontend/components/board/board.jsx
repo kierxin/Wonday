@@ -71,11 +71,7 @@ class Board extends React.Component {
                 )}
 
 
-<<<<<<< HEAD
-                {this.props.user.workspace && this.props.board.modalType === "create-board" && (
-=======
                 {this.props.user.workspace && this.props.board && this.props.board.id && (
->>>>>>> main
                     <ModalContainer />
                 )}
 
