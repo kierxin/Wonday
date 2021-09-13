@@ -9,7 +9,6 @@ export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 
 
 const receiveBoard = board => {
-    console.log(board);
     return {
         type: RECEIVE_BOARD,
         board: board
