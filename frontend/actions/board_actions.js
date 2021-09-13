@@ -60,15 +60,12 @@ export const getLatestBoard = boardId => dispatch => {
 };
 
 export const createNewBoard = newBoard => dispatch => {
-    console.log("CREATE NEW BOARD!!");
-
     return(
         BoardApiUtil.postBoard(newBoard)
         .then(
             board => dispatch(receiveBoard(board)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
-        // .then(action => console.log(action))
         // .then(action => BoardApiUtil.getBoard(action.board.id))
         // .then(action => getLatestBoard(action.board.id))
         .then(board => dispatch(receiveBoard(board)))

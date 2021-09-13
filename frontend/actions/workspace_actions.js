@@ -20,8 +20,6 @@ const newBoardParams = (workspace) => {
 
 
 export const createNewWorkspace = userId => dispatch => {
-    console.log("CREATE NEW WORKSAPCE");
-
     const workspace = { leaders: [userId], name: "My Workspace" }
 
     return(

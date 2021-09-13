@@ -10,7 +10,6 @@ import { getLatestBoard } from "../../actions/board_actions";
 const mSTP = state => {
     // const boards = state.user.boards;
     // const board = boards.filter(board => board.id === state.user.latest_board);
-    // console.log(board);
 
     return {
         user: state.user,
