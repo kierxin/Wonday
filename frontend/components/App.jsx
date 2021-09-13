@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -11,12 +11,10 @@ import LandingPage from "./landing/landing_page";
 
 const App = () => (
     <>
-        {/* <Switch> */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute path="/api/" component={BoardContainer} />
             <AuthRoute exact path="/" component={LandingPage} />
-        {/* </Switch> */}
     </>
 );
 

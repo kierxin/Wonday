@@ -1,5 +1,7 @@
 import * as SessionApiUtil from "../util/session_api_util";
 import { createNewWorkspace } from "./workspace_actions";
+import { getBoard } from "../util/board_api_util";
+import { getLatestBoard, RECEIVE_BOARD } from "./board_actions";
 
 
 export const RECEIVE_USER = 'RECEIVE_USER';
@@ -19,6 +21,11 @@ const logoutUser = () => ({
 const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
+});
+
+const receiveBoard = board => ({
+    type: RECEIVE_BOARD,
+    board: board
 });
 
 
@@ -54,6 +61,9 @@ export const login = formUser => dispatch => {
             user => dispatch(receiveUser(user)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
+        // .then(action => getLatestBoard(action.user.latest_board))
+        .then(action => getBoard(action.user.latest_board))
+        .then(board => dispatch(receiveBoard(board)))
     );
 }
 

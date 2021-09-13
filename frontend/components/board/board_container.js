@@ -2,15 +2,17 @@ import { connect } from "react-redux";
 
 import Board from "./board";
 import { logout } from "../../actions/session_actions";
-import { getBoard, defineBoard } from "../../util/board_api_util";
+import { getBoard } from "../../util/board_api_util";
 import { createNewGroup } from "../../actions/group_actions";
 
 
 const mSTP = state => {
-    const board = defineBoard(state.user);
+    const boards = state.user.boards;
+    const board = boards.filter(board => board.id === state.user.latest_board);
+
     return {
         user: state.user,
-        board: board
+        board: state.board || board
     }
 };
 

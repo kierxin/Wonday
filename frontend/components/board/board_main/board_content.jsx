@@ -15,8 +15,8 @@ class BoardContent extends React.Component {
 
     render() {
         let groups = "";
-        if(this.props.user.board && this.props.user.board.groups) {
-            groups = JSON.stringify(this.props.user.board.groups)
+        if(this.props.board) {
+            groups = JSON.stringify(this.props.board.groups)
         }
 
 
