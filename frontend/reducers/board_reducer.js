@@ -7,21 +7,16 @@ const boardReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
 
     switch (action.type) {
-        // case RECEIVE_USER:
-        //     if (!action.user.boards) {
-        //         return state;
-        //     } else {
-        //         return Object.assign({}, action.user.boards[0]);
-        //     }
 
         case RECEIVE_BOARD:
             nextState = Object.assign({}, state, action.board);
-            // if (!nextState.modal) { nextState.modal = false };
             return nextState;
 
         case TOGGLE_MODAL:
+            const modalType = (' ' + action.modalType).slice(1)
+
             return Object.assign({}, state, {
-                modal: Object.assign({}, action.modalType || false)
+                modal: modalType || false
             })
 
         case LOGOUT_USER:

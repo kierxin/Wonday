@@ -63,7 +63,7 @@ class WorkspaceSidebar extends React.Component {
                 onMouseEnter={this.show}
                 onMouseLeave={this.hide} >
 
-                {this.props.workspace && (<div className="workspace-sidebar-container">
+                {this.props.user.workspace && (<div className="workspace-sidebar-container">
                     <div id="workspace-sidebar-header">
                         <h3>Workspace</h3>
                         <button id="workspace-settings-option"></button>
