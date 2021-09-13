@@ -1,12 +1,13 @@
 import React from "react";
-import BoardNameContainer from "./board_name_container";
+
+import BoardNameContainer from './board_name_container';
 
 
 class BoardHeader extends React.Component {
     render() {
-
         return(
             <div className="board-header">
+
                 <div className="upper-board-header">
                     <BoardNameContainer />
 
@@ -25,6 +26,7 @@ class BoardHeader extends React.Component {
                         </button>
                     </div>
                 </div>
+
             </div>
         )
     }

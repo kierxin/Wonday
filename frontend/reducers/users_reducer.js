@@ -28,6 +28,9 @@ const usersReducer = (state = {}, action) => {
 
             if(!alreadyIncluded) {
                 boards.push(action.board);
+            } else {
+                const oldBoard = boards.filter(board => board.id === action.board.id);
+                boards[boards.indexOf(oldBoard)] = action.board;
             }
             
             return Object.assign({}, state, {

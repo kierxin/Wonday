@@ -4,8 +4,6 @@ import Modal from "./modal";
 
 
 const mSTP = state => ({
-    userId: state.user.id,
-    workspaceId: state.user.workspace.id,
     modalType: state.board.modal
 })
 

@@ -1,7 +1,7 @@
 import * as SessionApiUtil from "../util/session_api_util";
 import { createNewWorkspace } from "./workspace_actions";
 import { getBoard } from "../util/board_api_util";
-import { getLatestBoard, RECEIVE_BOARD } from "./board_actions";
+import { RECEIVE_BOARD } from "./board_actions";
 
 
 export const RECEIVE_USER = 'RECEIVE_USER';
@@ -28,6 +28,13 @@ const receiveBoard = board => ({
     board: board
 });
 
+
+export const fetchUser = userId => dispatch => {
+    return(
+        SessionApiUtil.fetchUser(userId)
+        .then(user => dispatch(receiveUser(user)))
+    );
+};
 
 export const createNewUser = formUser => dispatch => {
     return (

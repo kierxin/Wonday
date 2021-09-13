@@ -68,8 +68,6 @@ export const createNewBoard = newBoard => dispatch => {
             board => dispatch(receiveBoard(board)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
-        // .then(action => BoardApiUtil.getBoard(action.board.id))
-        // .then(action => getLatestBoard(action.board.id))
         .then(board => dispatch(receiveBoard(board)))
         // .then(action => newGroupParams(action.board))
         // .then(group => dispatch(createNewGroup(group[0], group[1])))

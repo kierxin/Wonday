@@ -1,10 +1,5 @@
 .create-board-modal-background {
-    position: absolute;
-    z-index: 100;
-    float: left;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(43, 52, 90, 0.6);
+    @include modal-bg($background-color: rgba(43, 52, 90, 0.6));
 }
 
 .create-board-modal-foreground {
@@ -64,3 +59,13 @@
         color: black;
     }
 }
+
+// .rename-board-modal-background {
+//     @include modal-bg();
+//     border: 2px solid gold;
+// }
+
+// .rename-board-modal-foreground {
+//     color: red;
+//     border: 2px solid salmon;
+// }

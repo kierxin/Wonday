@@ -1,5 +1,5 @@
 import { RECEIVE_BOARD, TOGGLE_MODAL } from "../actions/board_actions";
-import { LOGOUT_USER, RECEIVE_USER } from "../actions/session_actions";
+import { LOGOUT_USER } from "../actions/session_actions";
 
 
 const boardReducer = (state = {}, action) => {

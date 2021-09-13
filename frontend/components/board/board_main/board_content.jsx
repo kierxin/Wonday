@@ -1,5 +1,5 @@
 import React from "react";
-import BoardHeader from "./board_header";
+import BoardHeaderContainer from "./board_header_container";
 
 
 class BoardContent extends React.Component {
@@ -10,7 +10,8 @@ class BoardContent extends React.Component {
 
 
     componentDidMount() {
-        this.props.getLatestBoard(this.props.user.latest_board)
+        this.props.getLatestBoard(this.props.user.latest_board);
+        this.props.fetchUser(this.props.user.id);
     }
 
 
@@ -23,7 +24,7 @@ class BoardContent extends React.Component {
 
         return (
             <section className="board-content">
-                <BoardHeader />
+                <BoardHeaderContainer />
                 <div>
                     <p>USER: {JSON.stringify(this.props.user)}</p><br /><br />
                     <p>CURRENT BOARD: {JSON.stringify(this.props.board)}</p><br /><br />

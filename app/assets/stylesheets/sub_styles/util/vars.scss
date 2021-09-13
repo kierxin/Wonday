@@ -1,4 +1,13 @@
 // MIXINS
+@mixin modal-bg($background-color: transparent) {
+    position: absolute;
+    z-index: 100;
+    float: left;
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+}
+
 @mixin roboto-lightweight {
     font-family: $roboto;
     font-weight: 300;
