@@ -37,8 +37,6 @@ class Group extends React.Component {
 
     changeColor(e) {
         e.preventDefault();
-        console.log("choose color");
-
         let updatedGroup = this.props.group;
         updatedGroup.color = e.currentTarget.value;
         this.props.updateGroup(updatedGroup.board_id, updatedGroup);
@@ -58,7 +56,8 @@ class Group extends React.Component {
                             <button onClick={this.toggleOptions}
                                 className={`group-options-btn ${group.color}-btn`}>▼</button>
 
-                            <div className={`group-dropdown group-dropdown-${status}`}>
+                            <div onBlur={this.toggleOptions}
+                                className={`group-dropdown group-dropdown-${status}`}>
 
                                 <div className="color-change-wrapper"
                                     onMouseEnter={this.toggleColorChange}
