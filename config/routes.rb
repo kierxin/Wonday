@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :groups, only: [:index, :show, :create, :update, :destroy]
     end
 
-    resources :users, only: [:show, :update, :create]
+    resources :users, only: [:index, :show, :update, :create]
     resource :session, only: [:create, :destroy]
     resources :workspaces, only: [:create, :update, :destroy]
   end

@@ -1,7 +1,7 @@
 import React from "react";
-import BoardNameContainer from "../board/board_main/board_name_container";
 
 import CreateBoardModalContainer from "./create_board_modal_container";
+
 
 class Modal extends React.Component {
 
@@ -25,9 +25,6 @@ class Modal extends React.Component {
                 onClick={this.handleClick}>
 
                     {this.props.modalType === "create-board" && <CreateBoardModalContainer />}
-
-                    {/* {this.props.modalType === "rename-board" &&
-                    <BoardNameContainer />} */}
 
             </div>
         )

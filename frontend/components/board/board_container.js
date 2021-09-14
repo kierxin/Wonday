@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import Board from "./board";
-import { logout } from "../../actions/session_actions";
+import { getCurrentUser, logout } from "../../actions/session_actions";
 import { getBoard } from "../../util/board_api_util";
 import { createNewGroup } from "../../actions/group_actions";
 
@@ -17,6 +17,7 @@ const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
     getBoard: boardId => dispatch(getBoard(boardId)),
     createNewGroup: boardId => dispatch(createNewGroup(boardId)),
+    getCurrentUser: () => dispatch(getCurrentUser())
 });
 
 

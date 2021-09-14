@@ -15,8 +15,9 @@ class Board extends React.Component {
     }
 
     componentDidMount() {
-        !this.props.user.workspace && location.reload();
-        !this.props.board && location.reload();
+        this.props.getCurrentUser();
+        // !this.props.user.workspace && location.reload();
+        // !this.props.board && location.reload();
     }
 
 
@@ -59,7 +60,7 @@ class Board extends React.Component {
                         </div>
                     </div>
                 </nav>
-                {(this.props.board) && (
+                {/* {(this.props.board) && ( */}
                     <section className="board-main">
 
                         <WorkspaceSidebarContainer />
@@ -69,12 +70,12 @@ class Board extends React.Component {
                             component={BoardContentContainer} />
                             
                     </section>
-                )}
+                {/* )} */}
 
 
-                {this.props.user.workspace && this.props.board && this.props.board.id && (
+                {/* {this.props.user.workspace && this.props.board && this.props.board.id && ( */}
                     <ModalContainer />
-                )}
+                {/* )} */}
 
             </main>
         )

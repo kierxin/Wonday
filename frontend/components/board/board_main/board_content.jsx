@@ -10,7 +10,7 @@ class BoardContent extends React.Component {
 
 
     componentDidMount() {
-        this.props.getLatestBoard(this.props.user.latest_board);
+        this.props.getLatestBoard(this.props.user.latest_board, this.props.user);
     }
 
     render() {

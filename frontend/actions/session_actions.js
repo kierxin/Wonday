@@ -29,6 +29,13 @@ const receiveBoard = board => ({
 });
 
 
+export const getCurrentUser = () => dispatch => {
+    return(
+        SessionApiUtil.getCurrentUser()
+        .then(user => dispatch(receiveUser(user)))
+    )
+}
+
 export const fetchUser = userId => dispatch => {
     return(
         SessionApiUtil.fetchUser(userId)
@@ -58,7 +65,7 @@ export const updateUser = user => dispatch => {
             user => dispatch(receiveUser(user)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
-    )
+    );
 }
 
 export const login = formUser => dispatch => {
