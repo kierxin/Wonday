@@ -87,6 +87,11 @@ export const updateBoard = board => dispatch => {
     return(
         BoardApiUtil.updateBoard(board)
         .then(board => dispatch(receiveBoard(board)))
+        .then(getCurrentUser())
+        .then(user => {
+            user.latest_board = board.id;
+            updateUser(user);
+        })
     )
 }
 

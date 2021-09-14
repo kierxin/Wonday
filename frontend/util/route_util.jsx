@@ -35,9 +35,17 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 
 
 const mSTP = state => {
+    let latest;
+    const boards = state.user.boards
+    if (boards && boards.length && !boards.some(board => board.id === state.user.latest_board)) {
+        latest = boards[0].id;
+    } else {
+        latest = state.user.latest_board;
+    }
+
     return { 
         loggedIn: Boolean(state.session.id),
-        latest: state.user.latest_board,
+        latest: latest,
         boardId: state.board.id
     }
 };
