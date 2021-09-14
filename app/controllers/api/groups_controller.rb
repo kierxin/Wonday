@@ -13,7 +13,7 @@ class Api::GroupsController < ApplicationController
 
     def create
 
-        available_colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
+        available_colors = ["gold", "indigo", "green", "blue", "salmon", "brown", "gray"]
         idx = rand(7)
 
         defaultGroup = {

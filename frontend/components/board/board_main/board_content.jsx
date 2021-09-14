@@ -2,7 +2,7 @@ import React from "react";
 
 import BoardHeaderContainer from "./board_header_container";
 import BoardBar from "./board_bar";
-import TextInputContainer from "./text_input_container";
+import GroupContainer from "../groups/group_container";
 
 
 class BoardContent extends React.Component {
@@ -21,11 +21,7 @@ class BoardContent extends React.Component {
         
         const groupsList = groups.map(group => {
             return(
-                <li key={`group-${group.id}`}
-                    className={`${group.color}`}>
-
-                    <TextInputContainer elementType="group" groupId={group.id} elementId={group.id} />
-                </li>
+                <GroupContainer id={group.id} key={`extra-${group.id}`} />
             )
         });
 

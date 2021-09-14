@@ -1,6 +1,8 @@
 .board-main {
     @include flex;
-    // width: 100%;
+    width: calc(100vw - 80px);
+    margin: 0;
+    overflow-y: auto;
 }
 
 .workspace-sidebar {

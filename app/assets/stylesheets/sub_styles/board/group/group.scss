@@ -1,0 +1,33 @@
+.gold { @include group-title($color: gold); }
+.salmon { @include group-title($color: salmon); }
+.green { @include group-title($color: rgb(161, 220, 114)); }
+.blue { @include group-title($color: rgb(78, 187, 255)); }
+.brown { @include group-title($color: rgb(175, 142, 129)); }
+.gray { @include group-title($color: rgb(150, 150, 150)); }
+.indigo { @include group-title($color: rgb(111, 88, 187)); }
+
+.group-header {
+    @include flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .gold-btn { @include group-options-btn($color: gold); }
+    .salmon-btn { @include group-options-btn($color: salmon); }
+    .green-btn { @include group-options-btn($color: rgb(161, 220, 114)); }
+    .blue-btn { @include group-options-btn($color: rgb(78, 187, 255)); }
+    .brown-btn { @include group-options-btn($color: rgb(175, 142, 129)); }
+    .gray-btn { @include group-options-btn($color: rgb(150, 150, 150)); }
+    .indigo-btn { @include group-options-btn($color: rgb(111, 88, 187)); }
+
+}
+
+div#colors-picker {
+    @include flex;
+    padding: 3px 0;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.colors-picker-false {
+    display: none;
+}
