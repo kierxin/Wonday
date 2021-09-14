@@ -1,12 +1,12 @@
 .board-main {
     @include flex;
+    // width: 100%;
 }
 
 .workspace-sidebar {
     height: 100vh;
-    width: 5%;
-    max-width: 350px;
     min-width: 30px;
+    max-width: 300px;
     overflow: hidden;
     background-color: rgb(247, 247, 247);
 }
@@ -44,6 +44,7 @@
 
 .workspace-sidebar-collapsed {
     @include workspace-sidebar-collapsed-btn-transition;
+    width: 30px;
 
     div {
         @include div-visibility-toggle;
@@ -53,8 +54,7 @@
 
 .workspace-sidebar-open {
     @include workspace-sidebar-collapsed-btn-transition;
-    width: 60%;
-    min-width: 200px;
+    width: 300px;
     border-right: 1px solid lightgray;
     box-shadow: 5px 0px 20px rgba(145, 145, 145, 0.3);
     overflow: hidden;
@@ -110,8 +110,7 @@
 #boards-list {
     width: 100%;
     height: 78%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: auto;
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid rgb(209, 217, 226);

@@ -11,18 +11,20 @@ class BoardsList extends React.Component {
     }
 
     getLatestBoard(e) {
-        if(!e.currentTarget.classList.contains("ignore-fetch")) {
-            this.props.getLatestBoard(e.currentTarget.getAttribute("dataid"), this.props.user.id)
-            .then(action => {
-                this.props.history.push(action.board.id)
-            });
+        e.preventDefault();
+        console.log(e.currentTarget);
+
+        if (!e.currentTarget.classList.contains("ignore-fetch")) {
+            this.props.getLatestBoard(`${e.currentTarget.getAttribute("dataid")}`)
+                .then(action => {
+                    this.props.history.push(action.board.id)
+                });
         }
     }
 
     deleteBoard(e) {
         e.preventDefault();
-        this.props.deleteBoard(e.currentTarget.getAttribute("dataid"))
-        .then(result => this.getLatestBoard(result.boards.boards[0].id, this.props.user));
+        this.props.deleteBoard(e.currentTarget.getAttribute("dataid"));
     }
 
     render() {
@@ -31,7 +33,7 @@ class BoardsList extends React.Component {
         const boardOptions = boards.map(board => {
             return (
                 <li key={`board-option-${board.id}`}>
-                    <button>
+                    <button onClick={this.getLatestBoard} dataid={board.id}>
                         {board.name}
                         <i className="far fa-trash-alt ignore-fetch"
                             onClick={this.deleteBoard}
@@ -52,6 +54,3 @@ class BoardsList extends React.Component {
 }
 
 export default BoardsList;
-
-
-
