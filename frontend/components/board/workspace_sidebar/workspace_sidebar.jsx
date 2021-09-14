@@ -19,6 +19,10 @@ class WorkspaceSidebar extends React.Component {
         this.toggleModal = this.toggleModal.bind(this);
     }
 
+    componentDidMount() {
+        this.props.getLatestBoard(this.props.user.boards[0], this.props.user);
+    }
+
     show() {
         if(this.state.hoverable) {
             this.setState({ collapsed: false, toggleText: "<" });

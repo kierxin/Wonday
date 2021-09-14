@@ -1,5 +1,6 @@
 import { RECEIVE_BOARD, RECEIVE_BOARDS, REMOVE_BOARD } from "../actions/board_actions";
 import { RECEIVE_USER, LOGOUT_USER } from "../actions/session_actions";
+import { RECEIVE_WORKSPACE } from "../actions/workspace_actions";
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -16,6 +17,11 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_BOARDS:
             return Object.assign({}, state, {
                 boards: action.boards
+            });
+
+        case RECEIVE_WORKSPACE:
+            return Object.assign({}, state, {
+                workspace: action.workspace
             });
 
         case RECEIVE_BOARD:
