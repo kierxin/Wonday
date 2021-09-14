@@ -27,6 +27,7 @@ const boardReducer = (state = {}, action) => {
             });
 
         case RECEIVE_GROUP:
+            console.log(action.group);
             let groups = nextState.groups;
 
             if (groups.findIndex(group => group.id === action.group.id) === -1) { 
@@ -36,6 +37,10 @@ const boardReducer = (state = {}, action) => {
 
                 groups[idx] = action.group;
             }
+
+            return Object.assign({}, state, {
+                groups: groups
+            });
 
         case TOGGLE_MODAL:
             const modalType = (' ' + action.modalType).slice(1)

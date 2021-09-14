@@ -1,1 +1,1 @@
-json.(group, :board_id, :color, :title)
+json.(group, :board_id, :color, :id, :title)
