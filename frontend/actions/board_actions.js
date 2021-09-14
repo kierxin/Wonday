@@ -1,6 +1,7 @@
 import * as BoardApiUtil from '../util/board_api_util';
 import { getCurrentUser, updateUser } from '../util/session_api_util';
 import { createNewGroup } from './group_actions';
+import { fetchUser } from './session_actions';
 
 
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
@@ -59,13 +60,12 @@ export const viewBoards = () => dispatch => {
     );
 };
 
-export const getLatestBoard = (boardId, user) => dispatch => {
+export const getLatestBoard = (boardId, userId) => dispatch => {
     return(
         BoardApiUtil.getBoard(boardId)
         .then(
             board => dispatch(receiveBoard(board))
         )
-        
     );
 };
 
@@ -79,7 +79,6 @@ export const createNewBoard = newBoard => dispatch => {
         .then(board => dispatch(receiveBoard(board)))
         // .then(action => newGroupParams(action.board))
         // .then(group => dispatch(createNewGroup(group[0], group[1])))
-        .then(result => dispatch(getCurrentUser))
     );
 };
 

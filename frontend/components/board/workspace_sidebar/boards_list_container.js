@@ -13,7 +13,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    getLatestBoard: (boardId, user) => dispatch(getLatestBoard(boardId, user)),
+    getLatestBoard: (boardId, userId) => dispatch(getLatestBoard(boardId, userId)),
     viewBoards: () => dispatch(viewBoards()),
     deleteBoard: boardId => dispatch(deleteBoard(boardId))
 });

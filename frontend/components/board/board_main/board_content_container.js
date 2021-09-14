@@ -15,7 +15,7 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => ({
-    getLatestBoard: (boardId, user) => dispatch(getLatestBoard(boardId, user)),
+    getLatestBoard: (boardId, userId) => dispatch(getLatestBoard(boardId, userId)),
     fetchGroups: boardId => dispatch(fetchGroups(boardId))
 });
 

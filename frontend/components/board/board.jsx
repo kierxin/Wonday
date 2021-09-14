@@ -14,12 +14,6 @@ class Board extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        // !this.props.user.workspace && location.reload();
-        this.props.getCurrentUser();
-        // this.props.getLatestBoard(this.props.latest_board, this.props.user.id);
-    }
-
 
     render() {
         const user = this.props.user;

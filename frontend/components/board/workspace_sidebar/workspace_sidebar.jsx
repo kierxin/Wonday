@@ -20,7 +20,7 @@ class WorkspaceSidebar extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getLatestBoard(this.props.user.boards[0], this.props.user);
+        this.props.getLatestBoard(this.props.user.boards[0], this.props.user.id);
     }
 
     show() {
