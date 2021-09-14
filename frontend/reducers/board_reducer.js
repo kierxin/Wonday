@@ -6,7 +6,6 @@ import { LOGOUT_USER } from "../actions/session_actions";
 const boardReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
-    console.log(action);
 
     switch (action.type) {
 
@@ -17,11 +16,6 @@ const boardReducer = (state = {}, action) => {
             }
 
             return nextState;
-
-        case REMOVE_BOARD:
-            if (action.boards.deleted === nextState.id) {
-                return action.boards.boards[0];
-            }
 
         case RECEIVE_GROUPS:
             return Object.assign({}, state, {
@@ -39,8 +33,6 @@ const boardReducer = (state = {}, action) => {
 
                 groups[idx] = action.group;
             }
-
-            console.log(groups);
 
             return Object.assign({}, state, {
                 groups: groups

@@ -8,6 +8,8 @@ class Api::BoardsController < ApplicationController
     def show
         @user = current_user
         @board = Board.find_by(id: params[:id]) || Board.find_by(id: current_user.latest_board)
+        @user.latest_board = @board.id
+        @user.save!
         
         render "/api/boards/show"
     end
@@ -47,10 +49,10 @@ class Api::BoardsController < ApplicationController
 
         @workspace = Workspace.find(@board.workspace_id)
         if @workspace.boards.length > 1
-            @idx = @board.id
             @board.destroy
-            @boards = Board.all
-            render "/api/boards/destroy"
+            @boards = current_user.boards
+
+            render "/api/boards/index"
         else 
             render json: {status: "error", code: 405, message: "Workspace must have at least one board"}
             @boards = Board.all

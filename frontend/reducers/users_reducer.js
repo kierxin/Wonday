@@ -16,7 +16,7 @@ const usersReducer = (state = {}, action) => {
 
         case RECEIVE_BOARDS:
             return Object.assign({}, state, {
-                boards: action.boards
+                boards: action.boards.boards
             });
 
         case RECEIVE_WORKSPACE:
@@ -49,12 +49,12 @@ const usersReducer = (state = {}, action) => {
                 boards: boards
              });
 
-        case REMOVE_BOARD:
-            let removeBoards = nextState.boards;
-            const idx = removeBoards.findIndex(board => board.id === action.boards.deleted);
-            removeBoards.splice(idx, 1)
-            nextState.boards = removeBoards;
-            return nextState;
+        // case REMOVE_BOARD:
+        //     let removeBoards = nextState.boards;
+        //     const idx = removeBoards.findIndex(board => board.id === action.boards.deleted);
+        //     removeBoards.splice(idx, 1)
+        //     nextState.boards = removeBoards;
+        //     return nextState;
 
         default:
             return state;

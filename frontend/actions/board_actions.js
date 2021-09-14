@@ -1,7 +1,6 @@
 import * as BoardApiUtil from '../util/board_api_util';
 import { getCurrentUser, updateUser } from '../util/session_api_util';
 import { createNewGroup } from './group_actions';
-import { fetchUser } from './session_actions';
 
 
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
@@ -22,11 +21,6 @@ const receiveBoards = boards => ({
     type: RECEIVE_BOARDS,
     boards: boards
 });
-
-const removeBoard = boards => ({
-    type: REMOVE_BOARD,
-    boards: boards
-})
 
 const receiveErrors = errors => ({
     type: RECEIVE_BOARD_ERRORS,
@@ -76,7 +70,7 @@ export const createNewBoard = newBoard => dispatch => {
             board => dispatch(receiveBoard(board)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
-        .then(board => dispatch(receiveBoard(board)))
+        .then(action => dispatch(receiveBoard(action.board)))
         // .then(action => newGroupParams(action.board))
         // .then(group => dispatch(createNewGroup(group[0], group[1])))
     );
@@ -86,11 +80,11 @@ export const updateBoard = board => dispatch => {
     return(
         BoardApiUtil.updateBoard(board)
         .then(board => dispatch(receiveBoard(board)))
-        .then(getCurrentUser())
-        .then(user => {
-            user.latest_board = board.id;
-            updateUser(user);
-        })
+        // .then(getCurrentUser())
+        // .then(user => {
+        //     user.latest_board = board.id;
+        //     updateUser(user);
+        // })
     )
 }
 
@@ -98,7 +92,7 @@ export const deleteBoard = boardId => dispatch => {
     return(
         BoardApiUtil.deleteBoard(boardId)
         .then(
-            boards => dispatch(removeBoard(boards)),
+            boards => dispatch(receiveBoards(boards)),
             error => dispatch(receiveErrors(error.responseJSON))
         )
     )
