@@ -43,11 +43,9 @@ export const createNewGroup = (boardId) => dispatch => {
             group => dispatch(receiveGroup(group)),
             errors => dispatch(receiveErrors(errors.responseJSON))
         )
-        .then(group => dispatch(receiveGroups(group)))
+        .then(action => dispatch(receiveGroup(action.group)))
     );
 };
-
-
 
 export const updateGroup = (boardId, group) => dispatch => {
     return (

@@ -3,12 +3,12 @@ class Api::GroupsController < ApplicationController
     def index
         @board = @board = Board.find_by(id: params[:board_id])
         @groups = @board.groups
-        render "/api/boards/groups/index"
+        render "/api/groups/index"
     end
 
     def show
         @group = Group.find_by(id: params[:id])
-        render "/api/boards/groups/show"
+        render "/api/groups/show"
     end
 
     def create

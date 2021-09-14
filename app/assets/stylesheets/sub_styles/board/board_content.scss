@@ -24,7 +24,15 @@
         padding: 0;
     
         input {
-            @include text-input
+            @include text-input    
+
+            &:hover {
+                border: 1px solid rgb(169, 169, 169);
+            }
+
+            &:focus {
+                border: 1px solid rgb(39, 113, 233);
+            }
         }
     }
 }
@@ -109,29 +117,29 @@
 }
 
 .gold {
-    color: gold;
+    @include group-title($color: gold)
 }
 
 .salmon {
-    color: salmon;
+    @include group-title($color: salmon)
 }
 
 .green {
-    color: rgb(129, 204, 67);
+    @include group-title($color: rgb(129, 204, 67));
 }
 
 .blue {
-    color: rgb(14, 114, 255);
+    @include group-title($color: rgb(14, 114, 255));
 }
 
 .brown {
-    color: rgb(121, 96, 92);
+    @include group-title($color: rgb(121, 96, 92));
 }
 
 .gray {
-    color: rgb(137, 137, 137);
+    @include group-title($color: rgb(137, 137, 137));
 }
 
 .indigo {
-    color: rgb(74, 54, 138);
+    @include group-title($color: rgb(74, 54, 138));
 }

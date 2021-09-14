@@ -17,20 +17,17 @@ class BoardContent extends React.Component {
     }
 
     render() {
-
-        let groups = this.props.board.groups;
-
+        const groups = this.props.board.groups;
+        
         const groupsList = groups.map(group => {
             return(
                 <li key={`group-${group.id}`}
                     className={`${group.color}`}>
 
                     <TextInputContainer elementType="group" groupId={group.id} elementId={group.id} />
-
-                    {/* <h1>{group.title}</h1> */}
                 </li>
             )
-        })
+        });
 
 
         return (

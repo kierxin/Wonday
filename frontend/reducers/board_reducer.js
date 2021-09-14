@@ -6,8 +6,10 @@ import { LOGOUT_USER } from "../actions/session_actions";
 const boardReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
+    console.log(action);
 
     switch (action.type) {
+
         case RECEIVE_BOARD:
             nextState = Object.assign({}, action.board);
             if (!nextState.hasOwnProperty("modal")) {
@@ -27,7 +29,7 @@ const boardReducer = (state = {}, action) => {
             });
 
         case RECEIVE_GROUP:
-            console.log(action.group);
+            console.log(action);
             let groups = nextState.groups;
 
             if (groups.findIndex(group => group.id === action.group.id) === -1) { 
@@ -37,6 +39,8 @@ const boardReducer = (state = {}, action) => {
 
                 groups[idx] = action.group;
             }
+
+            console.log(groups);
 
             return Object.assign({}, state, {
                 groups: groups
