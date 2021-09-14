@@ -21,13 +21,13 @@
 
 }
 
-div#colors-picker {
+div.colors-picker {
     @include flex;
     padding: 3px 0;
     width: 200px;
     justify-content: space-around;
 }
 
-.colors-picker-false {
+div.colors-picker-false {
     display: none;
 }

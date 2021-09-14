@@ -18,6 +18,9 @@ const boardReducer = (state = {}, action) => {
             return nextState;
 
         case RECEIVE_GROUPS:
+            console.log("RECEIVE GROUPS");
+            console.log(action);
+            console.log(action.groups);
             return Object.assign({}, state, {
                 groups: action.groups
             });

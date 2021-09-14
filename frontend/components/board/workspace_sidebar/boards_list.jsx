@@ -15,14 +15,13 @@ class BoardsList extends React.Component {
 
         if (!e.currentTarget.classList.contains("ignore-fetch")) {
             this.props.getLatestBoard(`${e.currentTarget.getAttribute("dataid")}`)
-                .then(promise => {
-                    this.props.history.push(promise.board.id)
-                });
+            .then(promise => {
+                this.props.history.push(promise.board.id)
+            });
         }
     }
 
     deleteBoard(e) {
-        console.log("DELETE");
         e.preventDefault();
         this.props.deleteBoard(e.currentTarget.getAttribute("dataid"))
         .then(this.props.getLatestBoard(this.props.user.boards[0].id, this.props.user.id));

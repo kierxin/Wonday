@@ -43,6 +43,13 @@ class Api::GroupsController < ApplicationController
     end
 
     def destroy
+        @group = Group.find_by(id: params[:id])
+        @board = Group.find(@group.board_id)
+            
+        @group.destroy
+        @groups = Group.all.select { |group| group.board_id == @board.id }
+
+        render "/api/groups/index"
     end
 
     private

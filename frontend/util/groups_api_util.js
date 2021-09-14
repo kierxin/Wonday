@@ -26,3 +26,10 @@ export const updateGroup = (boardId, group) => (
         data: { group: group }
     })
 )
+
+export const deleteGroup = (boardId, groupId) => (
+    $.ajax({
+        url: `/api/boards/${boardId}/groups/${groupId}`,
+        method: 'DELETE'
+    })
+);

@@ -53,3 +53,13 @@ export const updateGroup = (boardId, group) => dispatch => {
         .then(group => dispatch(receiveGroup(group)))
     );
 };
+
+export const deleteGroup = (boardId, groupId) => dispatch => {
+    return (
+        GroupsApiUtil.deleteGroup(boardId, groupId)
+            .then(
+                groups => dispatch(receiveGroups(groups)), // is this accurate?
+                error => dispatch(receiveErrors(error.responseJSON))
+            )
+    )
+}

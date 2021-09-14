@@ -1,5 +1,4 @@
 import * as BoardApiUtil from '../util/board_api_util';
-import { getCurrentUser, updateUser } from '../util/session_api_util';
 import { createNewGroup } from './group_actions';
 
 
