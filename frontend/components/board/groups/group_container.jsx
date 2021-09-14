@@ -14,7 +14,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     updateGroup: (boardId, group) => dispatch(updateGroup(boardId, group)),
-    deleteGroup: (boardId, group) => dispatch(deleteGroup(boardId, group))
+    deleteGroup: (boardId, group) => dispatch(deleteGroup(boardId, group)),
+    updateColor: (boardId, group, color) => dispatch(updateColor(boardId, group, color))
 });
 
 

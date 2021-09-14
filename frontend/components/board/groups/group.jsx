@@ -11,11 +11,13 @@ class Group extends React.Component {
         super(props);
 
         this.state = {
+            viewOptions: false,
             chooseColor: false
         }
 
         this.toggleColorChange = this.toggleColorChange.bind(this);
         this.changeColor = this.changeColor.bind(this);
+        this.toggleOptions = this.toggleOptions.bind(this);
         this.deleteGroup = this.deleteGroup.bind(this);
     }
 
@@ -24,18 +26,27 @@ class Group extends React.Component {
         this.props.deleteGroup(this.props.group.board_id, this.props.group.id)
     }
 
+    toggleOptions(e) {
+        e.preventDefault();
+        this.setState({ viewOptions: !this.state.viewOptions });
+    }
+
     toggleColorChange() {
         this.setState({ chooseColor: !this.state.chooseColor });
     }
 
-    changeColor() {
+    changeColor(e) {
         e.preventDefault();
-        // this.props...
         console.log("choose color");
+
+        let updatedGroup = this.props.group;
+        updatedGroup.color = e.currentTarget.value;
+        this.props.updateGroup(updatedGroup.board_id, updatedGroup);
     }
 
     render() {
         const group = this.props.group;
+        const status = this.state.viewOptions;
 
         return(
             <li key={`group-${group.id}`}
@@ -43,28 +54,38 @@ class Group extends React.Component {
                 <div className="group-container">
                     <div className="group-over">
                         <div className="group-header">
-                            <button className={`${group.color}-btn`}>▼</button>
-                            <div className={`group-dropdown`}>
+
+                            <button onClick={this.toggleOptions}
+                                className={`group-options-btn ${group.color}-btn`}>▼</button>
+
+                            <div className={`group-dropdown group-dropdown-${status}`}>
 
                                 <div className="color-change-wrapper"
                                     onMouseEnter={this.toggleColorChange}
                                     onMouseLeave={this.toggleColorChange}>
-                                    <button>Change group color</button>
-                                    <div className={`colors-picker colors-picker-${this.state.chooseColor}`}>
-                                        <ColorChoice color="gold" changeColor={this.changeColor} />
-                                        <ColorChoice color="salmon" changeColor={this.changeColor} />
-                                        <ColorChoice color="green" changeColor={this.changeColor} />
-                                        <ColorChoice color="blue" changeColor={this.changeColor} />
-                                        <ColorChoice color="brown" changeColor={this.changeColor} />
-                                        <ColorChoice color="gray" changeColor={this.changeColor} />
-                                        <ColorChoice color="indigo" changeColor={this.changeColor} />
+                                    <button className="group-option">
+                                        Change group color
+                                    </button>
+                                    <div className="color-choices-wrapper">
+                                        <div className={`colors-picker colors-picker-${this.state.chooseColor}`}>
+                                            <ColorChoice color="gold" changeColor={this.changeColor} />
+                                            <ColorChoice color="salmon" changeColor={this.changeColor} />
+                                            <ColorChoice color="green" changeColor={this.changeColor} />
+                                            <ColorChoice color="blue" changeColor={this.changeColor} />
+                                            <ColorChoice color="brown" changeColor={this.changeColor} />
+                                            <ColorChoice color="gray" changeColor={this.changeColor} />
+                                            <ColorChoice color="indigo" changeColor={this.changeColor} />
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <button onClick={this.deleteGroup}>
+                                <button className="group-option" 
+                                    onClick={this.deleteGroup}>
                                     Delete group
                                 </button>
+                                
                             </div>
+
                             <TextInputContainer elementType="group" groupId={group.id} elementId={group.id} />
                         </div>
                         

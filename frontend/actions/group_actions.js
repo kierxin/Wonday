@@ -54,6 +54,16 @@ export const updateGroup = (boardId, group) => dispatch => {
     );
 };
 
+// export const updateColor = (boardId, group, color) => dispatch => {
+//     let updatedGroup = group;
+//     updatedGroup.color = color;
+
+//     return (
+//         GroupsApiUtil.updateGroup(boardId, updateGroup)
+//             .then(group => dispatch(receiveGroup(group)))
+//     );
+// };
+
 export const deleteGroup = (boardId, groupId) => dispatch => {
     return (
         GroupsApiUtil.deleteGroup(boardId, groupId)
