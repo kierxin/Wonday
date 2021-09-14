@@ -19,7 +19,6 @@ class Api::BoardsController < ApplicationController
 
         if @board.save
             @workspace = @board.workspace
-            @user = current_user
             @user.latest_board = @board.id
             @user.save!
 
@@ -32,8 +31,11 @@ class Api::BoardsController < ApplicationController
 
     def update
         @board = Board.find_by(id: params[:id])
+        @user = current_user
 
         if @board.update(board_params)
+            @user.latest_board = @board.id
+            @user.save!
             render "/api/boards/show"
         else
             render json: @board.errors.full_messages, status: 422
