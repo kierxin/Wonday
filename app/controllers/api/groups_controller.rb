@@ -12,12 +12,21 @@ class Api::GroupsController < ApplicationController
     end
 
     def create
-        @group = Group.new(group_params)
+
+        available_colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
+        idx = rand(7)
+
+        defaultGroup = {
+            board_id: params[:board_id],
+            color: available_colors[idx],
+            title: "New Group"
+        }
+        @group = Group.new(defaultGroup)
 
         if @group.save
             @board = Board.find_by(id: @group.board_id)
             @board.save!
-            render "/api/boards/groups/show"
+            render "/api/groups/show"
         else
             render json: @group.errors.full_messages, status: 422
         end
@@ -27,7 +36,7 @@ class Api::GroupsController < ApplicationController
         @group = Group.find_by(id: params[:id])
 
         if @group.update(group_params)
-            render "/api/boards/groups/show"
+            render "/api/groups/show"
         else
             render json: @group.errors.full_messages, status: 422
         end

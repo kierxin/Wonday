@@ -54,7 +54,7 @@ class Board extends React.Component {
                         </div>
                     </div>
                 </nav>
-                {/* {(this.props.board) && ( */}
+
                     <section className="board-main">
 
                         <WorkspaceSidebarContainer />
@@ -64,12 +64,8 @@ class Board extends React.Component {
                             component={BoardContentContainer} />
                             
                     </section>
-                {/* )} */}
-
-
-                {/* {this.props.user.workspace && this.props.board && this.props.board.id && ( */}
+                    
                     <ModalContainer />
-                {/* )} */}
 
             </main>
         )

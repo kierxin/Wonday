@@ -11,8 +11,6 @@ class BoardsList extends React.Component {
     }
 
     getLatestBoard(e) {
-        e.preventDefault();
-        
         if(!e.currentTarget.classList.contains("ignore-fetch")) {
             this.props.getLatestBoard(e.currentTarget.getAttribute("dataid"), this.props.user.id)
             .then(action => {
@@ -33,7 +31,7 @@ class BoardsList extends React.Component {
         const boardOptions = boards.map(board => {
             return (
                 <li key={`board-option-${board.id}`}>
-                    <button onClick={this.getLatestBoard} dataid={board.id}>
+                    <button>
                         {board.name}
                         <i className="far fa-trash-alt ignore-fetch"
                             onClick={this.deleteBoard}

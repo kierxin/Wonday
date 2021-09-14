@@ -1,5 +1,7 @@
 import React from "react";
+
 import BoardHeaderContainer from "./board_header_container";
+import BoardBar from "./board_bar";
 
 
 class BoardContent extends React.Component {
@@ -14,20 +16,28 @@ class BoardContent extends React.Component {
     }
 
     render() {
-        let groups = "";
-        if(this.props.board) {
-            groups = JSON.stringify(this.props.board.groups)
-        }
+
+        let groups = this.props.board.groups;
+
+        const groupsList = groups.map(group => {
+            return(
+                <li key={`group-${group.id}`}
+                    className={`${group.color}`}>
+                    <h1>{group.title}</h1>
+                </li>
+            )
+        })
 
 
         return (
             <section className="board-content">
                 <BoardHeaderContainer />
-                <div>
-                    <p>USER: {JSON.stringify(this.props.user)}</p><br /><br />
-                    <p>CURRENT BOARD: {JSON.stringify(this.props.board)}</p><br /><br />
-                    <p>GROUPS: {groups}</p><br /><br />
-                </div>
+
+                <BoardBar />
+
+                <ul className="groups-main">
+                    {groupsList}
+                </ul>
             </section>
         );
     }

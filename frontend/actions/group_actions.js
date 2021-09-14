@@ -36,9 +36,9 @@ export const fetchGroup = (boardId, groupId) => dispatch => {
     );
 };
 
-export const createNewGroup = (boardId, group) => dispatch => {
+export const createNewGroup = (boardId) => dispatch => {
     return(
-        GroupsApiUtil.postGroup(boardId, group)
+        GroupsApiUtil.postGroup(boardId)
         .then(
             group => dispatch(receiveGroup(group)),
             errors => dispatch(receiveErrors(errors.responseJSON))
