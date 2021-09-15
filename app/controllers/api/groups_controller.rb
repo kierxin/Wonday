@@ -1,7 +1,7 @@
 class Api::GroupsController < ApplicationController
 
     def index
-        @board = @board = Board.find_by(id: params[:board_id])
+        @board = Board.find_by(id: params[:board_id])
         @groups = @board.groups
         render "/api/groups/index"
     end
@@ -16,12 +16,12 @@ class Api::GroupsController < ApplicationController
         available_colors = ["gold", "indigo", "green", "blue", "salmon", "brown", "gray"]
         idx = rand(7)
 
-        defaultGroup = {
+        default_group = {
             board_id: params[:board_id],
             color: available_colors[idx],
             title: "New Group"
         }
-        @group = Group.new(defaultGroup)
+        @group = Group.new(default_group)
 
         if @group.save
             @board = Board.find_by(id: @group.board_id)
@@ -44,7 +44,7 @@ class Api::GroupsController < ApplicationController
 
     def destroy
         @group = Group.find_by(id: params[:id])
-        @board = Board.find_by(id: params[:board_id])
+        @board = @group.board #does this work?
             
         @group.destroy
         @groups = Group.all.select { |group| group.board_id == @board.id }

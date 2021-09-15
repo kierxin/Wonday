@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
 import { updateGroup, deleteGroup } from "../../../actions/group_actions";
+import { fetchTasks } from "../../../actions/task_actions";
 import Group from "./group";
 
 
@@ -14,7 +15,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     updateGroup: (boardId, group) => dispatch(updateGroup(boardId, group)),
-    deleteGroup: (boardId, groupId) => dispatch(deleteGroup(boardId, groupId))
+    deleteGroup: (boardId, groupId) => dispatch(deleteGroup(boardId, groupId)),
+    fetchTasks: groupId => dispatch(fetchTasks(groupId))
 });
 
 

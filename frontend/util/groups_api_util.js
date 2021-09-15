@@ -5,9 +5,9 @@ export const fetchGroups = (boardId) => (
     })
 );
 
-export const fetchGroup = (boardId, groupId) => (
+export const fetchGroup = (groupId) => (
     $.ajax({
-        url: `/api/boards/${boardId}/groups/${groupId}`,
+        url: `/api/groups/${groupId}`,
         method: 'GET'
     })
 );
@@ -19,17 +19,17 @@ export const postGroup = (boardId) => (
     })
 )
 
-export const updateGroup = (boardId, group) => (
+export const updateGroup = (group) => (
     $.ajax({
-        url: `/api/boards/${boardId}/groups/${group.id}`,
+        url: `/api/groups/${group.id}`,
         method: 'PATCH',
         data: { group: group }
     })
 )
 
-export const deleteGroup = (boardId, groupId) => (
+export const deleteGroup = (groupId) => (
     $.ajax({
-        url: `/api/boards/${boardId}/groups/${groupId}`,
+        url: `/api/groups/${groupId}`,
         method: 'DELETE'
     })
 );

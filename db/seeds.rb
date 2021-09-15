@@ -43,3 +43,8 @@ group2 = Group.create!(
     color: "salmon",
     title: "My second group"
 )
+
+task1 = Task.create!(
+    title: "Write database migrations",
+    group_id: 1
+)

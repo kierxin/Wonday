@@ -29,9 +29,9 @@ export const fetchGroups = boardId => dispatch => {
     );
 };
 
-export const fetchGroup = (boardId, groupId) => dispatch => {
+export const fetchGroup = (groupId) => dispatch => {
     return(
-        GroupsApiUtil.fetchGroup(boardId, groupId)
+        GroupsApiUtil.fetchGroup(groupId)
         .then(group => dispatch(receiveGroup(group)))
     );
 };
@@ -49,16 +49,16 @@ export const createNewGroup = (boardId) => dispatch => {
 
 export const updateGroup = (boardId, group) => dispatch => {
     return (
-        GroupsApiUtil.updateGroup(boardId, group)
+        GroupsApiUtil.updateGroup(group)
         .then(group => dispatch(receiveGroup(group)))
     );
 };
 
-export const deleteGroup = (boardId, groupId) => dispatch => {
+export const deleteGroup = (groupId) => dispatch => {
     return (
-        GroupsApiUtil.deleteGroup(boardId, groupId)
+        GroupsApiUtil.deleteGroup(groupId)
             .then(
-                groups => dispatch(receiveGroups(groups)), // is this accurate?
+                groups => dispatch(receiveGroups(groups)),
                 error => dispatch(receiveErrors(error.responseJSON))
             )
     )

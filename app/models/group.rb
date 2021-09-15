@@ -1,8 +1,9 @@
 class Group < ApplicationRecord
 
     belongs_to :board
+    has_many :tasks
 
-    available_colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"];
+    available_colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
 
     validates :color, :board_id, :title, presence: true
     validates :title, length: { maximum: 200 }

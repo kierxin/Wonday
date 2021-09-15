@@ -2,7 +2,6 @@ import React from "react";
 
 import TextInputContainer from '../board_main/text_input_container';
 import ColorChoice from "./color_choice";
-// import ModalContainer from '../../modals/modal_container';
 
 
 class Group extends React.Component {
@@ -19,6 +18,10 @@ class Group extends React.Component {
         this.changeColor = this.changeColor.bind(this);
         this.toggleOptions = this.toggleOptions.bind(this);
         this.deleteGroup = this.deleteGroup.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchTasks(this.props.group.id)
     }
 
     deleteGroup(e) {
@@ -88,7 +91,8 @@ class Group extends React.Component {
                             <TextInputContainer elementType="group" groupId={group.id} elementId={group.id} />
                         </div>
                         
-                        {/* for each task, the task's title & options button */}
+                        {/* for each task, the task's title & trashcan button */}
+                        <div>{JSON.stringify(group.tasks)}</div>
                     </div>
                     <div className="group-under">
                         {/* header (flexbox of columnTypes) */}
