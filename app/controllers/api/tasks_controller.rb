@@ -29,11 +29,12 @@ class Api::TasksController < ApplicationController
 
     def update
         @task = Task.find_by(id: params[:id])
+        @group = Group.find_by(id: @task.group_id)
 
         if @task.update(task_params)
             render "/api/tasks/show"
         else
-            render json: @task.error.full_messages, status: 422
+            render json: @task.errors.full_messages, status: 422
         end
     end
 

@@ -41,10 +41,10 @@ const boardReducer = (state = {}, action) => {
 
 
         case RECEIVE_TASKS:
-            if(action.tasks.length) {
+            if(action.tasks.length > 0) {
                 const groupId = action.tasks[0].group_id;
                 const groupIdx = nextState.groups.findIndex(group => group.id === groupId);
-
+                
                 nextState.groups[groupIdx].tasks = action.tasks;
             }
             
@@ -52,16 +52,18 @@ const boardReducer = (state = {}, action) => {
 
 
         case RECEIVE_TASK:
-            const groupID = action.task.group_id;
-            const groupIndex = nextState.groups.indexOf(group => group.id === groupID);
-            const group = nextState.groups[groupIndex]
+            if(action.task.id) {
+                const group = nextState.groups.find(group => group.id === action.task.group_id);
+                const groupIndex = nextState.groups.findIndex(group => group.id === action.task.group_id);
 
-            if(group.tasks.findIndex(task => task.id === action.task.id) === -1) {
-                nextState.groups[groupIndex].tasks.push(action.task);
-            } else {
-                const index = group.tasks.findIndex(task => task.id === action.task.id);
-                nextState.groups[groupIndex].tasks[index] = action.task;
+                if (group.tasks.findIndex(task => task.id === action.task.id) === -1) {
+                    nextState.groups[groupIndex].tasks.push(action.task);
+                } else {
+                    const index = group.tasks.findIndex(task => task.id === action.task.id);
+                    nextState.groups[groupIndex].tasks[index] = action.task;
+                }
             }
+            
             return nextState;
 
 

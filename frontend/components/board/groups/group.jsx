@@ -82,10 +82,14 @@ class Group extends React.Component {
                         <div className="tasks-list">{tasks}</div>
 
                     </div>
+
                     <div className="group-under">
                         {/* header (flexbox of columnTypes) */}
                         {/* for each task, a flexbox that containers each of its columns */}
                     </div>
+
+                    {/* Add Task component */}
+                    
                 </div>
             </li>
         )

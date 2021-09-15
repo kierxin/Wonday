@@ -48,7 +48,7 @@ export const createNewTask = (groupId) => dispatch => {
 
 export const updateTask = (groupId, task) => dispatch => {
     return (
-        GroupsApiUtil.updateTask(task)
+        TasksApiUtil.updateTask(task)
             .then(task => dispatch(receiveTask(task)))
     );
 };
