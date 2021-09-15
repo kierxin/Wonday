@@ -18,7 +18,6 @@
 
 .group-container {
     margin: 8px 0;
-    border: 1px solid gold;
 }
 
 .group-over {
@@ -99,7 +98,7 @@
 }
 
 .tasks-list {
-    border: 1px solid salmon;
+    width: 300px;
     min-height: 30px;
     margin: 0;
     padding: 0;
@@ -107,43 +106,86 @@
     .task-title-container {
         @include flex;
         overflow: hidden;
-        // height: fit-content;
-        // width: fit-content;
         padding: 0;
         margin: 0;
         background-color: rgb(248, 248, 248);
+        border-bottom: 1px solid lightgray;
+
+        &:last-child {
+            border: none
+        }
 
         input {
             margin: 0;
             color: black;
             font-size: .9rem;
             background-color: transparent;
-            border: 1px solid lime;
         }
     }
 }
 
-
-i {
-    border: 1px solid magenta;
+.tasks-list i {
     font-size: 1rem;
     padding: .5rem;
-    width: 2rem;
-    height: 2rem;
+    width: calc(2rem + 2px);
+    height: calc(2rem + 2px);
 
     &:hover {
         cursor: pointer;
     }
 }
 
-i.i-gold {color: gold; background-color: rgb(255, 233, 109); }
-i.i-salmon {color: white; background-color: salmon;}
-i.i-green {color: rgb(161, 220, 114); }
-i.i-blue {color: rgb(78, 187, 255); }
-i.i-brown {color: rgb(175, 142, 129); }
-i.i-gray {color: rgb(150, 150, 150); }
-i.i-indigo {color: rgb(111, 88, 187); }
+i.i-gold {color: gold; background-color: rgb(255, 241, 160); }
+i.i-salmon {color: salmon; background-color: rgb(255, 194, 176);}
+i.i-green {color: rgb(161, 220, 114); background-color: rgb(220, 248, 197); }
+i.i-blue {color: rgb(78, 187, 255); background-color: rgb(174, 224, 255); }
+i.i-brown {color: rgb(175, 142, 129); background-color: rgb(221, 193, 182); }
+i.i-gray {color: rgb(150, 150, 150); background-color: rgb(226, 226, 226); }
+i.i-indigo {color: rgb(111, 88, 187); background-color: rgb(217, 206, 250); }
 
 .add-task-container {
-    @include flex;
+    padding: 0;
+    border: 1px solid lightgray;
+
+    form {
+        @include flex;
+        margin: 0;
+        justify-content: space-between;
+        overflow: hidden;
+
+        input {
+            margin: 1px 0 1px 0;
+            width: calc(100% - 60px);
+            padding: 0 0 0 5px;
+            font-size: .9rem;
+            color: black;
+        }
+
+        button {
+            margin: 1px 1px 0 0;
+            height: 35px;
+            width: 50px;
+            border: none;
+            text-align: center;
+            background-color: rgb(42, 106, 255);
+            color: white;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#change-task-title {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.task-input {
+    width: 255px;
+    min-width: 0;
+    overflow: hidden;
 }

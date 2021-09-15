@@ -122,7 +122,7 @@ class Group extends React.Component {
                         <form onSubmit={this.addTask}>
                             <input type="text"
                                 className="add-task-input"
-                                defaultValue={this.state.addNewTaskTitle}
+                                placeholder={`+ ${this.state.addNewTaskTitle}`}
                                 onChange={this.changeNewTaskTitle} />
 
                             <button>Add</button>

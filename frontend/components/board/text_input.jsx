@@ -56,17 +56,16 @@ class TextInput extends React.Component {
     render() {
 
         return (
-            <>
-                <form onSubmit={this.handleSubmit}
-                    id={`change-${this.props.elementType}-title`}>
+            <form onSubmit={this.handleSubmit}
+                id={`change-${this.props.elementType}-title`}>
 
-                    <input type="text"
-                        defaultValue={this.state.title}
-                        onChange={this.handleInput}
-                        onBlur={this.handleSubmit} />
+                <input type="text"
+                    defaultValue={this.state.title}
+                    onChange={this.handleInput}
+                    onBlur={this.handleSubmit}
+                    className={`${this.props.elementType}-input`} />
 
-                </form>
-            </>
+            </form>
         )
     }
 
