@@ -1,4 +1,4 @@
-json.(board, :id, :workspace_id, :name, :leaders)
+json.(board, :id, :workspace_id, :name, :leaders, :columns_in_use)
 
 
 json.users board.users do |user|

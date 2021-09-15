@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_14_233658) do
+ActiveRecord::Schema.define(version: 2021_09_15_164002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_09_14_233658) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "leaders", default: [], null: false, array: true
+    t.text "columns_in_use", default: ["status", "due_date", "people"], array: true
+    t.index ["columns_in_use"], name: "index_boards_on_columns_in_use"
     t.index ["leaders"], name: "index_boards_on_leaders"
     t.index ["name"], name: "index_boards_on_name"
     t.index ["workspace_id"], name: "index_boards_on_workspace_id"
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 2021_09_14_233658) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "due_date"
+    t.string "people", default: [], array: true
     t.index ["group_id"], name: "index_tasks_on_group_id"
     t.index ["title"], name: "index_tasks_on_title"
   end

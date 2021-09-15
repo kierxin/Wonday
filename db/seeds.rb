@@ -22,13 +22,15 @@ demoUser2 = User.create!(
 board1 = Board.create!(
     workspace_id: 1,
     name: "September Project",
-    leaders: [1]
+    leaders: [1],
+    columns_in_use: ["status", "due_date", "people"]
 )
 
 board2 = Board.create!(
     workspace_id: 1,
     name: "Ant Colony Game",
-    leaders: [2]
+    leaders: [2],
+    columns_in_use: ["status", "people"]
 )
 
 group1 = Group.create!(
@@ -45,6 +47,21 @@ group2 = Group.create!(
 )
 
 task1 = Task.create!(
-    title: "Write database migrations",
-    group_id: 1
+    title: "Brainstorm project schema",
+    group_id: 1,
+    status: "Done"
+)
+
+task2 = Task.create!(
+    title: "Write controller actions",
+    group_id: 1,
+    people: [1],
+    due_date: Date.new(2021, 9, 24)
+)
+
+task2 = Task.create!(
+    title: "Create presentational React components",
+    group_id: 1,
+    status: "Working on it",
+    people: [1, 2]
 )
