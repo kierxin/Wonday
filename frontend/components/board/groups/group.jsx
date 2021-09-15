@@ -10,23 +10,51 @@ class Group extends React.Component {
         super(props);
 
         this.state = {
+            group: this.props.group,
             viewOptions: false,
-            chooseColor: false
+            chooseColor: false,
+            addNewTaskTitle: "Add a new task"
         }
 
+        this.deleteGroup = this.deleteGroup.bind(this);
+        this.deleteTask = this.deleteTask.bind(this);
+        this.changeNewTaskTitle = this.changeNewTaskTitle.bind(this);
+        this.addTask = this.addTask.bind(this);
         this.toggleColorChange = this.toggleColorChange.bind(this);
         this.changeColor = this.changeColor.bind(this);
         this.toggleOptions = this.toggleOptions.bind(this);
-        this.deleteGroup = this.deleteGroup.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchTasks(this.props.group.id)
+        this.props.fetchTasks(this.props.group.id);
     }
 
     deleteGroup(e) {
         e.preventDefault();
-        this.props.deleteGroup(this.props.group.board_id, this.props.group.id)
+        this.props.deleteGroup(this.props.group.board_id, this.props.group.id);
+    }
+
+    deleteTask(e) {
+        e.preventDefault();
+        this.props.deleteTask(this.props.group.id, e.currentTarget.getAttribute("datavalue"));
+    }
+
+    changeNewTaskTitle(e) {
+        this.setState({ addNewTaskTitle: e.currentTarget.value });
+    }
+
+    addTask(e) {
+        e.preventDefault();
+        const task = {
+            title: this.state.addNewTaskTitle,
+            group_id: this.props.group.id
+        }
+
+        this.setState({ addNewTaskTitle: "Add a new task" }, () => {
+            this.props.createNewTask(this.props.group.id, task)
+        })
+        
+        
     }
 
     toggleOptions(e) {
@@ -50,8 +78,10 @@ class Group extends React.Component {
         const status = this.state.viewOptions;
         const tasks = group.tasks.map(task => {
             return(
-                <div className="task-container" key={`task-${task.id}`}>
-                    <i className="far fa-trash-alt ignore-fetch"></i>
+                <div className="task-title-container" key={`task-${task.id}`}>
+                    <i datavalue={task.id}
+                        onClick={this.deleteTask}
+                        className={`far fa-trash-alt ignore-fetch i-${group.color}`}></i>
 
                     <TextInputContainer elementType="task" groupId={group.id} elementId={task.id} />
                 </div>
@@ -88,7 +118,16 @@ class Group extends React.Component {
                         {/* for each task, a flexbox that containers each of its columns */}
                     </div>
 
-                    {/* Add Task component */}
+                    <div className="add-task-container">
+                        <form onSubmit={this.addTask}>
+                            <input type="text"
+                                className="add-task-input"
+                                defaultValue={this.state.addNewTaskTitle}
+                                onChange={this.changeNewTaskTitle} />
+
+                            <button>Add</button>
+                        </form>
+                    </div>
                     
                 </div>
             </li>

@@ -12,10 +12,11 @@ export const fetchGroup = (groupId) => (
     })
 );
 
-export const postGroup = (boardId) => (
+export const postGroup = (boardId, group) => (
     $.ajax({
         url: `/api/boards/${boardId}/groups`,
-        method: 'POST'
+        method: 'POST',
+        data: { group: group }
     })
 )
 

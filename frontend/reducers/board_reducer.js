@@ -41,30 +41,34 @@ const boardReducer = (state = {}, action) => {
 
 
         case RECEIVE_TASKS:
+            let tasksResult = JSON.parse(JSON.stringify(nextState));
+
             if(action.tasks.length > 0) {
                 const groupId = action.tasks[0].group_id;
-                const groupIdx = nextState.groups.findIndex(group => group.id === groupId);
+                const groupIdx = tasksResult.groups.findIndex(group => group.id === groupId);
                 
-                nextState.groups[groupIdx].tasks = action.tasks;
+                tasksResult.groups[groupIdx].tasks = action.tasks;
             }
             
-            return nextState;
+            return tasksResult;
 
 
         case RECEIVE_TASK:
+            let taskResult = JSON.parse(JSON.stringify(nextState));
+
             if(action.task.id) {
-                const group = nextState.groups.find(group => group.id === action.task.group_id);
-                const groupIndex = nextState.groups.findIndex(group => group.id === action.task.group_id);
+                const group = taskResult.groups.find(group => group.id === action.task.group_id);
+                const groupIndex = taskResult.groups.findIndex(group => group.id === action.task.group_id);
 
                 if (group.tasks.findIndex(task => task.id === action.task.id) === -1) {
-                    nextState.groups[groupIndex].tasks.push(action.task);
+                    taskResult.groups[groupIndex].tasks.push(action.task);
                 } else {
                     const index = group.tasks.findIndex(task => task.id === action.task.id);
-                    nextState.groups[groupIndex].tasks[index] = action.task;
+                    taskResult.groups[groupIndex].tasks[index] = action.task;
                 }
             }
-            
-            return nextState;
+
+            return taskResult;
 
 
         case TOGGLE_MODAL:

@@ -12,16 +12,19 @@ class Api::GroupsController < ApplicationController
     end
 
     def create
+        # if !group_params
+            available_colors = ["gold", "indigo", "green", "blue", "salmon", "brown", "gray"]
+            idx = rand(7)
 
-        available_colors = ["gold", "indigo", "green", "blue", "salmon", "brown", "gray"]
-        idx = rand(7)
-
-        default_group = {
-            board_id: params[:board_id],
-            color: available_colors[idx],
-            title: "New Group"
-        }
-        @group = Group.new(default_group)
+            default_group = {
+                board_id: params[:board_id],
+                color: available_colors[idx],
+                title: "New Group"
+            }
+            @group = Group.new(default_group)
+        # else
+        #     @group = Group.new(group_params)
+        # end
 
         if @group.save
             @board = Board.find_by(id: @group.board_id)

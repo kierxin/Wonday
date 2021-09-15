@@ -35,11 +35,11 @@ export const fetchTask = (groupId, taskId) => dispatch => {
     );
 };
 
-export const createNewTask = (groupId) => dispatch => {
+export const createNewTask = (groupId, task) => dispatch => {
     return (
-        TasksApiUtil.postTask(groupId)
+        TasksApiUtil.postTask(groupId, task)
             .then(
-                task => dispatch(receiveGroup(task)),
+                task => dispatch(receiveTask(task)),
                 errors => dispatch(receiveErrors(errors.responseJSON))
             )
             .then(action => dispatch(receiveTask(action.task)))
@@ -54,6 +54,7 @@ export const updateTask = (groupId, task) => dispatch => {
 };
 
 export const deleteTask = (groupId, taskId) => dispatch => {
+    // console.log(taskId);
     return (
         TasksApiUtil.deleteTask(taskId)
             .then(

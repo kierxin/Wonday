@@ -6,6 +6,6 @@ class Task < ApplicationRecord
 
     validates :title, :group_id, presence: true
     validates :title, length: { maximum: 500 }
-    validates :status, inclusion: { in: possible_statuses }
+    validates :status, inclusion: { in: possible_statuses }, allow_nil: true
 
 end

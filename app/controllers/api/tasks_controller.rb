@@ -12,11 +12,7 @@ class Api::TasksController < ApplicationController
     end
 
     def create
-        default_task = {
-            title: "New Task"
-        }
-
-        @task = Task.new(default_task)
+        @task = Task.new(task_params)
 
         if @task.save
             @group = Group.find_by(id: @task.group_id)

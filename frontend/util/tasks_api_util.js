@@ -12,10 +12,11 @@ export const fetchTask = (taskId) => (
     })
 );
 
-export const postTask = (groupId) => (
+export const postTask = (groupId, task) => (
     $.ajax({
         url: `/api/groups/${groupId}/tasks`,
-        method: 'POST'
+        method: 'POST',
+        data: { task: task }
     })
 )
 
