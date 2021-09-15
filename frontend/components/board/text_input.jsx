@@ -3,7 +3,7 @@ import React from "react";
 
 class TextInput extends React.Component {
 
-    constructor(props) { //takes in props from container's ownProps: title, element, elementType, handleSubmit
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -15,8 +15,10 @@ class TextInput extends React.Component {
     }
 
     componentDidMount() {
-        const title = (' ' + this.props.element.title).slice(1);
-        this.setState({ title: title })
+        if (this.props.element) {
+            const title = (' ' + this.props.element.title).slice(1);
+            this.setState({ title: title })
+        }
     }
 
     handleInput(e) {
@@ -27,8 +29,11 @@ class TextInput extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        let oldTitle = "";
 
-        const oldTitle = (' ' + this.props.element.title).slice(1);
+        if (this.props.element) {
+            oldTitle = (' ' + this.props.element.title).slice(1);
+        }
 
         if (this.state.title.length < 0) {
             this.setState({ title: oldTitle });
@@ -37,9 +42,13 @@ class TextInput extends React.Component {
             element.title = this.state.title;
 
             if (this.props.elementType === "group") {
-                this.props.updateGroup(this.props.parentId, element)
+                this.props.updateGroup(this.props.parentId, element);
             } else {
-                // this.props.updateTask(this.props.parentId, element)
+                if (this.state.title.length > 0) {
+                    this.props.updateTask(this.props.parentId, element);
+                } else {
+                    this.setState({ title: "New Task" });
+                }
             }
         }
     }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import TextInputContainer from '../board_main/text_input_container';
-import ColorChoice from "./color_choice";
+import GroupOptionsDropdown from "./group-options-dropdown";
 
 
 class Group extends React.Component {
@@ -48,6 +48,15 @@ class Group extends React.Component {
     render() {
         const group = this.props.group;
         const status = this.state.viewOptions;
+        const tasks = group.tasks.map(task => {
+            return(
+                <div className="task-container" key={`task-${task.id}`}>
+                    <i className="far fa-trash-alt ignore-fetch"></i>
+
+                    <TextInputContainer elementType="task" groupId={group.id} elementId={task.id} />
+                </div>
+            )
+        })
 
         return(
             <li key={`group-${group.id}`}
@@ -59,40 +68,19 @@ class Group extends React.Component {
                             <button onClick={this.toggleOptions}
                                 className={`group-options-btn ${group.color}-btn`}>▼</button>
 
-                            <div onBlur={this.toggleOptions}
-                                className={`group-dropdown group-dropdown-${status}`}>
-
-                                <div className="color-change-wrapper"
-                                    onMouseEnter={this.toggleColorChange}
-                                    onMouseLeave={this.toggleColorChange}>
-                                    <button className="group-option">
-                                        Change group color
-                                    </button>
-                                    <div className="color-choices-wrapper">
-                                        <div className={`colors-picker colors-picker-${this.state.chooseColor}`}>
-                                            <ColorChoice color="gold" changeColor={this.changeColor} />
-                                            <ColorChoice color="salmon" changeColor={this.changeColor} />
-                                            <ColorChoice color="green" changeColor={this.changeColor} />
-                                            <ColorChoice color="blue" changeColor={this.changeColor} />
-                                            <ColorChoice color="brown" changeColor={this.changeColor} />
-                                            <ColorChoice color="gray" changeColor={this.changeColor} />
-                                            <ColorChoice color="indigo" changeColor={this.changeColor} />
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <button className="group-option" 
-                                    onClick={this.deleteGroup}>
-                                    Delete group
-                                </button>
-                                
-                            </div>
+                            <GroupOptionsDropdown 
+                                toggleOptions={this.toggleOptions}
+                                toggleColorChange={this.toggleColorChange}
+                                chooseColor={this.state.chooseColor}
+                                changeColor={this.changeColor}
+                                deleteGroup={this.deleteGroup}
+                                status={status} />
 
                             <TextInputContainer elementType="group" groupId={group.id} elementId={group.id} />
                         </div>
-                        
-                        {/* for each task, the task's title & trashcan button */}
-                        <div>{JSON.stringify(group.tasks)}</div>
+
+                        <div className="tasks-list">{tasks}</div>
+
                     </div>
                     <div className="group-under">
                         {/* header (flexbox of columnTypes) */}

@@ -44,7 +44,7 @@ class Api::GroupsController < ApplicationController
 
     def destroy
         @group = Group.find_by(id: params[:id])
-        @board = @group.board #does this work?
+        @board = Board.find(@group.board_id)
             
         @group.destroy
         @groups = Group.all.select { |group| group.board_id == @board.id }

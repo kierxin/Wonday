@@ -39,7 +39,7 @@ class Api::TasksController < ApplicationController
 
     def destroy
         @task = Task.find_by(id: params[:id])
-        @group = Group.find_by(id: params[:group_id])
+        @group = Group.find(@task.group_id)
 
         @task.destroy
         @tasks = Task.all.select { |task| task.group_id == @group.id }

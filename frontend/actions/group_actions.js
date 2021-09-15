@@ -54,7 +54,7 @@ export const updateGroup = (boardId, group) => dispatch => {
     );
 };
 
-export const deleteGroup = (groupId) => dispatch => {
+export const deleteGroup = (boardId, groupId) => dispatch => {
     return (
         GroupsApiUtil.deleteGroup(groupId)
             .then(
