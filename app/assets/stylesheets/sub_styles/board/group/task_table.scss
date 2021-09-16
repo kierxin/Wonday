@@ -1,5 +1,6 @@
 .task-row {
     @include flex;
+    height: 36px;
 }
 
 .task-col {
@@ -78,6 +79,21 @@ button.unknown-status-cell { background-color: rgb(218, 218, 218); }
     [datavalue="nil"] { background-color: rgb(218, 218, 218); }
 }
 
+.choose-deadline {
+    background-color: rgb(245, 245, 245);
+}
+
+::-webkit-datetime-edit {
+    text-align: center;
+    font-size: .9rem;
+    color: black;
+}
+
+::-webkit-calendar-picker-indicator {
+    padding: 9px 0;
+    font-size: .8rem;
+}
+
 .people-cell {
     position: relative;
     width: 100%;
@@ -116,5 +132,4 @@ button.unknown-status-cell { background-color: rgb(218, 218, 218); }
 
 .cell {
     flex: 1;
-    border: 1px solid red;
 }

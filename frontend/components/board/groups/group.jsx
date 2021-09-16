@@ -37,7 +37,7 @@ class Group extends React.Component {
 
     deleteTask(e) {
         e.preventDefault();
-        this.props.deleteTask(this.props.group.id, e.currentTarget.getAttribute("datavalue"));
+        this.props.deleteTask(this.props.group.id, e.currentTarget.getAttribute("datavalue"))
     }
 
     changeNewTaskTitle(e) {

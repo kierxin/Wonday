@@ -13,7 +13,10 @@ class DeadlineCell extends React.Component {
         const newDeadline = e.currentTarget.value;
         const task = this.props.task;
         task.deadline = newDeadline;
-        this.props.updateTask(task.group_id, task);
+
+        this.setState({ selectionMenu: false }, () => {
+            this.props.updateTask(task.group_id, task);
+        });
     }
 
     render() {
@@ -25,15 +28,11 @@ class DeadlineCell extends React.Component {
         }
 
         return (
-            <div className="cell">
-                {thisDeadline ? (
+            <div className="choose-deadline">
                     <input type="date"
                         id="choose-deadline"
-                        value={thisDeadline}
+                        value={thisDeadline || "⠀"}
                         onChange={this.handleChange} />
-                ) : (
-                    <div className="no-deadline">none</div>
-                )}
             </div>
         )
     }
