@@ -38,7 +38,6 @@ class PeopleCell extends React.Component {
         const removeIndex = task.people.indexOf(parseInt(removeId));
 
         task.people.splice(removeIndex, 1);
-        console.log(task);
 
         this.setState({ selectionMenu: false }, () => {
             this.props.updateTask(task.group_id, task);

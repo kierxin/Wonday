@@ -21,7 +21,6 @@ class StatusCell extends React.Component {
     handleChoice(e) {
         e.preventDefault();
         let task = this.props.task;
-        console.log(task);
         task.status = e.currentTarget.getAttribute("datavalue");
         
         this.setState({ selectionMenu: false }, () => {
