@@ -23,13 +23,17 @@
         }
 
         img {
-            background-color: black;
+            background-color: transparent;
             width: 2rem;
             height: 2rem;
-            border: 1px solid black;
 
             &:hover {
                 cursor: pointer;
+                opacity: .8;
+            }
+
+            &:active {
+                opacity: 1;
             }
         }
     }
@@ -42,7 +46,6 @@
         padding: 0;
         overflow: hidden;
         font-size: .9rem;
-        // border: 1px solid gold;
 
         input {
             font-family: $roboto;

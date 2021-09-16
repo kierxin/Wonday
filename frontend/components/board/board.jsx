@@ -24,22 +24,32 @@ class Board extends React.Component {
                     <div className="left-nav-inner-container">
                         <div className="left-nav-upper-btns">
                             <img id="left-nav-logo" className="left-nav-btn" src={wLogoSmall} alt="W Logo" />
+
+                            {/* <i class="fas fa-th-large"></i> */}
                             <LeftNavBtn external={false} src={"boards"} />
+
+                            {/* <i class="fab fa-github"></i> */}
                             <LeftNavBtn 
                                 external={true} 
                                 href="#" 
                                 src={"github"} 
                             />
+
+                            {/* <i class="fab fa-angellist"></i> */}
                             <LeftNavBtn 
                                 external={true} 
                                 href="#" 
                                 src={"angellist"} 
                             />
+
+                            {/* <i class="fab fa-linkedin-in"></i> */}
                             <LeftNavBtn 
                                 external={true} 
                                 href="#" 
                                 src={"linkedin"} 
                             />
+
+                            {/* <i class="fa fa-external-link"></i> */}
                             <LeftNavBtn 
                                 external={true} 
                                 href="#" 
@@ -48,7 +58,9 @@ class Board extends React.Component {
                         </div> 
                         <div className="left-nav-lower-btns">
                             
+                            {/* <i class="fas fa-user-plus"></i> */}
                             <LeftNavBtn external={false} src={"invite"} />
+                            
                             <UserIconContainer 
                                 name={user.full_name} />
                         </div>
