@@ -53,7 +53,7 @@ class PeopleCell extends React.Component {
                 return(
                     <li key={`person-${person.id}-${i}`}>
                         <button datavalue={person.id} onClick={this.handleRemove}>
-                            {person.full_name} ✕ {person.id}
+                            {person.full_name} ✕
                         </button>
                     </li>
                 );
@@ -72,9 +72,13 @@ class PeopleCell extends React.Component {
             // }
         });
 
+        const names = this.props.people.map(person => {
+            return person.full_name;
+        }).join(", ");
+
         return(
             <div className="cell">
-                <button datapeople={JSON.stringify(this.props.people)}
+                <button datapeople={names}
                     onClick={this.toggleSelection}
                     className={`task-col people-cell`}>
                     People

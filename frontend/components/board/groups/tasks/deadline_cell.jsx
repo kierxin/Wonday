@@ -22,17 +22,19 @@ class DeadlineCell extends React.Component {
     render() {
         const task = this.props.task;
         let thisDeadline;
+        let deadlineStatus = "";
 
         if(task) {
             thisDeadline = this.props.task.deadline;
+             if(!thisDeadline) { deadlineStatus = "no-deadline" }
         }
 
         return (
-            <div className="choose-deadline">
+            <div className={`choose-deadline ${deadlineStatus}`}>
                     <input type="date"
-                        id="choose-deadline"
                         value={thisDeadline || "⠀"}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        className={deadlineStatus} />
             </div>
         )
     }
