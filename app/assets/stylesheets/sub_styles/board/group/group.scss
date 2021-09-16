@@ -6,23 +6,16 @@
 
 .group-header {
     @include flex;
-    position: relative;
-    // justify-content: flex-start;
+    justify-content: flex-start;
     align-items: center;
-
-    .group-input {
-        width: calc(100% - 2px);
-    }
 }
 
 .group-upper {
     @include flex;
-    // @include flex($justify-content: flex-start);
     width: 100%;
 }
 
 .group-left {
-    // width: 500px;
     width: 50%;
     overflow: hidden;
 }
@@ -30,7 +23,6 @@
 .group-right {
     display: block;
     width: 50%;
-    // border: 1px solid yellow;
     margin: 0;
     padding-top: 15px; 
 }
@@ -46,9 +38,7 @@
         padding: 5px;
         margin-bottom: 11px;
         
-        // color: red;
         &:hover {
-            // border: 1px solid rgb(240, 240, 240);
             cursor: default;
         }
     }

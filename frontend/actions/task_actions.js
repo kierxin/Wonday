@@ -54,7 +54,6 @@ export const updateTask = (groupId, task) => dispatch => {
 };
 
 export const deleteTask = (groupId, taskId) => dispatch => {
-    // console.log(taskId);
     return (
         TasksApiUtil.deleteTask(taskId)
             .then(
