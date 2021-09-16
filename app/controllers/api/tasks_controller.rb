@@ -26,7 +26,7 @@ class Api::TasksController < ApplicationController
     def update
         @task = Task.find_by(id: params[:id])
         @group = Group.find_by(id: @task.group_id)
-
+            
         if @task.update(task_params)
             render "/api/tasks/show"
         else
@@ -46,7 +46,8 @@ class Api::TasksController < ApplicationController
 
     private
     def task_params
-        params.require(:task).permit(:title, :group_id, :status)
+        params[:task][:people] ||= []
+        params.require(:task).permit(:title, :group_id, :status, :deadline, :people, :people => [])
     end
     
 end

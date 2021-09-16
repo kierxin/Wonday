@@ -23,7 +23,7 @@ board1 = Board.create!(
     workspace_id: 1,
     name: "September Project",
     leaders: [1],
-    columns_in_use: ["status", "due_date", "people"]
+    columns_in_use: ["status", "deadline", "people"]
 )
 
 board2 = Board.create!(
@@ -56,7 +56,7 @@ task2 = Task.create!(
     title: "Write controller actions",
     group_id: 1,
     people: [1],
-    due_date: Date.new(2021, 9, 24)
+    deadline: Date.new(2021, 9, 24)
 )
 
 task2 = Task.create!(

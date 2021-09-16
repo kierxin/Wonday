@@ -18,7 +18,7 @@ export const postTask = (groupId, task) => (
         method: 'POST',
         data: { task: task }
     })
-)
+);
 
 export const updateTask = (task) => (
     $.ajax({
@@ -26,7 +26,7 @@ export const updateTask = (task) => (
         method: 'PATCH',
         data: { task: task }
     })
-)
+);
 
 export const deleteTask = (taskId) => (
     $.ajax({

@@ -1,6 +1,6 @@
 import React from "react";
 
-import StatusCellContainer from "./tasks/status_cell_container";
+import TaskCellsContainer from "./tasks/task_cells_container";
 
 
 const TaskCol = props => {
@@ -9,23 +9,17 @@ const TaskCol = props => {
     return(
         <>
             {colType === "status" && (
-                <StatusCellContainer task={task} />
+                <TaskCellsContainer.StatusCell task={task} />
             )}
 
-            {colType === "due_date" && (
-                // <DeadlineCellContainer task={task} />
-                <div>deadline</div>
+            {colType === "deadline" && (
+                <TaskCellsContainer.DeadlineCell task={task} />
             )}
 
-            {colType === "person" && (
-                // <PersonCellContainer task={task} />
-                <div>person</div>
+            {colType === "people" && (
+                <TaskCellsContainer.PeopleCell task={task} />
             )}
         </>
-
-        // <div className={`task-col ${colType}-cell`}>
-        //     {`${task[colType]}`}
-        // </div>
     )
 }
 

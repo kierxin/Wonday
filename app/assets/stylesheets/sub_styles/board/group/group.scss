@@ -31,7 +31,8 @@
     @include flex;
 
     h2 {
-        width: 33%;
+        flex: 1;
+        // width: 33%;
         border: 1px solid transparent;
         text-transform: capitalize;
         text-align: center;
@@ -167,22 +168,4 @@ i.i-indigo {color: rgb(111, 88, 187); background-color: rgb(217, 206, 250); }
     width: 255px;
     min-width: 0;
     overflow: hidden;
-}
-
-.task-row {
-    @include flex;
-}
-
-.task-col {
-    width: calc(33%);
-    margin-bottom: 1px;
-    height: 35px;
-    padding: 5px;
-    padding-top: 8px;
-    background-color: rgb(245, 245, 245);
-    border-bottom: 1px solid lightgray;
-}
-
-.task-col:last-child {
-    border-bottom: 0px solid transparent;
 }

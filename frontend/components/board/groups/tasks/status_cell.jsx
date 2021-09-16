@@ -50,7 +50,7 @@ class StatusCell extends React.Component {
         }
 
         return(
-            <div class="status-cell-container">
+            <div className="status-cell-container cell">
                 <button onClick={this.toggleSelection}
                     className={`task-col status-cell ${status}-status-cell`}>
                     {thisStatus}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_164002) do
+ActiveRecord::Schema.define(version: 2021_09_16_155433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_09_15_164002) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "leaders", default: [], null: false, array: true
-    t.text "columns_in_use", default: ["status", "due_date", "people"], array: true
+    t.text "columns_in_use", default: ["status", "deadline", "people"], array: true
     t.index ["columns_in_use"], name: "index_boards_on_columns_in_use"
     t.index ["leaders"], name: "index_boards_on_leaders"
     t.index ["name"], name: "index_boards_on_name"
@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 2021_09_15_164002) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "due_date"
-    t.string "people", default: [], array: true
+    t.date "deadline"
+    t.integer "people", default: [], array: true
     t.index ["group_id"], name: "index_tasks_on_group_id"
+    t.index ["people"], name: "index_tasks_on_people"
     t.index ["title"], name: "index_tasks_on_title"
   end
 
@@ -55,11 +56,11 @@ ActiveRecord::Schema.define(version: 2021_09_15_164002) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.string "full_name"
     t.integer "workspace_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "latest_board"
+    t.string "full_name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["latest_board"], name: "index_users_on_latest_board"

@@ -5,7 +5,7 @@ class User < ApplicationRecord
     belongs_to :workspace, optional: true
     has_many :boards, through: :workspace
 
-    validates :password_digest, presence: true
+    validates :password_digest, :full_name, presence: true
     validates :email, :session_token, uniqueness: true, presence: true
     validates :email, length: { in: 3..30 }
     validates :password, length: { in: 6..20, allow_nil: true}

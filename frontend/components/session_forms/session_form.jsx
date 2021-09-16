@@ -41,10 +41,17 @@ class SessionForm extends React.Component {
         if (this.state.user.password.length < 6 && this.state.page === 2) {
             this.setState({ error: "Password is too short" });
         } else if (this.state.page === 2) {
-            let user = Object.assign({}, this.state.user);
-            
-            this.props.processForm(user);
-            this.setState({ error: "Invalid username or password" });
+
+            if (this.state.user.full_name.length < 2) {
+                this.setState({ error: "Please enter your full name" })
+            } else if (!this.state.user.full_name.includes(" ")) {
+                this.setState({ error: "Please enter your full name" })
+            } else {
+                let user = Object.assign({}, this.state.user);
+
+                this.props.processForm(user);
+                this.setState({ error: "Invalid username or password" });
+            }
         }
     }
 
