@@ -1,114 +1,77 @@
-// GROUP TITLES
-.gold { @include group-title($color: gold); }
-.salmon { @include group-title($color: salmon); }
-.green { @include group-title($color: rgb(161, 220, 114)); }
-.blue { @include group-title($color: rgb(78, 187, 255)); }
-.brown { @include group-title($color: rgb(175, 142, 129)); }
-.gray { @include group-title($color: rgb(150, 150, 150)); }
-.indigo { @include group-title($color: rgb(111, 88, 187)); }
-
-// GROUP OPTIONS BUTTONS
-.gold-btn { @include group-options-btn($color: gold); }
-.salmon-btn { @include group-options-btn($color: salmon); }
-.green-btn { @include group-options-btn($color: rgb(161, 220, 114)); }
-.blue-btn { @include group-options-btn($color: rgb(78, 187, 255)); }
-.brown-btn { @include group-options-btn($color: rgb(175, 142, 129)); }
-.gray-btn { @include group-options-btn($color: rgb(150, 150, 150)); }
-.indigo-btn { @include group-options-btn($color: rgb(111, 88, 187)); }
-
 .group-container {
-    margin: 8px 0;
-}
-
-.group-over {
-    width: 400px;
-    overflow: hidden;
+    margin: 28px 0;
+    width: 99%;
+    min-width: 600px;
 }
 
 .group-header {
     @include flex;
     position: relative;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     align-items: center;
-}
 
-.group-options-btn {
-    &:hover {
-        cursor: pointer;
+    .group-input {
+        width: calc(100% - 2px);
     }
 }
 
-.group-dropdown {
-    position: absolute;
-    background-color: white;
-    margin-top: 80px;
-    z-index: 100;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+.group-upper {
+    @include flex;
+    // @include flex($justify-content: flex-start);
+    width: 100%;
+}
 
-    .group-option {
+.group-left {
+    // width: 500px;
+    width: 50%;
+    overflow: hidden;
+}
+
+.group-right {
+    display: block;
+    width: 50%;
+    // border: 1px solid yellow;
+    margin: 0;
+    padding-top: 15px; 
+}
+
+.group-right-header {
+    @include flex;
+
+    h2 {
+        width: 33%;
+        border: 1px solid transparent;
+        text-transform: capitalize;
+        text-align: center;
         padding: 5px;
-        text-align: left;
-        background-color: transparent;
-        border: 1px solid lightgray;
-        width: 100%;
-
-        &:first-child {
-            border-radius: 5px 0 0 0;
-            &:hover {
-                cursor: auto;
-            }
-        }
-
-        &:last-child {
-            border-radius: 0 0 0 5px;
-        }
-
+        margin-bottom: 11px;
+        
+        // color: red;
         &:hover {
-            cursor: pointer;
-            background-color: rgb(241, 241, 241);
+            // border: 1px solid rgb(240, 240, 240);
+            cursor: default;
         }
-    }
-
-    .color-change-wrapper {
-        @include flex;
-        position: relative;
-        width: 180px;
-    }
-
-    div.colors-picker {
-        @include flex;
-        position: absolute;
-        margin-left: -1px;
-        padding: 5px;
-        width: 260px;
-        justify-content: space-between;
-        background-color: white;
-        border: 1px solid lightgray;
-        border-radius: 0 3px 3px 0;
-    }
-
-    div.colors-picker-false {
-        position: relative;
-        display: none;
     }
 }
 
-.group-dropdown-false {
-    display: none;
+.group-right-main {
+    position: static;
+    display: block;
+    width: 100%;
 }
 
 .tasks-list {
-    width: 300px;
+    width: 100%;
     min-height: 30px;
-    margin: 0;
+    margin: 0 0 0 30px;
     padding: 0;
 
     .task-title-container {
         @include flex;
         overflow: hidden;
         padding: 0;
-        margin: 0;
-        background-color: rgb(248, 248, 248);
+        margin: 0 0 1px 0;
+        background-color: rgb(245, 245, 245);
         border-bottom: 1px solid lightgray;
 
         &:last-child {
@@ -116,10 +79,15 @@
         }
 
         input {
+            width: calc(100% - 42px);
             margin: 0;
             color: black;
             font-size: .9rem;
             background-color: transparent;
+
+            &:hover {
+                color: rgb(65, 130, 209);
+            }
         }
     }
 }
@@ -149,17 +117,33 @@ i.i-gray {color: rgb(150, 150, 150); background-color: rgb(226, 226, 226); }
 i.i-indigo {color: rgb(111, 88, 187); background-color: rgb(217, 206, 250); }
 
 .add-task-container {
+    @include flex;
+    margin-left: calc(2rem - 2px);
     padding: 0;
     border: 1px solid lightgray;
 
+    .add-color {
+        margin-top: 1px;
+        width: 2rem; 
+        height: 2rem; 
+    }
+    .add-color-gold {background-color: rgb(255, 241, 160); }
+    .add-color-salmon {background-color: rgb(255, 194, 176); }
+    .add-color-green {background-color: rgb(220, 248, 197); }
+    .add-color-blue {background-color: rgb(174, 224, 255); }
+    .add-color-brown {background-color: rgb(221, 193, 182); }
+    .add-color-gray {background-color: rgb(226, 226, 226); }
+    .add-color-indigo {background-color: rgb(217, 206, 250); }
+
     form {
         @include flex;
+        width: calc(100% - 2rem - 2px);
         margin: 0;
         justify-content: space-between;
         overflow: hidden;
 
         input {
-            margin: 1px 0 1px 0;
+            margin: 0;
             width: calc(100% - 60px);
             padding: 0 0 0 5px;
             font-size: .9rem;
@@ -167,8 +151,8 @@ i.i-indigo {color: rgb(111, 88, 187); background-color: rgb(217, 206, 250); }
         }
 
         button {
-            margin: 1px 1px 0 0;
-            height: 35px;
+            margin: 0;
+            height: 34px;
             width: 50px;
             border: none;
             text-align: center;
@@ -193,4 +177,22 @@ i.i-indigo {color: rgb(111, 88, 187); background-color: rgb(217, 206, 250); }
     width: 255px;
     min-width: 0;
     overflow: hidden;
+}
+
+.task-row {
+    @include flex;
+}
+
+.task-col {
+    width: calc(33%);
+    margin-bottom: 1px;
+    height: 35px;
+    padding: 5px;
+    padding-top: 8px;
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid lightgray;
+}
+
+.task-col:last-child {
+    border-bottom: 0px solid transparent;
 }

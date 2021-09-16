@@ -2,10 +2,10 @@
     width: 100%;
     display: block;
     padding: 15px;
+    overflow-y: auto;
 }
 
 .board-header {
-
     input {
         @include roboto-lightweight;
         font-weight: 500;

@@ -2,15 +2,16 @@
     @include flex;
     width: calc(100vw - 81px);
     margin: 0;
-    overflow-y: auto;
 }
 
 .workspace-sidebar {
+    top: 0;
+    left: 0;
     height: 100vh;
     min-width: 30px;
     max-width: 300px;
     overflow: hidden;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(243, 243, 243);
 }
 
 .workspace-sidebar-container {
