@@ -85,13 +85,16 @@
 
 .tasks-list i {
     font-size: 1rem;
-    padding: .6rem;
-    width: calc(2rem + 2px);
+    width: 18px;
+    padding-left: 18px;
     height: calc(2rem + 2px);
+    overflow: hidden;
 
     &:hover {
         cursor: pointer;
         opacity: .8;
+        width: calc(2rem + 2px);
+        padding: .6rem;
     }
 
     &:active {
