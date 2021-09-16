@@ -23,9 +23,10 @@ class StatusCell extends React.Component {
         let task = this.props.task;
         console.log(task);
         task.status = e.currentTarget.getAttribute("datavalue");
-        this.setState({ selectionMenu: false })
-
-        this.props.updateTask(task.group_id, task);
+        
+        this.setState({ selectionMenu: false }, () => {
+            this.props.updateTask(task.group_id, task);
+        });
     }
 
     render() {
@@ -67,11 +68,10 @@ class StatusCell extends React.Component {
                             datavalue="Stuck">Stuck</li>
 
                         <li onClick={this.handleChoice}
-                            datavalue="None">None</li>
+                            datavalue="">⠀</li>
                     </ul>
                 )}
             </div>
-            // also, the selection menu
         )
     }
 
