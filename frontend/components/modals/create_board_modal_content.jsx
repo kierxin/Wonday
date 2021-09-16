@@ -21,7 +21,7 @@ class CreateBoardModalContent extends React.Component {
         this.setState({ name: e.currentTarget.value });
     }
 
-    preventClose(e) {
+    preventClose(e) { // probably deprecated
         e.stopPropagation();
     }
 

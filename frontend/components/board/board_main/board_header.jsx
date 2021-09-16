@@ -4,6 +4,18 @@ import BoardNameContainer from './board_name_container';
 
 
 class BoardHeader extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.toggleModal = this.toggleModal.bind(this);
+    }
+
+    toggleModal(e) {
+        e.preventDefault();
+        this.props.toggleModal("boards-people");
+    }
+
     render() {
         return(
             <div className="board-header">
@@ -23,7 +35,9 @@ class BoardHeader extends React.Component {
                             + Add to board
                         </button>
                         <button id="board-header-settings">
-                            <img src={options} alt="click to open settings" />
+                            <img src={options} 
+                                alt="click to view board's members"
+                                onClick={this.toggleModal} />
                         </button>
                     </div>
                 </div>

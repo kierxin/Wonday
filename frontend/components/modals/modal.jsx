@@ -1,6 +1,7 @@
 import React from "react";
 
 import CreateBoardModalContainer from "./create_board_modal_container";
+import BoardsPeopleModalContainer from "./boards_people_modal_container";
 
 
 class Modal extends React.Component {
@@ -25,6 +26,8 @@ class Modal extends React.Component {
                 onClick={this.handleClick}>
 
                     {this.props.modalType === "create-board" && <CreateBoardModalContainer />}
+
+                    {this.props.modalType === "boards-people" && <BoardsPeopleModalContainer />}
 
             </div>
         )

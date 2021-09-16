@@ -1,8 +1,8 @@
-.create-board-modal-background {
+.create-board-modal-background, .boards-people-modal-background {
     @include modal-bg($background-color: rgba(43, 52, 90, 0.6));
 }
 
-.create-board-modal-foreground {
+.create-board-modal-foreground, .boards-people-modal-foreground {
     overflow: auto;
     background-color: white;
     width: 40vw;
@@ -12,7 +12,7 @@
     border-radius: 10px;
     padding: 30px;
 
-    #create-board-modal-header {
+    #create-board-modal-header, #boards-people-modal-header {
         @include flex;
 
         h1 {
