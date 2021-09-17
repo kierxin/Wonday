@@ -85,6 +85,7 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
   ![Screenshot of filtering implementation code](https://cdn.discordapp.com/attachments/865227670039560212/888444534323830855/wonday-sc-2.png)
 </details>
 
+
 ## Learning Experience
 
 Given that this project was my first real dive into React and Redux, I spent much of the first week figuring out how to use the redux store and get my components to update as expected. As I became more familiar with how components, reducers, actions and action creators, AJAX requests, and the Rails backend all connected, the power of React and Redux started to become very clear to me.
@@ -101,3 +102,11 @@ Given that this project was my first real dive into React and Redux, I spent muc
 - Using state in conjunction with conditionally rendered components, such as modals or filtered tasks
 - Working off of multiple Git branches
 - Deploying to Heroku
+
+
+## Future of the Project
+
+The next features I'd like to work on:
+
+- Users can be invited from the app via email
+- Groups of tasks can be re-ordered via drag-and-drop
