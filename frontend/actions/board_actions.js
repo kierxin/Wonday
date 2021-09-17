@@ -6,6 +6,7 @@ export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
+export const TOGGLE_FILTER = 'TOGGLE_FILTER';
 
 
 const receiveBoard = board => {
@@ -28,6 +29,11 @@ const receiveErrors = errors => ({
 const modal = modalType => ({
     type: TOGGLE_MODAL,
     modalType: modalType
+})
+
+const receiveFilter = filter => ({
+    type: TOGGLE_FILTER,
+    filter: filter
 })
 
 
@@ -94,3 +100,9 @@ export const toggleModal = modalType => dispatch => {
         dispatch(modal(modalType))
     );
 };
+
+export const toggleFilter = filter => dispatch => {
+    return(
+        dispatch(receiveFilter(filter))
+    );
+}

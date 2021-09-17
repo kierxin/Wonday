@@ -1,7 +1,7 @@
 import React from "react";
 
 import BoardHeaderContainer from "./board_header_container";
-import BoardBar from "./board_bar";
+import BoardBarContainer from "./board_bar_container";
 import GroupContainer from "../groups/group_container";
 
 
@@ -30,7 +30,7 @@ class BoardContent extends React.Component {
             <section className="board-content">
                 <BoardHeaderContainer />
 
-                <BoardBar />
+                <BoardBarContainer />
 
                 <ul className="groups-main">
                     {groupsList}

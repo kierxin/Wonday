@@ -9,7 +9,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    toggleModal: modalType => dispatch(toggleModal(modalType))
+    toggleModal: modalType => dispatch(toggleModal(modalType)),
 });
 
 

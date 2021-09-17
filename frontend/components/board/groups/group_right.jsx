@@ -4,12 +4,21 @@ import TaskCol from "./task_col";
 class GroupRight extends React.Component {
 
     render() {
+        let tasks = this.props.group.tasks;
+        const group = this.props.group;
+
+        if (this.props.filter) {
+            tasks = group.tasks.filter(task => task.people.includes(this.props.filter));
+        } else {
+            tasks = group.tasks;
+        }
+
         const columns = this.props.columns.map((col, i) => {
             return <h2 key={`col-${i}`}>{col}</h2>
         });
 
         
-        const tasksTable = this.props.group.tasks.map(task => {
+        const tasksTable = tasks.map(task => {
             return(
                 <div key={`task-row-${task.id}`} className="task-row">
                     {this.props.columns.map(col => {

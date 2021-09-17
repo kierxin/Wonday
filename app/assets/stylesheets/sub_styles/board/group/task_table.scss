@@ -116,6 +116,10 @@ input[type="date" i] {
     }
 }
 
+.people-cell-container {
+    position: relative;
+}
+
 .people-cell {
     position: relative;
     width: 100%;
@@ -150,6 +154,7 @@ input[type="date" i] {
 
 .choose-people-dropdown {
     position: absolute;
+    margin-top: 0;
     width: 1fr;
     padding: 5px;
     z-index: 200;

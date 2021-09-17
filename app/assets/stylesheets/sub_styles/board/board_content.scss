@@ -116,3 +116,40 @@
 #search-btn {
     margin: 0 15px;
 }
+
+.filter-by-person {
+    position: relative;
+
+    i {
+        margin-left: .5rem;
+    }
+}
+
+.filter-menu {
+    position: absolute;
+    z-index: 600;
+    width: 100%;
+    min-width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    box-shadow: 0 3px 10px rgba(111, 111, 111, .2);
+    background-color: white;
+
+    li {
+        margin: 3px auto;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: rgb(0, 124, 233);
+        color: white;
+        font-size: .8rem;
+
+            &:hover {
+                cursor: pointer;
+                opacity: .9;
+            }
+    }
+}

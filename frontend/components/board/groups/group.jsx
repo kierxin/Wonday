@@ -75,10 +75,16 @@ class Group extends React.Component {
     render() {
         const group = this.props.group;
         const status = this.state.viewOptions;
+        let tasks;
 
         // titles of group's tasks (text-input), & trashcan to delete them
-        const tasks = group.tasks.map(task => {
-            return(
+        if(this.props.filter) {
+            tasks = group.tasks.filter(task => task.people.includes(this.props.filter));
+        } else {
+            tasks = group.tasks;
+        }
+        tasks = tasks.map(task => {
+            return (
                 <div className="task-title-container" key={`task-${task.id}`}>
                     <i datavalue={task.id}
                         onClick={this.deleteTask}
@@ -88,7 +94,6 @@ class Group extends React.Component {
                 </div>
             )
         });
-
 
         return(
             <li key={`group-${group.id}`}

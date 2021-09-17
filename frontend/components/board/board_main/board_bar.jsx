@@ -8,6 +8,26 @@ class BoardBar extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            selectionMenu: false
+        }
+
+        this.toggleSelection = this.toggleSelection.bind(this);
+        this.handleChoice = this.handleChoice.bind(this);
+    }
+
+    toggleSelection() {
+        this.setState({ selectionMenu: !this.state.selectionMenu });
+    }
+
+    handleChoice(e) {
+        e.preventDefault();
+        const filter = parseInt(e.currentTarget.getAttribute("datafilter"));
+
+        this.setState({ selectionMenu: false }, () => {
+            this.props.toggleFilter(filter);
+        });
     }
 
     render() {
@@ -15,7 +35,11 @@ class BoardBar extends React.Component {
             <div className="board-bar">
                 <AddGroupBtnContainer />
                 <SearchBtn />
-                <FilterByPerson />
+                <FilterByPerson toggleSelection={this.toggleSelection}
+                    handleChoice={this.handleChoice}
+                    toggleFilter={this.props.toggleFilter}
+                    selectionMenu={this.state.selectionMenu}
+                    users={this.props.people} />
             </div>
         )
     }

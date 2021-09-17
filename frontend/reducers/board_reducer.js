@@ -1,4 +1,4 @@
-import { RECEIVE_BOARD, TOGGLE_MODAL } from "../actions/board_actions";
+import { RECEIVE_BOARD, TOGGLE_FILTER, TOGGLE_MODAL } from "../actions/board_actions";
 import { RECEIVE_GROUP, RECEIVE_GROUPS } from "../actions/group_actions";
 import { RECEIVE_TASK, RECEIVE_TASKS } from "../actions/task_actions";
 import { LOGOUT_USER } from "../actions/session_actions";
@@ -14,6 +14,9 @@ const boardReducer = (state = {}, action) => {
             nextState = Object.assign({}, state, action.board);
             if (!nextState.hasOwnProperty("modal")) {
                 nextState.modal = false;
+            }
+            if (!nextState.hasOwnProperty("filter")) {
+                nextState.filter = false;
             }
 
             return nextState;
@@ -76,6 +79,18 @@ const boardReducer = (state = {}, action) => {
 
             return Object.assign({}, state, {
                 modal: modalType || false
+            });
+
+        case TOGGLE_FILTER:
+            let filter = (' ' + action.filter).slice(1)
+            if (filter.length === 1) {
+                filter = parseInt(filter);
+            } else {
+                filter = false;
+            }
+            
+            return Object.assign({}, state, {
+                filter: filter || false
             });
 
         case LOGOUT_USER:

@@ -77,7 +77,7 @@ class PeopleCell extends React.Component {
         }).join(", ");
 
         return(
-            <div className="cell">
+            <div className="cell people-cell-container">
                 <button datapeople={names}
                     onClick={this.toggleSelection}
                     className={`task-col people-cell`}>

@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => {
     const group = state.board.groups.find(group => group.id === ownProps.id);
 
     return {
-        group: group
+        group: group,
+        filter: state.board.filter
     }
 }
 

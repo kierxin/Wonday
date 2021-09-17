@@ -8,7 +8,8 @@ const mSTP = (state, ownProps) => {
 
     return {
         columns: state.board.columns_in_use,
-        group: group
+        group: group,
+        filter: state.board.filter
     }
 }
 
