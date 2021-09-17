@@ -37,10 +37,53 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
   ```
 </details>
 
-- On login, existing users are directed to an overview of one of their boards; new users are provided a new board.
-- Boards contain groups of tasks; users can perform full standard CRUD actions on boards and tasks.
-    - Each task has columns which users may edit: Title, Status ("done", "stuck," etc.), Deadline, and People (assigned to the task).
-- The whole board may be filtered to display only the groups and tasks to which a specific user has been assigned.
+<details>
+  <summary>On login, existing users are directed to an overview of one of their boards; new users are provided a new board.</summary>
+
+  ![Screenshot of Wonday project board](https://media.discordapp.net/attachments/865227670039560212/888440008850145381/wonday-sc-1.png)
+</details>
+
+<details>
+  <summary>Boards contain groups of tasks; users can perform full standard CRUD actions on boards and tasks.</summary>
+
+  Each task has columns which users may edit: Title, Status ("done", "stuck," etc.), Deadline, and People (assigned to the task).
+
+  ```javascript
+    import React from "react";
+
+    import TaskCellsContainer from "./tasks/task_cells_container";
+
+
+    const TaskCol = props => {
+        const { colType, task } = props;
+
+        return(
+            <>
+                {colType === "status" && (
+                    <TaskCellsContainer.StatusCell task={task} />
+                )}
+
+                {colType === "deadline" && (
+                    <TaskCellsContainer.DeadlineCell task={task} />
+                )}
+
+                {colType === "people" && (
+                    <TaskCellsContainer.PeopleCell task={task} />
+                )}
+            </>
+        )
+    }
+
+
+    export default TaskCol;
+  ```
+</details>
+
+<details>
+  <summary>The whole board may be filtered to display only the groups and tasks to which a specific user has been assigned.</summary>
+
+  ![Screenshot of filtering implementation code](https://cdn.discordapp.com/attachments/865227670039560212/888443144973189240/wonday-sc-2.png)
+</details>
 
 ## Learning Experience
 
