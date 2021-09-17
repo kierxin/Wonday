@@ -6,6 +6,7 @@
     overflow: auto;
     background-color: white;
     width: 40vw;
+    min-width: 300px;
     height: 90vh;
     margin: 0 auto;
     margin-top: 5vh;
@@ -43,9 +44,10 @@
         display: block;
         width: 100%;
         margin: 0;
-        padding: 0;
+        padding: 10px;
         overflow: hidden;
         font-size: .9rem;
+        border-bottom: 1px solid rgb(238, 238, 238);
 
         input {
             font-family: $roboto;
@@ -57,11 +59,59 @@
     }
 
     button {
+        margin-left: 60%;
         min-width: 100px;
         min-height: 30px;
-        color: black;
+        border-radius: 3px;
+        padding: 10px;
+        font-size: 1rem;
+        border: none;
+        background-color: rgb(9, 83, 255);
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+            opacity: .9;
+        }
     }
 }
+
+
+    #fake-form {
+        @include flex($justify-content: flex-start);
+        flex-wrap: wrap;
+        margin: 15px;
+
+        h3 {
+            margin: 10px;
+            padding-top: 10px;
+            display: block;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        div {
+            @include flex;
+            width: 40%;
+            min-width: 110px;
+            padding: 10px;
+
+            label {
+                overflow: visible;
+                width: 80%;
+                z-index: 100;
+                border: none;
+            }
+
+            input, input:last-child {
+                width: 20px;
+                height: 20px;
+                border: none;
+                padding: 0;
+                font-size: 1rem;
+            }
+        }
+    }
 
 
 

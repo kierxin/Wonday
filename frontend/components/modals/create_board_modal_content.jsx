@@ -65,6 +65,35 @@ class CreateBoardModalContent extends React.Component {
                             value={this.state.name} />
                     </label>
 
+                    <div id="fake-form">
+                        <h3>Select what you're managing in this board</h3>
+
+                        <div>
+                            <input type="radio" id="use-case-radio-1" />
+                            <label for="use-case-radio-1">Items</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="use-case-radio-2" />
+                            <label for="use-case-radio-2">Budgets</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="use-case-radio-3" />
+                            <label for="use-case-radio-3">Projects</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="use-case-radio-4" />
+                            <label for="use-case-radio-4">Tasks</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="use-case-radio-5" />
+                            <label for="use-case-radio-5">Leads</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="use-case-radio-6" />
+                            <label for="use-case-radio-6">Campaigns</label>
+                        </div>
+                    </div>
+
                     <button type="submit" 
                         value="Create Board"
                         className={ignr}>
