@@ -82,7 +82,7 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
 <details>
   <summary>The whole board may be filtered to display only the groups and tasks to which a specific user has been assigned.</summary>
 
-  ![Screenshot of filtering implementation code](https://cdn.discordapp.com/attachments/865227670039560212/888443144973189240/wonday-sc-2.png)
+  ![Screenshot of filtering implementation code](https://cdn.discordapp.com/attachments/865227670039560212/888444534323830855/wonday-sc-2.png)
 </details>
 
 ## Learning Experience
