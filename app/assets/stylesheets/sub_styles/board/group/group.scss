@@ -102,13 +102,13 @@
     }
 }
 
-i.i-gold {color: gold; background-color: rgb(255, 241, 160); }
-i.i-salmon {color: salmon; background-color: rgb(255, 194, 176);}
-i.i-green {color: rgb(161, 220, 114); background-color: rgb(220, 248, 197); }
-i.i-blue {color: rgb(78, 187, 255); background-color: rgb(174, 224, 255); }
-i.i-brown {color: rgb(175, 142, 129); background-color: rgb(221, 193, 182); }
-i.i-gray {color: rgb(150, 150, 150); background-color: rgb(226, 226, 226); }
-i.i-indigo {color: rgb(111, 88, 187); background-color: rgb(217, 206, 250); }
+i.i-gold {color: $gold; background-color: $pale-gold; }
+i.i-salmon {color: $salmon; background-color: $pale-salmon;}
+i.i-green {color: $green; background-color: $pale-green; }
+i.i-blue {color: $blue; background-color: $pale-blue; }
+i.i-brown {color: $brown; background-color: $pale-brown; }
+i.i-gray {color: $gray; background-color: $pale-gray; }
+i.i-indigo {color: $indigo; background-color: $pale-indigo; }
 
 .add-task-container {
     @include flex;
@@ -121,13 +121,13 @@ i.i-indigo {color: rgb(111, 88, 187); background-color: rgb(217, 206, 250); }
         width: 2rem; 
         height: 2rem; 
     }
-    .add-color-gold {background-color: rgb(255, 241, 160); }
-    .add-color-salmon {background-color: rgb(255, 194, 176); }
-    .add-color-green {background-color: rgb(220, 248, 197); }
-    .add-color-blue {background-color: rgb(174, 224, 255); }
-    .add-color-brown {background-color: rgb(221, 193, 182); }
-    .add-color-gray {background-color: rgb(226, 226, 226); }
-    .add-color-indigo {background-color: rgb(217, 206, 250); }
+    .add-color-gold {background-color: $pale-gold; }
+    .add-color-salmon {background-color: $pale-salmon; }
+    .add-color-green {background-color: $pale-green; }
+    .add-color-blue {background-color: $pale-blue; }
+    .add-color-brown {background-color: $pale-brown; }
+    .add-color-gray {background-color: $pale-gray; }
+    .add-color-indigo {background-color: $pale-indigo; }
 
     form {
         @include flex;

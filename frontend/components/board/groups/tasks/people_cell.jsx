@@ -81,7 +81,7 @@ class PeopleCell extends React.Component {
                 <button datapeople={names}
                     onClick={this.toggleSelection}
                     className={`task-col people-cell`}>
-                    People
+                    <i class={`fas fa-user-friends ${this.props.color}-people-i`}></i>
                 </button>
                 {this.state.selectionMenu && (
                     <div className="choose-people-dropdown">

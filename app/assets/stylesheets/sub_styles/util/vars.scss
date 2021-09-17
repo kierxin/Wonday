@@ -14,7 +14,7 @@
     border: 1px solid transparent;
 }
 
-@mixin group-title($color: salmon) {
+@mixin group-title($color: $salmon) {
 
     input {
         @include text-input;
@@ -30,7 +30,7 @@
     }
 }
 
-@mixin group-options-btn($color: salmon) {
+@mixin group-options-btn($color: $salmon) {
     border-radius: 100%;
     color: white;
     height: 1rem;
@@ -145,3 +145,19 @@ $arial: Arial, Helvetica, sans-serif;
 
 // COLORS
 $input-border-color: 1px solid rgb(130,130,130);
+
+$gold: gold;
+$salmon: salmon;
+$green: rgb(161, 220, 114);
+$blue: rgb(78, 187, 255);
+$brown: rgb(175, 142, 129);
+$gray: rgb(150, 150, 150);
+$indigo: rgb(111, 88, 187);
+
+$pale-gold: rgb(255, 241, 160);
+$pale-salmon: rgb(255, 194, 176);
+$pale-green: rgb(220, 248, 197);
+$pale-blue: rgb(174, 224, 255);
+$pale-brown: rgb(221, 193, 182);
+$pale-gray: rgb(226, 226, 226);
+$pale-indigo: rgb(217, 206, 250);

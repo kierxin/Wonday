@@ -1,20 +1,20 @@
 // GROUP TITLES
-.gold { @include group-title($color: gold); }
-.salmon { @include group-title($color: salmon); }
-.green { @include group-title($color: rgb(161, 220, 114)); }
-.blue { @include group-title($color: rgb(78, 187, 255)); }
-.brown { @include group-title($color: rgb(175, 142, 129)); }
-.gray { @include group-title($color: rgb(150, 150, 150)); }
-.indigo { @include group-title($color: rgb(111, 88, 187)); }
+.gold { @include group-title($color: $gold); }
+.salmon { @include group-title($color: $salmon); }
+.green { @include group-title($color: $green); }
+.blue { @include group-title($color: $blue); }
+.brown { @include group-title($color: $brown); }
+.gray { @include group-title($color: $gray); }
+.indigo { @include group-title($color: $indigo); }
 
 // GROUP OPTIONS BUTTONS
-.gold-btn { @include group-options-btn($color: gold); }
-.salmon-btn { @include group-options-btn($color: salmon); }
-.green-btn { @include group-options-btn($color: rgb(161, 220, 114)); }
-.blue-btn { @include group-options-btn($color: rgb(78, 187, 255)); }
-.brown-btn { @include group-options-btn($color: rgb(175, 142, 129)); }
-.gray-btn { @include group-options-btn($color: rgb(150, 150, 150)); }
-.indigo-btn { @include group-options-btn($color: rgb(111, 88, 187)); }
+.gold-btn { @include group-options-btn($color: $gold); }
+.salmon-btn { @include group-options-btn($color: $salmon); }
+.green-btn { @include group-options-btn($color: $green); }
+.blue-btn { @include group-options-btn($color: $blue); }
+.brown-btn { @include group-options-btn($color: $brown); }
+.gray-btn { @include group-options-btn($color: $gray); }
+.indigo-btn { @include group-options-btn($color: $indigo); }
 
 
 .group-options-btn {

@@ -111,11 +111,21 @@ button.unknown-status-cell { background-color: rgb(218, 218, 218); }
 .people-cell {
     position: relative;
     width: 100%;
+
+    .gold-people-i { color: $gold; }
+    .salmon-people-i { color: $salmon; }
+    .green-people-i { color: $green; }
+    .blue-people-i { color: $blue; }
+    .brown-people-i { color: $brown; }
+    .gray-people-i { color: $gray; }
+    .indigo-people-i { color: $indigo; }
 }
 
 .people-cell:hover::before {
     position: absolute;
     width: 85%;
+    min-height: 50%;
+    max-height: 120%;
     overflow: hidden;
     right: 5%;
     top: 5px;
