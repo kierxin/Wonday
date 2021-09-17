@@ -17,7 +17,15 @@ class BoardContent extends React.Component {
     }
 
     render() {
-        const groups = this.props.board.groups;
+        let groups = this.props.board.groups;
+        console.log(this.props.filter);
+        if (this.props.filter) {
+            groups = groups.filter(group => {
+                return group.tasks.some(task => {
+                    return task.people.includes(this.props.filter);
+                })
+            })
+        }
         
         const groupsList = groups.map(group => {
             return(

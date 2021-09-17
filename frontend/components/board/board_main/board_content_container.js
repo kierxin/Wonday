@@ -10,7 +10,8 @@ const mSTP = state => {
 
     return {
         user: state.user,
-        board: state.board
+        board: state.board,
+        filter: state.board.filter
     }
 }
 
