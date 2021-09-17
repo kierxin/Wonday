@@ -14,27 +14,27 @@ In this two-week project, I used React.js, Redux, and Ruby on Rails to clone the
 While Monday.com has several ways teams can manage their work, my timeframe required me to prioritize a few features:
 
 <details>
-    <summary>Users can log in or sign up via a two-page authentication process and receive relevant error messages if they provide invalid credentials.</summary>
+  <summary>Users can log in or sign up via a two-page authentication process and receive relevant error messages if they provide invalid credentials.</summary>
     
-    ```javascript
-        constructor(props) {
-        super(props);
+  ```javascript
+    constructor(props) {
+      super(props);
 
-        this.state = {
-            user: {
-                email: '',
-                password: '',
-                full_name: ''
-            },
-            page: 1,
-            error: null
-        }
+      this.state = {
+        user: {
+          email: '',
+          password: '',
+          full_name: ''
+        },
+        page: 1,
+        error: null
+      }
 
-        this.handleInput = this.handleInput.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.goNext = this.goNext.bind(this);
+      this.handleInput = this.handleInput.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.goNext = this.goNext.bind(this);
     }
-    ```
+  ```
 </details>
 
 - On login, existing users are directed to an overview of one of their boards; new users are provided a new board.
