@@ -14,7 +14,6 @@ class Board extends React.Component {
         super(props);
     }
 
-
     render() {
         const user = this.props.user;
 
@@ -25,59 +24,45 @@ class Board extends React.Component {
                         <div className="left-nav-upper-btns">
                             <img id="left-nav-logo" className="left-nav-btn" src={wLogoSmall} alt="W Logo" />
 
-                            {/* <i class="fas fa-th-large"></i> */}
                             <LeftNavBtn external={false} src={"boards"} />
-
-                            {/* <i class="fab fa-github"></i> */}
                             <LeftNavBtn 
                                 external={true} 
-                                href="#" 
+                                href="https://github.com/kierxin"
                                 src={"github"} 
                             />
-
-                            {/* <i class="fab fa-angellist"></i> */}
                             <LeftNavBtn 
                                 external={true} 
-                                href="#" 
+                                href="https://angel.co/u/keeruh"
                                 src={"angellist"} 
                             />
-
-                            {/* <i class="fab fa-linkedin-in"></i> */}
                             <LeftNavBtn 
                                 external={true} 
-                                href="#" 
+                                href="https://www.linkedin.com/in/kiraporter"
                                 src={"linkedin"} 
                             />
-
-                            {/* <i class="fa fa-external-link"></i> */}
                             <LeftNavBtn 
                                 external={true} 
                                 href="#" 
                                 src={"portfolio"} 
                             />
                         </div> 
-                        <div className="left-nav-lower-btns">
-                            
-                            {/* <i class="fas fa-user-plus"></i> */}
+
+                        <div className="left-nav-lower-btns">    
                             <LeftNavBtn external={false} src={"invite"} />
-                            
-                            <UserIconContainer 
-                                name={user.full_name} />
+                            <UserIconContainer name={user.full_name} />
                         </div>
+                        
                     </div>
                 </nav>
 
-                    <section className="board-main">
-
-                        <WorkspaceSidebarContainer />
-
-                        <ProtectedRoute 
-                            path={`/api/boards/${this.props.board.id}`}
-                            component={BoardContentContainer} />
-                            
-                    </section>
-                    
-                    <ModalContainer />
+                <section className="board-main">
+                    <WorkspaceSidebarContainer />
+                    <ProtectedRoute 
+                        path={`/api/boards/${this.props.board.id}`}
+                        component={BoardContentContainer} />
+                </section>
+                
+                <ModalContainer />
 
             </main>
         )

@@ -8,10 +8,16 @@ class BoardHeader extends React.Component {
     constructor(props) {
         super(props);
 
-        this.toggleModal = this.toggleModal.bind(this);
+        this.toggleAddToBoard = this.toggleAddToBoard.bind(this);
+        this.toggleBoardsPeople = this.toggleBoardsPeople.bind(this);
     }
 
-    toggleModal(e) {
+    toggleAddToBoard(e) {
+        e.preventDefault();
+        this.props.toggleModal("add-to-board");
+    }
+
+    toggleBoardsPeople(e) {
         e.preventDefault();
         this.props.toggleModal("boards-people");
     }
@@ -24,20 +30,18 @@ class BoardHeader extends React.Component {
                     <BoardNameContainer />
 
                     <div className="upper-board-header-btns">
-                        <div id="last-seen">
-                            Last Seen
-                        </div>
                         <button id="invite-to-board">
                             <img src={person} alt="icon" />
                             <p>Invite</p>
                         </button>
-                        <button id="add-to-board">
+                        <button id="add-to-board" 
+                            onClick={this.toggleAddToBoard}>
                             + Add to board
                         </button>
                         <button id="board-header-settings">
                             <img src={options} 
                                 alt="click to view board's members"
-                                onClick={this.toggleModal} />
+                                onClick={this.toggleBoardsPeople} />
                         </button>
                     </div>
                 </div>

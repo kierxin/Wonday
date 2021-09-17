@@ -98,12 +98,20 @@ button.unknown-status-cell { background-color: rgb(218, 218, 218); }
     }
 }
 
+input[type="date" i] {
+    background-color: #F5F5F5;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .no-deadline {
     ::-webkit-datetime-edit {
-        color: rgb(226, 226, 226);
+        color: rgb(218, 218, 218);
 
         &:hover {
-            color: rgb(204, 204, 204);
+            color: rgb(199, 199, 199);
         }
     }
 }

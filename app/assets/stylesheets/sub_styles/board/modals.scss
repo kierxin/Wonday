@@ -1,8 +1,8 @@
-.create-board-modal-background, .boards-people-modal-background {
+.create-board-modal-background, .boards-people-modal-background, .add-to-board-modal-background {
     @include modal-bg($background-color: rgba(43, 52, 90, 0.6));
 }
 
-.create-board-modal-foreground, .boards-people-modal-foreground {
+.create-board-modal-foreground, .boards-people-modal-foreground, .add-to-board-modal-foreground {
     overflow: auto;
     background-color: white;
     width: 40vw;
@@ -12,7 +12,7 @@
     border-radius: 10px;
     padding: 30px;
 
-    #create-board-modal-header, #boards-people-modal-header {
+    #create-board-modal-header, #boards-people-modal-header, #add-to-board-modal-header {
         @include flex;
 
         h1 {
@@ -62,3 +62,55 @@
         color: black;
     }
 }
+
+
+
+
+// Thanks for checking out this project! Enjoy!
+
+#add-to-board-modal-header {
+    span {
+        font-family: 'Aladin', cursive !important;
+        letter-spacing: 4px;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+}
+
+#sites-icons {
+    @include flex($justify-content: space-around);
+    width: 100%;
+    font-size: 1.8rem;
+
+    i { 
+        margin-bottom: 35px;
+        color: $gray;
+    }
+}
+
+.add-to-board-modal-foreground summary {
+    p.paras {
+        margin: 30px 0;
+        margin-top: 0;
+        line-height: 180%;
+
+        b { 
+            font-weight: 700;
+            color: $brown;
+        }
+    }
+
+    .sig { 
+        font-weight: 700;
+        color: $brown;
+    }
+}
+
+// - Kira (:
+
+#add-to-board-modal-header span.s-brown { color: $brown; }
+#add-to-board-modal-header span.s-salmon { color: $salmon; }
+#add-to-board-modal-header span.s-gold { color: $gold; }
+#add-to-board-modal-header span.s-green { color: $green; }
+#add-to-board-modal-header span.s-blue { color: $blue; }
+#add-to-board-modal-header span.s-indigo { color: $indigo; }
