@@ -94,7 +94,7 @@ Given that this project was my first real dive into React and Redux, I spent muc
 
 - The difference between updating a component's local state and updating the overall application state
     - To update state in the Redux store, use actions and ensure that reducers are returning a new copy of state
-    - And for data to persist between sessions, use AJAX requests to send data to the Rails controller actions
+    - And for data to persist between sessions, use AJAX requests to send data to the Rails controller methods
 - Having multiple reducers that are combined, so that each reducer only needs to be responsible for a slice of state
     - As opposed to all of the app's state being nested under a single reducer, which complicates logic in the reducer
 - Nesting resources in Rails routes
