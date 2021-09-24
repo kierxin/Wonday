@@ -109,6 +109,7 @@ Given that this project was my first real dive into React and Redux, I spent muc
 
 The next features I'd like to work on:
 
+- Boards can be searched
 - Users can be invited from the app via email
 - Groups of tasks can be re-ordered via drag-and-drop
 
