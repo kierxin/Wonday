@@ -111,3 +111,5 @@ The next features I'd like to work on:
 
 - Users can be invited from the app via email
 - Groups of tasks can be re-ordered via drag-and-drop
+
+![Screenshot from Wonday signup page](https://media.discordapp.net/attachments/865227670039560212/890755177869606922/wonday-sc-footer.png?width=1440&height=570)
