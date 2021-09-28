@@ -96,7 +96,7 @@ Given that this project was my first real dive into React and Redux, I spent muc
     - To update state in the Redux store, use actions and ensure that reducers are returning a new copy of state
     - And for data to persist between sessions, use AJAX requests to send data to the Rails controller methods
 - Having multiple reducers that are combined, so that each reducer only needs to be responsible for a slice of state
-    - As opposed to all of the app's state being nested under a single reducer, which complicates logic in the reducer
+    - As opposed to all of the app's state being handled by a single reducer, which complicates logic in the reducer
 - Nesting resources in Rails routes
 - Protecting frontend routes by redirecting the user (based on whether they are logged in, etc.)
 - Creating dropdown menus and other components that depend on event handling logic
