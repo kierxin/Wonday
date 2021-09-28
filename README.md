@@ -1,6 +1,6 @@
-# README
+[![Screenshot from Wonday splash page](https://cdn.discordapp.com/attachments/865227670039560212/890754331555561482/wonday-sc-banner.png)](https://wonday-clone-of-monday.herokuapp.com/#/)
 
-This project is [LIVE](https://wonday-clone-of-monday.herokuapp.com/#/).
+### This project is [LIVE](https://wonday-clone-of-monday.herokuapp.com/#/).
 
 ## Introduction
 
@@ -32,7 +32,7 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
 
       this.handleInput = this.handleInput.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-      this.goNext = this.goNext.bind(this);
+      this.goNextPage = this.goNextPage.bind(this);
     }
   ```
 </details>
@@ -90,13 +90,13 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
 
 Given that this project was my first real dive into React and Redux, I spent much of the first week figuring out how to use the redux store and get my components to update as expected. As I became more familiar with how components, reducers, actions and action creators, AJAX requests, and the Rails backend all connected, the power of React and Redux started to become very clear to me.
 
-### In the process of making this project, some things I've learned about...
+### Some things I learned about...
 
 - The difference between updating a component's local state and updating the overall application state
     - To update state in the Redux store, use actions and ensure that reducers are returning a new copy of state
     - And for data to persist between sessions, use AJAX requests to send data to the Rails controller methods
 - Having multiple reducers that are combined, so that each reducer only needs to be responsible for a slice of state
-    - As opposed to all of the app's state being nested under a single reducer, which complicates logic in the reducer
+    - As opposed to all of the app's state being handled by a single reducer, which complicates logic in the reducer
 - Nesting resources in Rails routes
 - Protecting frontend routes by redirecting the user (based on whether they are logged in, etc.)
 - Creating dropdown menus and other components that depend on event handling logic
@@ -109,5 +109,8 @@ Given that this project was my first real dive into React and Redux, I spent muc
 
 The next features I'd like to work on:
 
+- Boards can be searched
 - Users can be invited from the app via email
 - Groups of tasks can be re-ordered via drag-and-drop
+
+[![Screenshot from Wonday signup page](https://media.discordapp.net/attachments/865227670039560212/890755177869606922/wonday-sc-footer.png?width=1440&height=570)](https://wonday-clone-of-monday.herokuapp.com/#/)
