@@ -23,6 +23,7 @@ class DeadlineCell extends React.Component {
         const task = this.props.task;
         let thisDeadline;
         let deadlineStatus = "";
+        const now = new Date;
 
         if(task) {
             thisDeadline = this.props.task.deadline;
@@ -32,7 +33,9 @@ class DeadlineCell extends React.Component {
         return (
             <div className={`choose-deadline ${deadlineStatus}`}>
                     <input type="date"
-                        value={thisDeadline || "2021-01-01"}
+                        value={thisDeadline || (
+                            now.toISOString().slice(0, 10)
+                        )}
                         onChange={this.handleChange}
                         className={deadlineStatus} />
             </div>
