@@ -32,7 +32,7 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
 
       this.handleInput = this.handleInput.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-      this.goNext = this.goNext.bind(this);
+      this.goNextPage = this.goNextPage.bind(this);
     }
   ```
 </details>
