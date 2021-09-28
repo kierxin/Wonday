@@ -32,7 +32,7 @@ class DeadlineCell extends React.Component {
         return (
             <div className={`choose-deadline ${deadlineStatus}`}>
                     <input type="date"
-                        value={thisDeadline || "⠀"}
+                        value={thisDeadline || "2021-01-01"}
                         onChange={this.handleChange}
                         className={deadlineStatus} />
             </div>

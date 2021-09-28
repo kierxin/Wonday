@@ -70,27 +70,27 @@ class CreateBoardModalContent extends React.Component {
 
                         <div>
                             <input type="radio" id="use-case-radio-1" />
-                            <label for="use-case-radio-1">Items</label>
+                            <label htmlFor="use-case-radio-1">Items</label>
                         </div>
                         <div>
                             <input type="radio" id="use-case-radio-2" />
-                            <label for="use-case-radio-2">Budgets</label>
+                            <label htmlFor="use-case-radio-2">Budgets</label>
                         </div>
                         <div>
                             <input type="radio" id="use-case-radio-3" />
-                            <label for="use-case-radio-3">Projects</label>
+                            <label htmlFor="use-case-radio-3">Projects</label>
                         </div>
                         <div>
                             <input type="radio" id="use-case-radio-4" />
-                            <label for="use-case-radio-4">Tasks</label>
+                            <label htmlFor="use-case-radio-4">Tasks</label>
                         </div>
                         <div>
                             <input type="radio" id="use-case-radio-5" />
-                            <label for="use-case-radio-5">Leads</label>
+                            <label htmlFor="use-case-radio-5">Leads</label>
                         </div>
                         <div>
                             <input type="radio" id="use-case-radio-6" />
-                            <label for="use-case-radio-6">Campaigns</label>
+                            <label htmlFor="use-case-radio-6">Campaigns</label>
                         </div>
                     </div>
 
