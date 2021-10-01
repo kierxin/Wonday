@@ -42,7 +42,7 @@ class Board extends React.Component {
                             />
                             <LeftNavBtn 
                                 external={true} 
-                                href="#" 
+                                href="https://kierxin.github.io/Kira-Porter-Portfolio/"
                                 src={"portfolio"} 
                             />
                         </div> 

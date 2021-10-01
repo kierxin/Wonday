@@ -27,7 +27,7 @@ const NavHeader = () => {
                         href="https://github.com/kierxin/Wonday"
                         text="Wonday GitHub Repo" />
                     <NetworkLink
-                        href="#"
+                        href="https://kierxin.github.io/Kira-Porter-Portfolio/"
                         text="Portfolio" />
                 </ul>
                 
