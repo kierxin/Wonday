@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import NavHeader from "./nav_header";
+import Checkbox from "./checkbox";
 
 
 class LandingPage extends React.Component {
@@ -26,12 +27,12 @@ class LandingPage extends React.Component {
 
                     <div className="splash-use-cases splash-use-cases-top">
                         <label htmlFor="project-management">
-                        <input type="checkbox" id="project-management" />
+                            <Checkbox color="indigo" />
                             Project management
                         </label>
 
                         <label htmlFor="sales-and-crm">
-                        <input type="checkbox" id="sales-and-crm" />
+                            <Checkbox color="salmon" />
                             Sales and CRM
                         </label>
 

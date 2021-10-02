@@ -124,20 +124,33 @@
 
         label {
             margin: .5rem 0;
-            padding: .5rem;
+            padding: 1rem;
             border-radius: 2rem;
             background-color: rgb(243, 243, 243);
 
-            &:hover {
-                cursor: pointer;
-                background-color: rgb(238, 238, 238)
-            }
+            // &:hover {
+            //     cursor: pointer;
+            //     background-color: rgb(238, 238, 238)
+            // }
         }
 
-        input {
+        .my-checkbox {
+            display: inline-block;
             width: 1.1rem;
             height: 1.1rem;
+            margin-right: .2rem;
+            border: 1px solid black;
+            border-radius: 3px;
+            background-color: white;
+
+            &:hover { cursor: pointer; }
         }
+
+        #indigo-checkbox { border: 1px solid $indigo; }
+        .indigo-checked { background-color: $indigo; color: white }
+
+        #salmon-checkbox { border: 1px solid $salmon; }
+        .salmon-checked { background-color: $salmon; color: white }
     }
 
     .splash-use-cases-top { margin-top: 1rem; }
