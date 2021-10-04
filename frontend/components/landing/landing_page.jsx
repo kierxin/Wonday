@@ -91,30 +91,35 @@ class LandingPage extends React.Component {
                             toggleAnimation={this.toggleAnimation} />
                     </div>
                     <div className="splash-use-cases splash-use-cases-bottom">
-                        <label htmlFor="task-management">
-                            <Checkbox color="salmon" />
-                            Task management
-                        </label>
+                        <SplashUseCase
+                            case="task-management"
+                            color="red"
+                            innerText="Task management"
+                            toggleAnimation={this.toggleAnimation} />
 
-                        <label htmlFor="operations">
-                            <Checkbox color="salmon" />
-                            Operations
-                        </label>
+                        <SplashUseCase
+                            case="operations"
+                            color="teal"
+                            innerText="Operations"
+                            toggleAnimation={this.toggleAnimation} />
 
-                        <label htmlFor="hr-and-recruitment">
-                            <Checkbox color="salmon" />
-                            HR and recruitment
-                        </label>
+                        <SplashUseCase
+                            case="hr-and-recruitment"
+                            color="tangerine"
+                            innerText="HR and recruitment"
+                            toggleAnimation={this.toggleAnimation} />
 
-                        <label htmlFor="it">
-                            <Checkbox color="salmon" />
-                            IT
-                        </label>
+                        <SplashUseCase
+                            case="it"
+                            color="purple"
+                            innerText="IT"
+                            toggleAnimation={this.toggleAnimation} />
 
-                        <label htmlFor="workflows">
-                            <Checkbox color="salmon" />
-                            200+ workflows
-                        </label>
+                        <SplashUseCase
+                            case="workflows"
+                            color="darkgreen"
+                            innerText="200+ workflows"
+                            toggleAnimation={this.toggleAnimation} />
                     </div>
 
                     <Link to="/signup" id="get-started-btn-bigger">

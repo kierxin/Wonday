@@ -160,6 +160,21 @@
 
         #blue-checkbox { border: 1px solid $blue; }
         .blue-checked-box { background-color: $blue; color: white }
+
+        #tangerine-checkbox { border: 1px solid rgb(255, 177, 32); }
+        .tangerine-checked-box { background-color: rgb(255, 177, 32); color: white }
+
+        #red-checkbox { border: 1px solid rgb(224, 70, 59); }
+        .red-checked-box { background-color: rgb(223, 96, 87); color: white }
+
+        #teal-checkbox { border: 1px solid rgb(92, 184, 184); }
+        .teal-checked-box { background-color: rgb(92, 184, 184); color: white }
+
+        #purple-checkbox { border: 1px solid rgb(173, 134, 199); }
+        .purple-checked-box { background-color: rgb(173, 134, 199); color: white }
+
+        #darkgreen-checkbox { border: 1px solid rgb(87, 179, 133); }
+        .darkgreen-checked-box { background-color: rgb(87, 179, 133); color: white }
     }
 
     .splash-use-cases-top { margin-top: 1rem; }
@@ -208,4 +223,29 @@
 .blue-sq-color {
     @include expandSquare;
     background-color: $blue;
+}
+
+.tangerine-sq-color {
+    @include expandSquare;
+    background-color: rgb(255, 177, 32);
+}
+
+.red-sq-color {
+    @include expandSquare;
+    background-color: rgb(223, 96, 87);
+}
+
+.teal-sq-color {
+    @include expandSquare;
+    background-color: rgb(92, 184, 184);
+}
+
+.purple-sq-color {
+    @include expandSquare;
+    background-color: rgb(173, 134, 199);
+}
+
+.darkgreen-sq-color {
+    @include expandSquare;
+    background-color: rgb(87, 179, 133);
 }
