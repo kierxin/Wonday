@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Checkbox = ({ color }) => {
+const Checkbox = ({ color, colorAnimatedSquare }) => {
     return(
         <div 
             className="my-checkbox" 
@@ -13,10 +13,12 @@ const Checkbox = ({ color }) => {
                     classList = "my-checkbox";
                     e.currentTarget.setAttribute("class", classList)
                     e.currentTarget.innerText = "";
+                    colorAnimatedSquare("none");
                 } else {
                     classList = `${classList} ${color}-checked`;
                     e.currentTarget.setAttribute("class", classList)
                     e.currentTarget.innerText = "/";
+                    colorAnimatedSquare(`${color}`);
                 }
             }} >
         </div>
