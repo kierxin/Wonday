@@ -1,3 +1,18 @@
+// ANIMATIONS
+@keyframes popup {
+    0% {
+        transform: translateY(0px) rotate(100deg);
+    }
+
+    50% {
+        transform: translateY(-2.2rem) rotate(120deg); 
+    }
+
+    100% {
+        transform: translateY(0px) rotate(100deg);
+    }
+}
+
 // MIXINS
 @mixin modal-bg($background-color: transparent) {
     position: absolute;
@@ -142,8 +157,8 @@
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 2px;
-    transform: rotate(140deg);
-    // animation-name: popup;
+    animation-name: popup;
+    animation-duration: 700ms;
 }
 
 // FONTS
@@ -161,7 +176,7 @@ $green: rgb(151, 211, 102);
 $blue: rgb(77, 180, 224);
 $brown: rgb(184, 143, 126);
 $gray: rgb(133, 133, 133);
-$indigo: rgb(111, 88, 187);
+$indigo: rgb(139, 116, 214);
 
 $pale-gold: rgb(255, 226, 172);
 $pale-salmon: rgb(255, 194, 176);

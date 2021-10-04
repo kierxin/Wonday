@@ -1,26 +1,23 @@
 import React from "react";
 
 
-const Checkbox = ({ color, colorAnimatedSquare }) => {
+const Checkbox = ({ color, checked }) => {
+    let checkedClass;
+    let innerText;
+
+    if(checked) {
+        checkedClass = `my-checkbox ${color}-checked-box`
+        innerText = "✓";
+    } else {
+        checkedClass = "my-checkbox"
+        innerText = "";
+    }
+
     return(
         <div 
-            className="my-checkbox" 
-            id={`${color}-checkbox`}
-            onClick={e => {
-                let classList = e.currentTarget.getAttribute("class");
-
-                if (classList.split(" ").includes(`${color}-checked`)) {
-                    classList = "my-checkbox";
-                    e.currentTarget.setAttribute("class", classList)
-                    e.currentTarget.innerText = "";
-                    colorAnimatedSquare("none");
-                } else {
-                    classList = `${classList} ${color}-checked`;
-                    e.currentTarget.setAttribute("class", classList)
-                    e.currentTarget.innerText = "/";
-                    colorAnimatedSquare(`${color}`);
-                }
-            }} >
+            className={checkedClass} 
+            id={`${color}-checkbox`} >
+            {innerText}
         </div>
     )
 }

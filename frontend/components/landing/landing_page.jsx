@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import NavHeader from "./nav_header";
+import SplashUseCase from "./splash_use_case";
 import Checkbox from "./checkbox";
 
 
@@ -12,12 +13,22 @@ class LandingPage extends React.Component {
 
         this.state = { animatedSquareColor: "none" };
 
-        this.colorAnimatedSquare = this.colorAnimatedSquare.bind(this);
+        this.toggleAnimation = this.toggleAnimation.bind(this);
     }
 
-    colorAnimatedSquare(color) {
-        this.setState({ animatedSquareColor: color });
+    toggleAnimation(e) {
+        const color = e.currentTarget.getAttribute("datacolor");
+
+        if(!e.currentTarget.getAttribute("class").includes(
+            `${color}-checked-label`)
+        ) {
+            e.currentTarget.setAttribute(
+                "class", `${color}-checked-label`
+            );
+            this.setState({ animatedSquareColor: color });
+        }
     }
+
 
     render() {
         return(
@@ -34,32 +45,36 @@ class LandingPage extends React.Component {
                     <p>What would you like to manage with wonday.com Work OS?</p>
 
                     <div className="splash-use-cases splash-use-cases-top">
-                        <label htmlFor="project-management">
-                            <Checkbox 
-                                color="indigo" 
-                                colorAnimatedSquare={this.colorAnimatedSquare}/>
-                            Project management
-                        </label>
 
-                        <label htmlFor="sales-and-crm">
-                            <Checkbox color="salmon" />
-                            Sales and CRM
-                        </label>
+                        <SplashUseCase 
+                            case="project-management"
+                            color="indigo"
+                            innerText="Project Management"
+                            toggleAnimation={this.toggleAnimation} />
 
-                        <label htmlFor="marketing">
-                            <Checkbox color="salmon" />
-                            Marketing
-                        </label>
+                        <SplashUseCase
+                            case="sales-and-crm"
+                            color="green"
+                            innerText="Sales and CRM"
+                            toggleAnimation={this.toggleAnimation} />
 
-                        <label htmlFor="creative-and-design">
-                            <Checkbox color="salmon" />
-                            Creative and design
-                        </label>
+                        <SplashUseCase
+                            case="marketing"
+                            color="pink"
+                            innerText="Marketing"
+                            toggleAnimation={this.toggleAnimation} />
 
-                        <label htmlFor="software-dev">
-                            <Checkbox color="salmon" />
-                            Software development
-                        </label>
+                        <SplashUseCase
+                            case="creative-and-design"
+                            color="salmon"
+                            innerText="Creative and design"
+                            toggleAnimation={this.toggleAnimation} />
+
+                        <SplashUseCase
+                            case="software-dev"
+                            color="blue"
+                            innerText="Software development"
+                            toggleAnimation={this.toggleAnimation} />
                     </div>
                     <div className="splash-use-cases splash-use-cases-bottom">
                         <label htmlFor="task-management">

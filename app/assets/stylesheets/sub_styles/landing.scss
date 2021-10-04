@@ -104,7 +104,7 @@
     text-align: center;
     
     h1 {
-        padding-top: 70px;
+        padding-top: 2rem;
         padding-bottom: 10px;
         font-size: 4rem;
         font-weight: 700;
@@ -113,8 +113,8 @@
 
     p {
         @include roboto-lightweight;
-        margin-top: 30px;
-        font-size: 1.7rem;
+        margin-top: 1rem;
+        font-size: 1.5rem;
     }
 
     .splash-use-cases {
@@ -124,9 +124,11 @@
 
         label {
             margin: .5rem 0;
-            padding: 1rem;
+            padding: .7rem 1rem;
             border-radius: 2rem;
             background-color: rgb(243, 243, 243);
+
+            &:hover { cursor: pointer; }
         }
 
         .my-checkbox {
@@ -134,6 +136,7 @@
             width: 1.2rem;
             height: 1.2rem;
             margin-right: .3rem;
+            padding: .05rem;
             border: 1px solid black;
             border-radius: 2px;
             background-color: white;
@@ -141,11 +144,22 @@
             &:hover { cursor: pointer; }
         }
 
+        .checked-label { background-color: rgb(219, 239, 255); }
+
         #indigo-checkbox { border: 1px solid $indigo; }
-        .indigo-checked { background-color: $indigo; color: white }
+        .indigo-checked-box { background-color: $indigo; color: white }
+
+        #green-checkbox { border: 1px solid $green; }
+        .green-checked-box { background-color: $green; color: white }
+
+        #pink-checkbox { border: 1px solid rgb(255, 105, 130); }
+        .pink-checked-box { background-color: rgb(255, 105, 130); color: white }
 
         #salmon-checkbox { border: 1px solid $salmon; }
-        .salmon-checked { background-color: $salmon; color: white }
+        .salmon-checked-box { background-color: $salmon; color: white }
+
+        #blue-checkbox { border: 1px solid $blue; }
+        .blue-checked-box { background-color: $blue; color: white }
     }
 
     .splash-use-cases-top { margin-top: 1rem; }
@@ -155,10 +169,12 @@
     #get-started-btn-bigger {
         @include get-started();
         display: block;
+        position: relative;
+        z-index: 200;
         width: 240px;
         padding: 14px 0;
         height: 50px;
-        margin: 60px auto;
+        margin: 2rem auto;
         font-size: 1.2rem;
         text-decoration: none;
     }
@@ -166,10 +182,30 @@
 
 #animated-square {
     margin: 0 auto;
-    margin-top: -6rem;
+    margin-top: -4rem;
 }
 
 .indigo-sq-color {
     @include expandSquare;
-    background-color: indigo;
+    background-color: $indigo;
+}
+
+.green-sq-color {
+    @include expandSquare;
+    background-color: $green;
+}
+
+.pink-sq-color {
+    @include expandSquare;
+    background-color: rgb(255, 105, 130);
+}
+
+.salmon-sq-color {
+    @include expandSquare;
+    background-color: $salmon;
+}
+
+.blue-sq-color {
+    @include expandSquare;
+    background-color: $blue;
 }
