@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NavHeader from "./nav_header";
 import SplashUseCase from "./splash_use_case";
 import Checkbox from "./checkbox";
+import AnimatedSquare from "./animated_square";
 
 
 class LandingPage extends React.Component {
@@ -106,11 +107,8 @@ class LandingPage extends React.Component {
                     <Link to="/signup" id="get-started-btn-bigger">
                         <span id="get-started-text-bigger">Get Started</span> ›
                     </Link>
-                    <div 
-                        id="animated-square" 
-                        className={
-                            `${this.state.animatedSquareColor}-sq-color` }>
-                    </div>
+                    <AnimatedSquare 
+                        color={this.state.animatedSquareColor} />
                 </section>
             </>
         )
