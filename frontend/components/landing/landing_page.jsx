@@ -12,7 +12,11 @@ class LandingPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { animatedSquareColor: "none" };
+        this.state = { 
+            animatedSquareColor: {
+                mostRecentColor: "none"
+            }
+        };
 
         this.toggleAnimation = this.toggleAnimation.bind(this);
     }
@@ -20,13 +24,22 @@ class LandingPage extends React.Component {
     toggleAnimation(e) {
         const color = e.currentTarget.getAttribute("datacolor");
 
-        if(!e.currentTarget.getAttribute("class").includes(
-            `${color}-checked-label`)
-        ) {
+        if (!this.state.animatedSquareColor[`${color}`]) {
+            let colorToAdd = {...this.state.animatedSquareColor};
+            colorToAdd["mostRecentColor"] = color;
+            colorToAdd[`${color}`] = color;
             e.currentTarget.setAttribute(
                 "class", `${color}-checked-label`
             );
-            this.setState({ animatedSquareColor: color });
+            this.setState({ animatedSquareColor: colorToAdd }, () => {
+                console.log(this.state.animatedSquareColor);
+            });
+        } else {
+            let squareColor = {...this.state.animatedSquareColor};
+            squareColor["mostRecentColor"] = "none";
+            delete squareColor[`${color}`];
+            this.setState({ animatedSquareColor: squareColor });
+            console.log(this.state.animatedSquareColor);
         }
     }
 
@@ -108,7 +121,7 @@ class LandingPage extends React.Component {
                         <span id="get-started-text-bigger">Get Started</span> ›
                     </Link>
                     <AnimatedSquare 
-                        color={this.state.animatedSquareColor} />
+                        color={this.state.animatedSquareColor.mostRecentColor} />
                 </section>
             </>
         )
