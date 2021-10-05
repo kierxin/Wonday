@@ -91,7 +91,7 @@
     margin: 15px 0;
 
     button {
-        padding: 5px;
+        padding: .4rem .8rem .3rem .8rem;
         border: 1px solid transparent;
         background-color: transparent;
         border-radius: 3px;
@@ -101,6 +101,8 @@
             cursor: pointer;
             background-color: rgb(221, 228, 228);
         }
+
+        i { margin-top: -.2rem; }
     }
 }
 
@@ -120,8 +122,12 @@
 .filter-by-person {
     position: relative;
 
-    i {
-        margin-left: .5rem;
+    i.fa-times {
+        padding: .2rem .4rem;
+        margin: 0 -.5rem 0 .4rem;
+        border-radius: 3px;
+
+        &:hover { background-color: white; }
     }
 }
 

@@ -41,11 +41,15 @@ class WorkspaceSidebar extends React.Component {
         if (this.state.collapsed) {
             this.setState({ 
                 collapsed: false, 
-                hoverable:false, 
+                hoverable: false, 
                 toggleText: "<" 
             });
         } else {
-            this.setState({ collapsed: true, hoverable: true });
+            this.setState({ 
+                collapsed: true, 
+                hoverable: true,
+                toggleText: ">"
+            });
         }
     }
 
@@ -91,7 +95,7 @@ class WorkspaceSidebar extends React.Component {
             </nav>
             <div id="workspace-sidebar-collapse-btn"
                 onClick={this.toggleCollapse}>
-                        {this.state.toggleText}
+                    {this.state.toggleText}
             </div>
             </>
         );
