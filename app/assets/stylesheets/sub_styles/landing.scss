@@ -19,6 +19,7 @@
 
 .landing-nav-btns {
     @include flex;
+    position: sticky;
     height: 70px;
     width: 100%;
 }
@@ -124,7 +125,7 @@
 
         label {
             margin: .5rem 0;
-            padding: .7rem 1rem;
+            padding: .7rem 1rem .6rem 1rem;
             border-radius: 2rem;
             background-color: rgb(243, 243, 243);
 
@@ -136,6 +137,7 @@
             width: 1.2rem;
             height: 1.2rem;
             margin-right: .3rem;
+            margin-top: -.2rem;
             padding: .05rem;
             border: 1px solid black;
             border-radius: 2px;

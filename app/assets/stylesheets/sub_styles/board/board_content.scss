@@ -159,3 +159,13 @@
             }
     }
 }
+
+.add-group-prompt {
+    margin-top: 2rem;
+    margin-left: .5rem;
+    font-size: 1.1rem;
+    font-family: $roboto;
+    color: rgb(0, 124, 233);
+
+    i { margin-top: -.4rem; }
+}

@@ -26,11 +26,18 @@ class BoardContent extends React.Component {
             })
         }
         
-        const groupsList = groups.map(group => {
-            return(
-                <GroupContainer id={group.id} key={`extra-${group.id}`} />
-            )
-        });
+        let groupsList;
+        if (groups.length > 0) {
+            groupsList = groups.map(group => {
+                return (
+                    <GroupContainer id={group.id} key={`extra-${group.id}`} />
+                )
+            });
+        } else {
+            groupsList = <div className="add-group-prompt">
+                <i className="fas fa-arrow-up"></i> Welcome! Click the "Add Group" button to get started.
+            </div>;
+        }
 
 
         return (
