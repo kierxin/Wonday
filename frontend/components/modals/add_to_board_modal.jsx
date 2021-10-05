@@ -45,7 +45,7 @@ class AddToBoardModal extends React.Component {
                         <a href="https://github.com/kierxin" target="_blank"><i className="fab fa-github"></i></a>
                         <a href="https://angel.co/u/keeruh" target="_blank"><i className="fab fa-angellist"></i></a>
                         <a href="https://www.linkedin.com/in/kiraporter" target="_blank"><i className="fab fa-linkedin-in"></i></a>
-                        <a href="#" target="_blank"><i className="fa fa-external-link"></i></a>
+                        <a href="https://kierxin.github.io/Kira-Porter-Portfolio/" target="_blank"><i className="fa fa-external-link"></i></a>
                     </div>
 
                     <p className="sig">Have a great day!</p>

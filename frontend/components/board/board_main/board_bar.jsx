@@ -25,9 +25,9 @@ class BoardBar extends React.Component {
         e.preventDefault();
         const filter = parseInt(e.currentTarget.getAttribute("datafilter"));
 
-        this.setState({ selectionMenu: false }, () => {
+        // this.setState({ selectionMenu: false }, () => {
             this.props.toggleFilter(filter);
-        });
+        // });
     }
 
     render() {
@@ -35,7 +35,8 @@ class BoardBar extends React.Component {
             <div className="board-bar">
                 <AddGroupBtnContainer />
                 <SearchBtn />
-                <FilterByPerson toggleSelection={this.toggleSelection}
+                <FilterByPerson 
+                    toggleSelection={this.toggleSelection}
                     handleChoice={this.handleChoice}
                     toggleFilter={this.props.toggleFilter}
                     selectionMenu={this.state.selectionMenu}

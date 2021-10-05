@@ -76,7 +76,6 @@ class WorkspaceSidebar extends React.Component {
                 {this.props.user.workspace && (<div className="workspace-sidebar-container">
                     <div id="workspace-sidebar-header">
                         <h3>Workspace</h3>
-                        <button id="workspace-settings-option"></button>
                     </div>
                     <div id="workspace-name">
                         <p>{this.props.user.workspace.name[0].toUpperCase()}</p>
@@ -86,7 +85,7 @@ class WorkspaceSidebar extends React.Component {
                         id="add-board-option" 
                         onClick={this.toggleModal}>
                         {/* img */}
-                        <p>Add New Board</p>
+                        <p>+ Add New Board</p>
                     </button>
                     {this.props.user.boards && (
                         <BoardsListContainer />
