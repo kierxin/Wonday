@@ -7,9 +7,9 @@ import NetworkLink from "./NetworkLink";
 const NavHeader = () => {
     
     return (
-        <nav className="landing-nav-btns">
+        <nav className="splash-nav-btns">
 
-            <div className="left-side-landing-btns">
+            <div className="left-side-splash-btns">
 
                 <Link to="/" id="logo">
                     <img src={window.wLogo} alt="w logo" id="w-logo" />
@@ -33,7 +33,7 @@ const NavHeader = () => {
                 
             </div>
 
-            <div className="right-side-landing-btns">
+            <div className="right-side-splash-btns">
                 <Link to="/login" id="login-btn">Log In</Link>
                 <Link to="/signup" id="get-started-btn">
                     <span id="get-started-text">Get Started</span> ›

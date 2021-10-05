@@ -1,5 +1,5 @@
 // NAV_HEADER
-.landing-nav-btns {
+.splash-nav-btns {
     padding: 10px;
     position: sticky;
 }
@@ -17,18 +17,18 @@
     }
 }
 
-.landing-nav-btns {
+.splash-nav-btns {
     @include flex;
     position: sticky;
     height: 70px;
     width: 100%;
 }
 
-.left-side-landing-btns, .right-side-landing-btns {
+.left-side-splash-btns, .right-side-splash-btns {
     @include flex;
 }
 
-.left-side-landing-btns {
+.left-side-splash-btns {
     margin-left: 5px;
 }
 
@@ -39,7 +39,7 @@
     margin-left: 36px;
 }
 
-.right-side-landing-btns {
+.right-side-splash-btns {
     width: 20%;
     align-self: flex-end;
     align-items: center;
@@ -99,7 +99,7 @@
 }
 
 
-.landing-main {
+.splash-main {
     display: block;
     height: calc(100vh - 70px - 70px);
     text-align: center;

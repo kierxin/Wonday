@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 
 import NavHeader from "./nav_header";
 import SplashUseCase from "./splash_use_case";
-import Checkbox from "./checkbox";
 import AnimatedSquare from "./animated_square";
 
 
-class LandingPage extends React.Component {
+class SplashPage extends React.Component {
 
     constructor(props) {
         super(props);
@@ -53,10 +52,10 @@ class LandingPage extends React.Component {
                 <NavHeader />
                 <div className="yellow-banner">
                     <p>
-                        Welcome to <span id="landing-span-wonday">wonday</span>: a full-stack clone of monday.com
+                        Welcome to <span id="splash-span-wonday">wonday</span>: a full-stack clone of monday.com
                     </p>
                 </div>
-                <section className="landing-main">
+                <section className="splash-main">
                     <h1>Work Without Limits</h1>
                     <p>Easily build, run, and scale your dream workflows on one platform.</p>
                     <p>What would you like to manage with wonday.com Work OS?</p>
@@ -142,4 +141,4 @@ class LandingPage extends React.Component {
 }
 
 
-export default LandingPage;
+export default SplashPage;
