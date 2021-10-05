@@ -15,13 +15,16 @@ class LandingPage extends React.Component {
         this.state = { 
             animatedSquareColor: {
                 mostRecentColor: "none"
-            }
+            },
+            getStartedAnimated: ""
         };
 
         this.toggleAnimation = this.toggleAnimation.bind(this);
+        this.removeGetStartedAnimation = this.removeGetStartedAnimation.bind(this);
     }
 
     toggleAnimation(e) {
+        this.setState({ getStartedAnimated: "get-started-animated" });
         const color = e.currentTarget.getAttribute("datacolor");
 
         if (!this.state.animatedSquareColor[`${color}`]) {
@@ -40,6 +43,9 @@ class LandingPage extends React.Component {
         }
     }
 
+    removeGetStartedAnimation = () => {
+        this.setState({ getStartedAnimated: "" });
+    }
 
     render() {
         return(
@@ -119,7 +125,11 @@ class LandingPage extends React.Component {
                             toggleAnimation={this.toggleAnimation} />
                     </div>
 
-                    <Link to="/signup" id="get-started-btn-bigger">
+                    <Link 
+                        to="/signup" 
+                        id="get-started-btn-bigger"
+                        className={this.state.getStartedAnimated}
+                        onAnimationEnd={this.removeGetStartedAnimation} >
                         <span id="get-started-text-bigger">Get Started</span> ›
                     </Link>
                     <AnimatedSquare 

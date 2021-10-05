@@ -179,7 +179,7 @@
         .darkgreen-checked-box { background-color: rgb(87, 179, 133); color: white }
     }
 
-    .splash-use-cases-top { margin-top: 1rem; }
+    .splash-use-cases-top { margin-top: 1.8rem; }
 
     .splash-use-cases-bottom { width: 68%; }
 
@@ -194,6 +194,12 @@
         margin: 2rem auto;
         font-size: 1.2rem;
         text-decoration: none;
+    }
+
+    .get-started-animated {
+        animation-name: getstarted;
+        animation-delay: 700ms;
+        animation-duration: 300ms;
     }
 }
 
