@@ -31,7 +31,7 @@ class FilterByPerson extends React.Component {
             <div className="filter-by-person">
                 <button id="filter-btn"
                     onClick={this.props.toggleSelection}>
-                    <i class="far fa-user"></i> Filter By Person
+                    <i className="far fa-user"></i> Filter By Person
                     <i className="fas fa-times"
                         onClick={this.toggleFilter}></i>
                 </button>

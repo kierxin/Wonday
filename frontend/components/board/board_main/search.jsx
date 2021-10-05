@@ -9,7 +9,7 @@ class SearchBtn extends React.Component {
 
     render() {
         return (
-            <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+            <button id="search-btn"><i className="fas fa-search"></i> Search</button>
         )
     }
 

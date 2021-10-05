@@ -31,15 +31,12 @@ class LandingPage extends React.Component {
             e.currentTarget.setAttribute(
                 "class", `${color}-checked-label`
             );
-            this.setState({ animatedSquareColor: colorToAdd }, () => {
-                console.log(this.state.animatedSquareColor);
-            });
+            this.setState({ animatedSquareColor: colorToAdd });
         } else {
             let squareColor = {...this.state.animatedSquareColor};
             squareColor["mostRecentColor"] = "none";
             delete squareColor[`${color}`];
             this.setState({ animatedSquareColor: squareColor });
-            console.log(this.state.animatedSquareColor);
         }
     }
 

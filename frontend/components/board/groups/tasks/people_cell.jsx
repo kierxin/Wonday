@@ -19,7 +19,7 @@ class PeopleCell extends React.Component {
         this.setState({ selectionMenu: !this.state.selectionMenu });
     }
 
-    handleAdd(e) { // refactor to combine with handleRemove
+    handleAdd(e) {
         e.preventDefault();
         let task = this.props.task;
         if (!task.people.includes(parseInt(e.currentTarget.getAttribute("datavalue")))) {
@@ -61,7 +61,7 @@ class PeopleCell extends React.Component {
         } 
         
         const boardUsers = this.props.boardUsers.map((user, i) => {
-            // if(!task.people.includes(user.id)) {
+            if(!task.people.includes(user.id)) {
                 return (
                     <li key={`user-${user.id}-${i}`}>
                         <button datavalue={user.id} onClick={this.handleAdd}>
@@ -69,7 +69,7 @@ class PeopleCell extends React.Component {
                         </button>
                     </li>
                 )
-            // }
+            }
         });
 
         const names = this.props.people.map(person => {
