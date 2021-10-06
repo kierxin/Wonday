@@ -1,5 +1,5 @@
 demoWorkspace1 = Workspace.create!(
-    name: "New Workspace",
+    name: "My Workspace",
     leaders: [1]
 )
 

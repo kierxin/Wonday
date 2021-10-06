@@ -134,6 +134,42 @@ class SplashPage extends React.Component {
                     <AnimatedSquare 
                         color={this.state.animatedSquareColor.mostRecentColor} />
                 </section>
+                {/* <section className="splash-lower">
+                    <p>See the technologies used to build wonday.com</p>
+                    <div className="splash-companies">
+                        <div className="splash-companies-top">
+                            <div className="splash-company">
+                                <i class="devicon-react-original-wordmark colored"></i>
+                            </div>
+                            <div className="splash-company">
+                                <img src="#" alt="Company logo" />
+                            </div>
+                            <div className="splash-company">
+                                <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/universal.png" alt="Company logo" />
+                            </div>
+                            <div className="splash-company">
+                                <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/adobe.png" alt="Company logo" />
+                            </div>
+                            <div className="splash-company">
+                                <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/coca_cola.png" alt="Company logo" />
+                            </div>
+                        </div>
+                        <div className="splash-companies-bottom">
+                            <div className="splash-company">
+                                <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/loreal.png" alt="Company logo" />
+                            </div>
+                            <div className="splash-company">
+                                <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/nbc-logo.png" alt="Company logo" />
+                            </div>
+                            <div className="splash-company">
+                                <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/discovery_channel_logo.png" alt="Company logo" />
+                            </div>
+                            <div className="splash-company">
+                                <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/customers/logos-v2/deezer.png" alt="Company logo" />
+                            </div>
+                        </div>
+                    </div>
+                </section> */}
             </>
         )
     }

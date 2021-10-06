@@ -1,0 +1,31 @@
+.splash-lower {
+    display: block;
+    text-align: center;
+
+    p {
+        @include roboto-lightweight;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .splash-companies-top, .splash-companies-bottom {
+        @include flex;
+        align-items: center;
+        margin: 3rem auto;
+    }
+
+    .splash-companies-top {
+        width: 80%;
+
+        img {
+            display: block;
+            width: 10vw;
+            height: auto;
+            border: 1px solid green;
+        }
+    }
+
+    .splash-companies-bottom {
+        width: 70%;
+    }
+}
