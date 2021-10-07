@@ -18,6 +18,7 @@ class Api::BoardsController < ApplicationController
         @user = current_user
 
         @board = Board.new(board_params)
+        @board.description = ""
 
         if @board.save
             @workspace = @board.workspace
@@ -62,7 +63,7 @@ class Api::BoardsController < ApplicationController
 
     private
     def board_params
-        params.require(:board).permit(:name, :workspace_id, :leaders => []) 
+        params.require(:board).permit(:name, :workspace_id, :columns_in_use, :description, :leaders => []) 
     end
 
 end

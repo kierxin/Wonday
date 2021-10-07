@@ -8,5 +8,6 @@ class Board < ApplicationRecord
 
     validates :name, :workspace_id, :leaders, :columns_in_use, presence: true
     validates :columns_in_use, inclusion: { in: columns }
+    validates :description, length: { maximum: 1000 }
 
 end

@@ -1,6 +1,7 @@
 import React from "react";
 
 import BoardNameContainer from './board_name_container';
+import TextInputContainer from "./text_input_container";
 
 
 class BoardHeader extends React.Component {
@@ -46,6 +47,7 @@ class BoardHeader extends React.Component {
                     </div>
                 </div>
 
+                <TextInputContainer elementType="board" />
             </div>
         )
     }

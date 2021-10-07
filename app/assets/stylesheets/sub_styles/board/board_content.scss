@@ -6,19 +6,33 @@
 }
 
 .board-header {
+    border-bottom: 1px solid rgb(228, 228, 228);
+
     input {
         @include roboto-lightweight;
+        width: 100%;
         font-weight: 500;
         font-size: 1.5rem;
-        max-width: 99%;
+    }
+
+    input.board-input { // board description input
+        width: 50%;
+        height: fit-content;
+        padding: .2rem;
+        border-radius: 0;
+        border: 1px solid transparent;
+        font-weight: 400;
+        font-size: .9rem;
+
+        &:hover {
+            border: 1px dashed lightgray;
+        }
     }
 }
 
 .upper-board-header {
     @include flex;
     margin: 3px 0 10px 0;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgb(228, 228, 228);
 
     #change-board-name-field {
         margin: 0;

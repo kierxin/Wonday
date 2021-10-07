@@ -1,6 +1,5 @@
 import * as BoardApiUtil from '../util/board_api_util';
 
-
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
 export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
@@ -35,19 +34,6 @@ const receiveFilter = filter => ({
     type: TOGGLE_FILTER,
     filter: filter
 })
-
-
-// const newGroupParams = (board) => {
-//     const colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
-//     const index = Math.floor(Math.random() * 7);
-
-//     return [board.id, {
-//         "title": "New Group",
-//         "board_id": board.id,
-//         "color": colors[index]
-//     }]
-// }
-
 
 export const viewBoards = () => dispatch => {
     return(

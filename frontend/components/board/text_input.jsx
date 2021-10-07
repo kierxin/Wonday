@@ -15,9 +15,10 @@ class TextInput extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.element) {
-            const title = (' ' + this.props.element.title).slice(1);
-            this.setState({ title: title })
+        const ele = this.props.element;
+        if (ele) {
+            const title = (' ' + (ele.title || ele.description)).slice(1);
+            this.setState({ title: title });
         }
     }
 
@@ -29,32 +30,40 @@ class TextInput extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+        const ele = this.props.element;
+        const type = this.props.elementType;
         let oldTitle = "";
 
         if (this.props.element) {
-            oldTitle = (' ' + this.props.element.title).slice(1);
+            oldTitle = (' ' + ele.title || ele.description).slice(1);
         }
 
         if (this.state.title.length < 0) {
             this.setState({ title: oldTitle });
         } else {
-            let element = Object.assign({}, this.props.element);
-            element.title = this.state.title;
+            let element = Object.assign({}, ele);
 
-            if (this.props.elementType === "group") {
-                this.props.updateGroup(this.props.parentId, element);
+            if (type === "board") {
+                element.description = this.state.title;
+                this.props.updateBoard(element);
             } else {
-                if (this.state.title.length > 0) {
-                    this.props.updateTask(this.props.parentId, element);
-                } else {
-                    this.setState({ title: "New Task" });
+                element.title = this.state.title;
+
+                if (type === "group") {
+                    this.props.updateGroup(this.props.parentId, element);
+                } else if (type === "task") {
+                    if (this.state.title.length > 0) {
+                        this.props.updateTask(this.props.parentId, element);
+                    } else {
+                        this.setState({ title: "New Task" });
+                    }
                 }
             }
         }
     }
 
     render() {
-
         return (
             <form onSubmit={this.handleSubmit}
                 id={`change-${this.props.elementType}-title`}>

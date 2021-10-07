@@ -1,6 +1,6 @@
 demoWorkspace1 = Workspace.create!(
     name: "My Workspace",
-    leaders: [1]
+    leaders: [1],
 )
 
 demoUser1 = User.create!(
@@ -23,14 +23,16 @@ board1 = Board.create!(
     workspace_id: 1,
     name: "September Project",
     leaders: [1],
-    columns_in_use: ["status", "deadline", "people"]
+    columns_in_use: ["status", "deadline", "people"],
+    description: "Full-stack clone of Monday.com"
 )
 
 board2 = Board.create!(
     workspace_id: 1,
     name: "Ant Colony Game",
     leaders: [2],
-    columns_in_use: ["status", "people"]
+    columns_in_use: ["status", "people"],
+    description: "🐜"
 )
 
 group1 = Group.create!(
