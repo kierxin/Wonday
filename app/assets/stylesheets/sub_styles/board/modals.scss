@@ -77,6 +77,11 @@
 }
 
 
+li.board-member {
+    margin: 1rem 0;
+}
+
+
     #fake-form {
         @include flex($justify-content: flex-start);
         flex-wrap: wrap;
