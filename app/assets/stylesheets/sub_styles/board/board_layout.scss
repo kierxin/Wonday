@@ -55,7 +55,23 @@
 
             content: attr(data-title);
         }
+    }
 
+    .left-nav-lower-btns {
+        .left-nav-btn {
+            &:hover {
+                cursor: url('coming-soon-light.cur'), not-allowed;
+                background-color: transparent;
+
+                img {
+                    opacity: .3;
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
     }
 
     [data-title="Boards"] {

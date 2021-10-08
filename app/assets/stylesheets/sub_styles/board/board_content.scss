@@ -94,6 +94,14 @@
             height: 1rem;
             margin-right: 5px;
         }
+
+        &:hover {
+            cursor: url('coming-soon-dark.cur'), not-allowed;
+            background-color: lightgray;
+            color: gray;
+            
+            img { opacity: .4; }
+        }
     }
     
 }
