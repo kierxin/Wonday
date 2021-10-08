@@ -38,9 +38,11 @@ class BoardsList extends React.Component {
                 <li key={`board-option-${board.id}`}>
                     <button onClick={this.getLatestBoard} dataid={board.id}>
                         {board.name}
-                        <i className="far fa-trash-alt ignore-fetch"
-                            onClick={this.deleteBoard}
-                            dataid={board.id}></i>
+                        {boards.length > 1 && (
+                            <i className="far fa-trash-alt ignore-fetch"
+                                onClick={this.deleteBoard}
+                                dataid={board.id}></i>
+                        )}
                     </button>
                 </li>
             )
