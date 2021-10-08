@@ -41,7 +41,11 @@ class Api::TasksController < ApplicationController
         @task.destroy
         @tasks = Task.all.select { |task| task.group_id == @group.id }
 
-        render "/api/tasks/index"
+        if @tasks.length > 0
+            render "/api/tasks/index"
+        else
+            render json: { justGroupId: @group.id }
+        end
     end
 
     private

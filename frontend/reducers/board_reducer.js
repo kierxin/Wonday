@@ -46,12 +46,18 @@ const boardReducer = (state = {}, action) => {
         case RECEIVE_TASKS:
             let tasksResult = JSON.parse(JSON.stringify(nextState));
 
-            if(action.tasks.length > 0) {
+            if (action.tasks.justGroupId) {
+                const groupIdx = tasksResult.groups.findIndex(
+                    group => group.id === action.tasks.justGroupId
+                );
+                tasksResult.groups[groupIdx].tasks = [];
+            } else if (action.tasks && action.tasks.length > 0) {
                 const groupId = action.tasks[0].group_id;
-                const groupIdx = tasksResult.groups.findIndex(group => group.id === groupId);
-                
+                const groupIdx = tasksResult.groups.findIndex(
+                    group => group.id === groupId
+                );
                 tasksResult.groups[groupIdx].tasks = action.tasks;
-            }
+            } 
             
             return tasksResult;
 
