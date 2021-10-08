@@ -46,7 +46,6 @@ class Api::TasksController < ApplicationController
 
     private
     def task_params
-        params[:task][:people] ||= []
         params.require(:task).permit(:title, :group_id, :status, :deadline, people: [])
     end
     

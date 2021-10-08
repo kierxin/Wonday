@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
 
     belongs_to :board
-    has_many :tasks
+    has_many :tasks, dependent: :destroy
 
     available_colors = ["gold", "indigo", "green", "blue", "brown", "gray", "salmon"]
 
