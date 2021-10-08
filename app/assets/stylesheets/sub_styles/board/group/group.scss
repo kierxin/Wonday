@@ -32,7 +32,6 @@
 
     h2 {
         flex: 1;
-        // width: 33%;
         border: 1px solid transparent;
         text-transform: capitalize;
         text-align: center;
@@ -43,6 +42,29 @@
             cursor: default;
         }
     }
+}
+
+.toggle-choose-column {
+    width: 1rem;
+    // position: relative;
+
+    i {
+        margin-top: .4rem;
+
+        &:hover {
+            cursor: pointer;
+            color: $deep-blue;
+        }
+
+        &:active { opacity: 1; }
+    }
+}
+
+.choose-columns-true {
+    position: absolute;
+    // top: -10vh;
+    // left: -10vw;
+    border: 1px solid red;
 }
 
 .group-right-main {

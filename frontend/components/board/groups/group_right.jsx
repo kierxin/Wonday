@@ -1,7 +1,26 @@
 import React from "react";
+
 import TaskCol from "./task_col";
+import ChooseColumnsContainer from "./choose_columns_container";
+
 
 class GroupRight extends React.Component {
+    
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            choosingCols: false
+        }
+
+        this.toggleColumnChoosing = this.toggleColumnChoosing.bind(this);
+    }
+
+    toggleColumnChoosing(e) {
+        e.preventDefault();
+        this.setState({ choosingCols: !this.state.choosingCols });
+        console.log("choose toggle");
+    }
 
     render() {
         let tasks = this.props.group.tasks;
@@ -28,6 +47,7 @@ class GroupRight extends React.Component {
                                 key={`${col}-${task.id}`} />
                         );
                     })}
+                    <div className="end-of-task-row"></div>
                 </div>
             );
         });
@@ -36,6 +56,16 @@ class GroupRight extends React.Component {
             <div className="group-right">
                 <div className="group-right-header">
                     {columns}
+                    <div className="toggle-choose-column"
+                        onClick={this.toggleColumnChoosing}>
+                        <i className="far fa-check-circle"></i>
+                    </div>
+
+                    {this.state.choosingCols && (
+                        <ChooseColumnsContainer
+                            choosing={this.state.choosingCols}
+                            toggleColumnChoosing={this.toggleColumnChoosing} />
+                    )}
                 </div>
                 <div className="group-right-main">
                     {tasksTable}

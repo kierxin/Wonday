@@ -187,3 +187,9 @@ input[type="date" i] {
 .cell {
     flex: 1;
 }
+
+.end-of-task-row {
+    width: 1rem;
+    background-color: rgb(231, 231, 231);
+    border-bottom: 1px solid white;
+}

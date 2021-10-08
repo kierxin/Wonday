@@ -115,14 +115,14 @@
     padding: 10px 0;
     border: none;
     border-radius: 65px;
-    background-color: rgb(19, 167, 226);
-    box-shadow: 0 3px 0 rgb(26, 151, 209);
+    background-color: $mid-blue;
+    box-shadow: 0 3px 0 $mid-blue;
     color: white;
     font-size: 1.2rem;
 
     &:hover {
         cursor: pointer;
-        background-color: rgb(26, 151, 209);
+        background-color: $mid-blue;
     }
 }
 
@@ -133,7 +133,7 @@
     border-radius: 5px;
     margin-top: 15px;
     margin-left: 5px;
-    background-color: rgb(21, 107, 235);
+    background-color: $deep-blue;
     box-shadow: none;
     font-size: 1rem;
     font-weight: 700;
@@ -185,3 +185,6 @@ $pale-blue: rgb(174, 224, 255);
 $pale-brown: rgb(221, 193, 182);
 $pale-gray: rgb(211, 211, 211);
 $pale-indigo: rgb(217, 206, 250);
+
+$mid-blue: rgb(26, 151, 209);
+$deep-blue: rgb(21, 107, 235);
