@@ -1,4 +1,4 @@
-import { RECEIVE_BOARD, RECEIVE_BOARDS, REMOVE_BOARD } from "../actions/board_actions";
+import { RECEIVE_BOARD, RECEIVE_BOARDS } from "../actions/board_actions";
 import { RECEIVE_USER, LOGOUT_USER } from "../actions/session_actions";
 import { RECEIVE_WORKSPACE } from "../actions/workspace_actions";
 
@@ -49,18 +49,9 @@ const usersReducer = (state = {}, action) => {
                 boards: boards
              });
 
-        // case REMOVE_BOARD:
-        //     let removeBoards = nextState.boards;
-        //     const idx = removeBoards.findIndex(board => board.id === action.boards.deleted);
-        //     removeBoards.splice(idx, 1)
-        //     nextState.boards = removeBoards;
-        //     return nextState;
-
         default:
             return state;
-
     }
-    
 }
 
 
