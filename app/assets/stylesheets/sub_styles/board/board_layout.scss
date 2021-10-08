@@ -60,7 +60,7 @@
     .left-nav-lower-btns {
         .left-nav-btn {
             &:hover {
-                cursor: url('coming-soon-light.cur'), not-allowed;
+                cursor: url('coming-soon-light.cur'), url('coming-soon-light.png'), not-allowed;
                 background-color: transparent;
 
                 img {
