@@ -16,7 +16,10 @@ class BoardsList extends React.Component {
         if (!e.currentTarget.classList.contains("ignore-fetch")) {
             this.props.getLatestBoard(`${e.currentTarget.getAttribute("dataid")}`)
             .then(promise => {
-                this.props.history.push(promise.board.id)
+                if (this.props.board && !this.props.board === promise.board.id) {
+                    this.props.history.push(promise.board.id)
+
+                }
             });
         }
     }

@@ -55,9 +55,7 @@ class Api::BoardsController < ApplicationController
 
             render "/api/boards/index"
         else 
-            render json: {status: "error", code: 405, message: "Workspace must have at least one board"}
-            @boards = @workspace.boards
-            render "/api/boards/show"
+            render json: ["Workspace must have at least one board"], status: 405
         end
     end
 

@@ -8,6 +8,7 @@ import BoardsList from "./boards_list";
 
 
 const mSTP = state => ({
+    board: state.board.id,
     user: state.user,
     boards: state.user.boards
 });
