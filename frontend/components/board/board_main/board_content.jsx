@@ -18,12 +18,28 @@ class BoardContent extends React.Component {
 
     render() {
         let groups = this.props.board.groups;
-        if (this.props.filter) {
+        if (this.props.filter && this.props.filterType === "person") {
             groups = groups.filter(group => {
                 return group.tasks.some(task => {
-                    return task.people.includes(this.props.filter);
+                    return task.people.includes(this.props.filter)
                 })
             })
+        } else if (this.props.filter && this.props.filterType === "search") {
+            const searchTerm = this.props.filter;
+
+            groups = groups.filter(group => {
+
+
+                return group.tasks.some(task => {
+                    let titleWords = task.title.split(" ");
+                    titleWords = titleWords.map(word => word.toLowerCase());
+
+
+                    return titleWords.some(titleWord => {
+                        return titleWord.includes(searchTerm.toLowerCase());
+                    });
+                });
+            });
         }
         
         let groupsList;

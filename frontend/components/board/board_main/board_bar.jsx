@@ -23,11 +23,19 @@ class BoardBar extends React.Component {
 
     handleChoice(e) {
         e.preventDefault();
-        const filter = parseInt(e.currentTarget.getAttribute("datafilter"));
+        const target = e.currentTarget;
+        let filter;
+        let filterType;
 
-        // this.setState({ selectionMenu: false }, () => {
-            this.props.toggleFilter(filter);
-        // });
+        if (target.hasAttribute("datafilter")) {
+            filterType = "person";
+            filter = parseInt(e.currentTarget.getAttribute("datafilter"));
+        } else if (target.hasAttribute("datasearch")) {
+            filterType = "search";
+            filter = e.currentTarget.getAttribute("datasearch");
+        }
+        
+        this.props.toggleFilter(filter, filterType);
     }
 
     render() {

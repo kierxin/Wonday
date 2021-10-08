@@ -18,6 +18,9 @@ const boardReducer = (state = {}, action) => {
             if (!nextState.hasOwnProperty("filter")) {
                 nextState.filter = false;
             }
+            if (!nextState.hasOwnProperty("filterType")) {
+                nextState.filterType = false;
+            }
 
             return nextState;
 
@@ -25,6 +28,7 @@ const boardReducer = (state = {}, action) => {
             return Object.assign({}, state, {
                 groups: action.groups
             });
+
 
         case RECEIVE_GROUP:
             let groups = nextState.groups;
@@ -40,7 +44,6 @@ const boardReducer = (state = {}, action) => {
             return Object.assign({}, state, {
                 groups: groups
             });
-
 
 
         case RECEIVE_TASKS:
@@ -81,26 +84,40 @@ const boardReducer = (state = {}, action) => {
 
 
         case TOGGLE_MODAL:
-            const modalType = (' ' + action.modalType).slice(1)
+            const modalType = (' ' + action.modalType).slice(1);
 
             return Object.assign({}, state, {
                 modal: modalType || false
             });
 
+
         case TOGGLE_FILTER:
-            let filter = (' ' + action.filter).slice(1)
+            let filter = (' ' + action.filter).slice(1);
+            let filterType = (' ' + action.filterType).slice(1);
+
             if (filter.length === 1) {
                 filter = parseInt(filter);
             } else {
                 filter = false;
+                filterType = false
             }
-            
+
             return Object.assign({}, state, {
-                filter: filter || false
+                filter: filter || false,
+                filterType: filterType || false
             });
+
+
+        // case SET_FILTER_TYPE:
+        //     let filterType = (' ' + action.filterType).slice(1);
+
+        //     return Object.assign({}, state, {
+        //         filterType: filterType || false
+        //     });
 
         case LOGOUT_USER:
             return {};
+
 
         default:
             return state;
