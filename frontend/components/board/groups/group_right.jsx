@@ -19,7 +19,6 @@ class GroupRight extends React.Component {
     toggleColumnChoosing(e) {
         e.preventDefault();
         this.setState({ choosingCols: !this.state.choosingCols });
-        console.log("choose toggle");
     }
 
     render() {
