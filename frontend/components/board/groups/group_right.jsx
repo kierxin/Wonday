@@ -64,7 +64,7 @@ class GroupRight extends React.Component {
                     {this.state.choosingCols && (
                         <ChooseColumnsContainer
                             choosing={this.state.choosingCols}
-                            toggleColumnChoosing={this.toggleColumnChoosing} />
+                            toggleChoosing={this.toggleColumnChoosing} />
                     )}
                 </div>
                 <div className="group-right-main">

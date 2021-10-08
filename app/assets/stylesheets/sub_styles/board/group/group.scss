@@ -29,6 +29,7 @@
 
 .group-right-header {
     @include flex;
+    position: relative;
 
     h2 {
         flex: 1;
@@ -46,7 +47,6 @@
 
 .toggle-choose-column {
     width: 1rem;
-    // position: relative;
 
     i {
         margin-top: .4rem;
@@ -61,11 +61,34 @@
 }
 
 .choose-columns-true {
+    @include flex;
     position: absolute;
-    // top: -10vh;
-    // left: -10vw;
-    border: 1px solid red;
+    width: 90%;
+    z-index: 500;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 1.1rem rgba(110, 110, 110, 0.2);
 }
+
+.remove-columns, .add-columns {
+    width: 50%;
+    padding: .5rem;
+
+    h4 { font-weight: 700; }
+    p {
+        margin-top: .2rem;
+        padding: .2rem;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(238, 238, 238);
+            color: $deep-blue;
+        }
+    }
+}
+
+.remove-columns { border-right: 1px solid rgb(231, 231, 231); }
 
 .group-right-main {
     position: static;
@@ -75,7 +98,6 @@
 
 .tasks-list {
     width: 100%;
-    // min-height: 30px;
     margin: 0 0 0 30px;
     padding: 0;
 

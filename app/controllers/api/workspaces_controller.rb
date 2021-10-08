@@ -23,7 +23,7 @@ class Api::WorkspacesController < ApplicationController
 
     private
     def workspace_params
-        params.require(:workspace).permit(:name, :leaders => []) 
+        params.require(:workspace).permit(:name, leaders: []) 
     end
 
 end

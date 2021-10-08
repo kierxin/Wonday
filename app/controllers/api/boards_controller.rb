@@ -34,9 +34,9 @@ class Api::BoardsController < ApplicationController
 
     def update
         @board = Board.find_by(id: params[:id])
-        @user = current_user
 
         if @board.update(board_params)
+            @user = current_user
             @user.latest_board = @board.id
             @user.save!
             render "/api/boards/show"
@@ -63,7 +63,7 @@ class Api::BoardsController < ApplicationController
 
     private
     def board_params
-        params.require(:board).permit(:name, :workspace_id, :columns_in_use, :description, :leaders => []) 
+        params.require(:board).permit(:name, :workspace_id, :description, columns_in_use: [], leaders: []) 
     end
 
 end

@@ -6,7 +6,8 @@ import ChooseColumns from "./choose_columns";
 
 const mSTP = (state, ownProps) => ({
     choosing: ownProps.choosing,
-    board: state.board
+    board: state.board,
+    toggleChoosing: ownProps.toggleChoosing
 })
 
 const mDTP = dispatch => ({
