@@ -96,10 +96,15 @@ const boardReducer = (state = {}, action) => {
             let filterType = (' ' + action.filterType).slice(1);
 
             if (filter.length === 1) {
-                filter = parseInt(filter);
-            } else {
+                if (filterType === "person") {
+                    filter = parseInt(filter);
+                } else if (filterType !== "search") {
+                    filter = false;
+                    filterType = false;
+                }
+            } else if (filterType !== "search") {
                 filter = false;
-                filterType = false
+                filterType = false;
             }
 
             return Object.assign({}, state, {
@@ -107,13 +112,6 @@ const boardReducer = (state = {}, action) => {
                 filterType: filterType || false
             });
 
-
-        // case SET_FILTER_TYPE:
-        //     let filterType = (' ' + action.filterType).slice(1);
-
-        //     return Object.assign({}, state, {
-        //         filterType: filterType || false
-        //     });
 
         case LOGOUT_USER:
             return {};

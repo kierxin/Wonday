@@ -75,11 +75,22 @@ class Group extends React.Component {
     render() {
         const group = this.props.group;
         const status = this.state.viewOptions;
+        const filter = this.props.filter;
         let tasks;
 
         // titles of group's tasks (text-input), & trashcan to delete them
-        if(this.props.filter) {
-            tasks = group.tasks.filter(task => task.people.includes(this.props.filter));
+        if (filter) {
+            if (filter === "true" && this.props.filterType === "search") {
+                tasks = group.tasks;
+            } else {
+                tasks = group.tasks.filter(task => {
+                    return task.people.includes(filter) || (
+                        task.title.toLowerCase().includes(filter.toLowerCase())
+                    ) || (
+                        task.status && task.status.toLowerCase().includes(filter.toLowerCase())
+                    );
+                });
+            }
         } else {
             tasks = group.tasks;
         }

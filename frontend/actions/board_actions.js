@@ -6,7 +6,6 @@ export const REMOVE_BOARD = 'REMOVE_BOARD';
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const TOGGLE_FILTER = 'TOGGLE_FILTER';
-// export const SET_FILTER_TYPE = 'TOGGLE_FILTER';
 
 
 const receiveBoard = board => {
@@ -36,11 +35,6 @@ const receiveFilter = (filter, filterType) => ({
     filter: filter,
     filterType: filterType
 })
-
-// const receiveFilterType = type => ({
-//     type: SET_FILTER_TYPE,
-//     filterType: type
-// })
 
 export const viewBoards = () => dispatch => {
     return(
@@ -99,9 +93,3 @@ export const toggleFilter = (filter, filterType) => dispatch => {
         dispatch(receiveFilter(filter, filterType))
     );
 }
-
-// export const setFilterType = type => dispatch => {
-//     return(
-//         dispatch(receiveFilterType(type))
-//     )
-// }

@@ -24,9 +24,20 @@ class GroupRight extends React.Component {
     render() {
         let tasks = this.props.group.tasks;
         const group = this.props.group;
+        const filter = this.props.filter;
 
-        if (this.props.filter) {
-            tasks = group.tasks.filter(task => task.people.includes(this.props.filter));
+        if (filter) {
+            if (filter === "true" && this.props.filterType === "search") {
+                tasks = group.tasks;
+            } else {
+                tasks = group.tasks.filter(task => {
+                    return task.people.includes(filter) || (
+                        task.title.toLowerCase().includes(filter.toLowerCase())
+                    ) || (
+                            task.status && task.status.toLowerCase().includes(filter.toLowerCase())
+                    );
+                });
+            }
         } else {
             tasks = group.tasks;
         }

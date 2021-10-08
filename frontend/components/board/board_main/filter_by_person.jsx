@@ -6,12 +6,12 @@ class FilterByPerson extends React.Component {
     constructor(props) {
         super(props);
 
-        this.toggleFilter = this.toggleFilter.bind(this);
+        // this.toggleFilter = this.toggleFilter.bind(this);
     }
 
-    toggleFilter() {
-        this.props.toggleFilter(false);
-    }
+    // toggleFilter() {
+    //     this.props.toggleFilter(false);
+    // }
 
     render() {
         let people;
@@ -34,7 +34,7 @@ class FilterByPerson extends React.Component {
                     <i className="far fa-user"></i> Filter By Person
                     {this.props.selectionMenu && (
                         <i className="fas fa-times"
-                            onClick={this.toggleFilter}></i>
+                            onClick={this.props.toggleFilter}></i>
                     )}
                 </button>
 

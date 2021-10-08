@@ -1,7 +1,7 @@
 import React from "react";
 import AddGroupBtnContainer from "./add_group_btn_container";
 import FilterByPerson from "./filter_by_person";
-import SearchBtn from "./search";
+import Search from "./search";
 
 
 class BoardBar extends React.Component {
@@ -19,21 +19,13 @@ class BoardBar extends React.Component {
 
     toggleSelection() {
         this.setState({ selectionMenu: !this.state.selectionMenu });
+        this.props.toggleFilter();
     }
 
     handleChoice(e) {
         e.preventDefault();
-        const target = e.currentTarget;
-        let filter;
-        let filterType;
-
-        if (target.hasAttribute("datafilter")) {
-            filterType = "person";
-            filter = parseInt(e.currentTarget.getAttribute("datafilter"));
-        } else if (target.hasAttribute("datasearch")) {
-            filterType = "search";
-            filter = e.currentTarget.getAttribute("datasearch");
-        }
+        const filterType = "person";
+        const filter = parseInt(e.currentTarget.getAttribute("datafilter"));
         
         this.props.toggleFilter(filter, filterType);
     }
@@ -42,7 +34,8 @@ class BoardBar extends React.Component {
         return(
             <div className="board-bar">
                 <AddGroupBtnContainer />
-                <SearchBtn />
+                <Search
+                    toggleFilter={this.props.toggleFilter} />
                 <FilterByPerson 
                     toggleSelection={this.toggleSelection}
                     handleChoice={this.handleChoice}

@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
 
     return {
         group: group,
-        filter: state.board.filter
+        filter: state.board.filter,
+        filterType: state.board.filterType
     }
 }
 

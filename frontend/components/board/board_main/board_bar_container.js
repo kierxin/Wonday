@@ -10,7 +10,6 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     toggleFilter: (filter, type) => dispatch(toggleFilter(filter, type))
-    // setFilterType: filterType => dispatch(setFilterType(filterType))
 })
 
 
