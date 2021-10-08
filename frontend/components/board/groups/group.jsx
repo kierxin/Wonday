@@ -148,6 +148,7 @@ class Group extends React.Component {
                                     onChange={this.changeNewTaskTitle} />
 
                                 <button>Add</button>
+                                <div className="end-of-task-row"></div>
                             </form>
                         </div>
                     

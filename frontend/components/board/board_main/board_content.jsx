@@ -36,6 +36,7 @@ class BoardContent extends React.Component {
         } else {
             groupsList = <div className="add-group-prompt">
                 <i className="fas fa-arrow-up"></i> Welcome! Click the "Add Group" button to get started.
+                <p><i className="fas fa-arrow-left"></i> Or, create/view other boards.</p>
             </div>;
         }
 
