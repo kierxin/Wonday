@@ -37,7 +37,8 @@ class DeadlineCell extends React.Component {
                             now.toISOString().slice(0, 10)
                         )}
                         onChange={this.handleChange}
-                        className={deadlineStatus} />
+                        className={deadlineStatus}
+                        aria-label="task deadline" />
             </div>
         )
     }

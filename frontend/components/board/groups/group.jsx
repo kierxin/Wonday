@@ -161,7 +161,8 @@ class Group extends React.Component {
                                 <input type="text"
                                     className="add-task-input"
                                     placeholder={`+ ${this.state.addNewTaskTitle}`}
-                                    onChange={this.changeNewTaskTitle} />
+                                    onChange={this.changeNewTaskTitle}
+                                    aria-label="new task name" />
 
                                 <button>Add</button>
                                 <div className="end-of-task-row"></div>

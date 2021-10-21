@@ -50,7 +50,8 @@ class BoardName extends React.Component {
                     <input type="text"
                         defaultValue={this.state.name}
                         onChange={this.handleInput}
-                        onBlur={this.handleSubmit} />
+                        onBlur={this.handleSubmit}
+                        aria-label="board name" />
                 </form>
             </> 
         )

@@ -73,7 +73,8 @@ class TextInput extends React.Component {
                     defaultValue={this.state.title}
                     onChange={this.handleInput}
                     onBlur={this.handleSubmit}
-                    className={`${this.props.elementType}-input`} />
+                    className={`${this.props.elementType}-input`}
+                    aria-label={`${this.props.elementType}`} />
             </form>
         )
     }

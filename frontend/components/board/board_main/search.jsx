@@ -53,7 +53,8 @@ class Search extends React.Component {
                             type="text"
                             placeholder="Search task by title or status..."
                             onChange={this.handleChange}
-                            onBlur={this.toggleInput} />
+                            onBlur={this.toggleInput}
+                            aria-label="search the board" />
                         <i  id="cancel-search"
                             className="fas fa-times"
                             onClick={this.props.toggleFilter}></i>
