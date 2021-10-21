@@ -65,7 +65,8 @@ class TextInput extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}
+            <form 
+                onSubmit={this.handleSubmit}
                 id={`change-${this.props.elementType}-title`}>
 
                 <input type="text"
@@ -73,7 +74,6 @@ class TextInput extends React.Component {
                     onChange={this.handleInput}
                     onBlur={this.handleSubmit}
                     className={`${this.props.elementType}-input`} />
-
             </form>
         )
     }

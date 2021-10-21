@@ -96,7 +96,7 @@
         }
 
         &:hover {
-            cursor: url('coming-soon-dark.cur'), url('coming-soon-dark.png'), not-allowed;
+            cursor: url(coming-soon-dark.cur), url(coming-soon-dark.png), not-allowed;
             background-color: lightgray;
             color: gray;
             
@@ -129,7 +129,7 @@
 }
 
 #add-group-btn {
-    background-color: rgb(13, 114, 255);
+    background-color: $deep-blue;
     color: white;
 
     &:hover {

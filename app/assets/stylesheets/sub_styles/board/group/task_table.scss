@@ -34,7 +34,7 @@
     &:hover { opacity: .9; }
 }
 
-button.done-status-cell { background-color: rgb(131, 214, 163); }
+button.done-status-cell { background-color: rgb(114, 199, 147); }
 button.doing-status-cell { background-color: rgb(245, 207, 127); }
 button.stuck-status-cell { background-color: rgb(228, 117, 126); }
 button.unknown-status-cell { background-color: rgb(218, 218, 218); }
@@ -73,7 +73,7 @@ button.unknown-status-cell { background-color: rgb(218, 218, 218); }
         }
     }
 
-    [datavalue="Done"] { background-color: rgb(131, 214, 163); }
+    [datavalue="Done"] { background-color: rgb(114, 199, 147); }
     [datavalue="Working on it"] { background-color: rgb(245, 207, 127); }
     [datavalue="Stuck"] { background-color: rgb(228, 117, 126); }
     [datavalue="nil"] { background-color: rgb(218, 218, 218); }

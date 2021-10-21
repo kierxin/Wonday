@@ -12,8 +12,8 @@ class LeftNavBtn extends React.Component {
 
             return(
                 <div className="left-nav-btn" data-title={`${title}`}>
-                    <a href={this.props.href} target="_blank">
-                        <img src={window[src]} />
+                    <a href={this.props.href} target="_blank" rel="noreferrer">
+                        <img src={window[src]} alt="icon for external link" />
                     </a>
                 </div>
             )
@@ -22,7 +22,7 @@ class LeftNavBtn extends React.Component {
             
             return(
                 <div className="left-nav-btn" data-title={`${title}`}>
-                    <img src={window[src]} />
+                    <img src={window[src]} alt="icon" />
                 </div>
             );
 

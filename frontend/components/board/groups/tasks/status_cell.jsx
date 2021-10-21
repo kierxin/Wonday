@@ -51,7 +51,8 @@ class StatusCell extends React.Component {
         return(
             <div className="status-cell-container cell">
                 <button onClick={this.toggleSelection}
-                    className={`task-col status-cell ${status}-status-cell`}>
+                    className={`task-col status-cell ${status}-status-cell`}
+                    aria-label={`Select ${thisStatus}`}>
                     {thisStatus}
                 </button>
                 

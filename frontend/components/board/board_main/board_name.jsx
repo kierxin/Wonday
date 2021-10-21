@@ -43,14 +43,14 @@ class BoardName extends React.Component {
 
         return(
             <>
-                <form onSubmit={this.handleSubmit}
+                <form 
+                    onSubmit={this.handleSubmit}
                     id="change-board-name-field">
 
                     <input type="text"
                         defaultValue={this.state.name}
                         onChange={this.handleInput}
                         onBlur={this.handleSubmit} />
-
                 </form>
             </> 
         )

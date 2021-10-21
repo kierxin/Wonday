@@ -42,10 +42,10 @@ class AddToBoardModal extends React.Component {
                     <p className="paras">Welcome to Wonday! This <b>Monday.com</b> clone is made with Ruby on Rails, Javascript, React.js, and Redux.</p>
                     <p className="paras">There is still lots that I would love to do on this project but in the meantime, if you have any feedback, it would be great to hear from you. I can by reached at <b>kierxin@gmail.com</b> or at:</p>
                     <div id="sites-icons">
-                        <a href="https://github.com/kierxin" target="_blank"><i className="fab fa-github"></i></a>
-                        <a href="https://angel.co/u/keeruh" target="_blank"><i className="fab fa-angellist"></i></a>
-                        <a href="https://www.linkedin.com/in/kiraporter" target="_blank"><i className="fab fa-linkedin-in"></i></a>
-                        <a href="https://kierxin.github.io/Kira-Porter-Portfolio/" target="_blank"><i className="fa fa-external-link"></i></a>
+                        <a href="https://github.com/kierxin" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
+                        <a href="https://angel.co/u/keeruh" target="_blank" rel="noreferrer"><i className="fab fa-angellist"></i></a>
+                        <a href="https://www.linkedin.com/in/kiraporter" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
+                        <a href="https://kierxin.github.io/Kira-Porter-Portfolio/" target="_blank" rel="noreferrer"><i className="fa fa-external-link"></i></a>
                     </div>
 
                     <p className="sig">Have a great day!</p>

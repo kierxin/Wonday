@@ -52,7 +52,10 @@ class PeopleCell extends React.Component {
             thisPeople = this.props.people.map((person, i) => {
                 return(
                     <li key={`person-${person.id}-${i}`}>
-                        <button datavalue={person.id} onClick={this.handleRemove}>
+                        <button 
+                            datavalue={person.id} 
+                            onClick={this.handleRemove}
+                            aria-label={`Unassign ${person.full_name}`}>
                             {person.full_name} ✕
                         </button>
                     </li>
@@ -64,7 +67,10 @@ class PeopleCell extends React.Component {
             if(!task.people.includes(user.id)) {
                 return (
                     <li key={`user-${user.id}-${i}`}>
-                        <button datavalue={user.id} onClick={this.handleAdd}>
+                        <button 
+                            datavalue={user.id} 
+                            onClick={this.handleAdd}
+                            aria-label={`Assign ${user.full_name}`}>
                             {user.full_name} +
                         </button>
                     </li>
@@ -80,7 +86,8 @@ class PeopleCell extends React.Component {
             <div className="cell people-cell-container">
                 <button datapeople={names}
                     onClick={this.toggleSelection}
-                    className={`task-col people-cell`}>
+                    className={`task-col people-cell`}
+                    aria-label={"View people to assign to task"}>
                     <i className={`fas fa-user-friends ${this.props.color}-people-i`}></i>
                 </button>
                 {this.state.selectionMenu && (
