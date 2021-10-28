@@ -1,22 +1,21 @@
 [![Screenshot from Wonday splash page](https://cdn.discordapp.com/attachments/865227670039560212/890754331555561482/wonday-sc-banner.png)](https://wonday-clone-of-monday.herokuapp.com/#/)
 
-### This project is [LIVE](https://wonday-clone-of-monday.herokuapp.com/#/).
+## This project is [LIVE](https://wonday-clone-of-monday.herokuapp.com/#/).
 
-## Introduction
+# Introduction
 
 Welcome to Wonday! More info is available at the Wiki: https://github.com/kierxin/Wonday/wiki
 
 In this two-week project, I used React.js, Redux, and Ruby on Rails to clone the website [Monday.com](https://monday.com/). 
 
 
-## Features
+# Features
 
 While Monday.com has several ways teams can manage their work, my timeframe required me to prioritize a few features:
 
-<details>
-  <summary>Users can log in or sign up via a two-page authentication process and receive relevant error messages if they provide invalid credentials.</summary>
-    
-  ```javascript
+
+```Users can log in or sign up via a two-page authentication process and receive relevant error messages if they provide invalid credentials.```
+```javascript
     constructor(props) {
       super(props);
 
@@ -35,20 +34,16 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
       this.goNextPage = this.goNextPage.bind(this);
     }
   ```
-</details>
 
-<details>
-  <summary>On login, existing users are directed to an overview of one of their boards; new users are provided a new board.</summary>
 
-  ![Screenshot of Wonday project board](https://media.discordapp.net/attachments/865227670039560212/888440008850145381/wonday-sc-1.png)
-</details>
+```On login, existing users are directed to an overview of one of their boards; new users are provided a new board.```
 
-<details>
-  <summary>Boards contain groups of tasks; users can perform full standard CRUD actions on boards and tasks.</summary>
+![Screenshot of Wonday project board](https://media.discordapp.net/attachments/865227670039560212/888440008850145381/wonday-sc-1.png)
 
-  Each task has columns which users may edit: Title, Status ("done", "stuck," etc.), Deadline, and People (assigned to the task).
 
-  ```javascript
+```Boards contain groups of tasks; users can perform full standard CRUD actions on boards and tasks. Each task has columns which users may edit: Title, Status ("done", "stuck," etc.), Deadline, and People (assigned to the task).```
+
+```javascript
     import React from "react";
 
     import TaskCellsContainer from "./tasks/task_cells_container";
@@ -77,20 +72,19 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
 
     export default TaskCol;
   ```
-</details>
-
-<details>
-  <summary>The whole board may be filtered to display only the groups and tasks to which a specific user has been assigned.</summary>
-
-  ![Screenshot of filtering implementation code](https://cdn.discordapp.com/attachments/865227670039560212/888444534323830855/wonday-sc-2.png)
-</details>
 
 
-## Learning Experience
+``` The whole board may be filtered to display only the groups and tasks to which a specific user has been assigned.```
+
+![Screenshot of filtering implementation code](https://cdn.discordapp.com/attachments/865227670039560212/888444534323830855/wonday-sc-2.png)
+
+
+# Learning Experience
 
 Given that this project was my first real dive into React and Redux, I spent much of the first week figuring out how to use the redux store and get my components to update as expected. As I became more familiar with how components, reducers, actions and action creators, AJAX requests, and the Rails backend all connected, the power of React and Redux started to become very clear to me.
 
-### Some things I learned about...
+
+## Some things I learned about...
 
 - The difference between updating a component's local state and updating the overall application state
     - To update state in the Redux store, use actions and ensure that reducers are returning a new copy of state
@@ -105,7 +99,7 @@ Given that this project was my first real dive into React and Redux, I spent muc
 - Deploying to Heroku
 
 
-## Future of the Project
+# Future of the Project
 
 The next features I'd like to work on:
 
