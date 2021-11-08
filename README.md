@@ -6,7 +6,7 @@
 
 Welcome to Wonday! More info is available at the Wiki: https://github.com/kierxin/Wonday/wiki
 
-In this full-stack project, I used React.js, Redux, Rails, and PostgreSQL to clone the website [Monday.com](https://monday.com/). 
+In this full-stack project, I used Ruby on Rails, JavaScript, React, Redux, and PostgreSQL to clone the website [Monday.com](https://monday.com/). 
 
 
 # Features
