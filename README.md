@@ -14,7 +14,7 @@ In this full-stack project, I used Ruby on Rails, JavaScript, React, Redux, and 
 While Monday.com has several ways teams can manage their work, my timeframe required me to prioritize a few features:
 
 
-```Users can log in or sign up via a two-page authentication process and receive relevant error messages if they provide invalid credentials.```
+### Users can log in or sign up via a two-page authentication process and receive relevant error messages if they provide invalid credentials.
 ```javascript
     constructor(props) {
       super(props);
@@ -36,12 +36,12 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
   ```
 
 
-```On login, existing users are directed to an overview of one of their boards; new users are provided a new board.```
+### On login, existing users are directed to an overview of one of their boards; new users are provided a new board.
 
 ![Screenshot of Wonday project board](https://media.discordapp.net/attachments/865227670039560212/888440008850145381/wonday-sc-1.png)
 
 
-```Boards contain groups of tasks; users can perform full standard CRUD actions on boards and tasks. Each task has columns which users may edit: Title, Status ("done", "stuck," etc.), Deadline, and People (assigned to the task).```
+### Boards contain groups of tasks; users can perform full standard CRUD actions on boards and tasks. Each task has columns which users may edit: Title, Status ("done", "stuck," etc.), Deadline, and People (assigned to the task).
 
 ```javascript
     import React from "react";
@@ -74,7 +74,7 @@ While Monday.com has several ways teams can manage their work, my timeframe requ
   ```
 
 
-``` The whole board may be filtered to display only the groups and tasks to which a specific user has been assigned.```
+### The whole board may be filtered to display only the groups and tasks to which a specific user has been assigned.
 
 ![Screenshot of filtering implementation code](https://cdn.discordapp.com/attachments/865227670039560212/888444534323830855/wonday-sc-2.png)
 
