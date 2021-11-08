@@ -39,7 +39,7 @@ class AddToBoardModal extends React.Component {
                 </div>
 
                 <summary>
-                    <p className="paras">Welcome to Wonday! This <b>Monday.com</b> clone is made with Ruby on Rails, Javascript, React.js, and Redux.</p>
+                    <p className="paras">Welcome to Wonday! This <b>Monday.com</b> clone is made with Ruby on Rails, React, Redux, and PostgreSQL.</p>
                     <p className="paras">There is still lots that I would love to do on this project but in the meantime, if you have any feedback, it would be great to hear from you. I can by reached at <b>kierxin@gmail.com</b> or at:</p>
                     <div id="sites-icons">
                         <a href="https://github.com/kierxin" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
