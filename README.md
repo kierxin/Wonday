@@ -1,7 +1,5 @@
 [![Screenshot from Wonday splash page](https://cdn.discordapp.com/attachments/865227670039560212/890754331555561482/wonday-sc-banner.png)](https://wonday-clone-of-monday.herokuapp.com/#/)
 
-### View this website [LIVE](https://wonday-clone-of-monday.herokuapp.com/#/) !
-
 # Introduction
 
 Welcome to Wonday! More info is available at the Wiki: https://github.com/kierxin/Wonday/wiki
